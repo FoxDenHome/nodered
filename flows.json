@@ -1043,7 +1043,7 @@
         "z": "b689760f8cbc2ccd",
         "name": "Dori switcher",
         "info": "",
-        "x": 510,
+        "x": 470,
         "y": 80,
         "wires": []
     },
@@ -1053,7 +1053,7 @@
         "z": "b689760f8cbc2ccd",
         "name": "Dori Nixie clock",
         "info": "",
-        "x": 540,
+        "x": 480,
         "y": 420,
         "wires": []
     },
