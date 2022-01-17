@@ -1,1 +1,2451 @@
-[{"id":"b689760f8cbc2ccd","type":"tab","label":"Dori room special","disabled":false,"info":"","env":[]},{"id":"53112e8c6c9ca84a","type":"tab","label":"Ceiling Fan","disabled":false,"info":"","env":[]},{"id":"a7bed2fe84d7aa78","type":"tab","label":"Power saving","disabled":false,"info":"","env":[]},{"id":"855a07ea.d0a178","type":"server","name":"Home Assistant","version":2,"addon":true,"rejectUnauthorizedCerts":true,"ha_boolean":"y|yes|true|on|home|open","connectionDelay":true,"cacheJson":true,"heartbeat":false,"heartbeatInterval":30},{"id":"8fa25b4c3543d259","type":"mqtt-broker","name":"Home Assistant","broker":"localhost","port":"1883","clientid":"","autoConnect":true,"usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closeRetain":"false","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","willMsg":{},"sessionExpiry":""},{"id":"de560318ea26a14c","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Office ceiling fan low speed","version":2,"haConfig":[{"property":"name","value":"Office ceiling fan low speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"54be5fa1388dc42a","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Office ceiling fan medium speed","version":2,"haConfig":[{"property":"name","value":"Office ceiling fan medium speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"4267320f2a4ff024","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Office ceiling fan high speed","version":2,"haConfig":[{"property":"name","value":"Office ceiling fan high speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"44c020f7b4bfeafd","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Office ceiling fan off","version":2,"haConfig":[{"property":"name","value":"Office ceiling fan off"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"9c5c5bb008a2ab3b","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Bedroom ceiling fan high speed","version":2,"haConfig":[{"property":"name","value":"Bedroom ceiling fan high speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"419630bfa94c45b7","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Corner ceiling fan high speed","version":2,"haConfig":[{"property":"name","value":"Corner ceiling fan high speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"f3b8724f1c5d093e","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Corner ceiling fan low speed","version":2,"haConfig":[{"property":"name","value":"Corner ceiling fan low speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"4aee556c176bd9e6","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Bedroom ceiling fan low speed","version":2,"haConfig":[{"property":"name","value":"Bedroom ceiling fan low speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"72056e70eddc89ba","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Bedroom ceiling fan medium speed","version":2,"haConfig":[{"property":"name","value":"Bedroom ceiling fan medium speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"6f58f6ca73fd27d4","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Corner ceiling fan medium speed","version":2,"haConfig":[{"property":"name","value":"Corner ceiling fan medium speed"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"ba92d4a56659babc","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Bedroom ceiling fan off","version":2,"haConfig":[{"property":"name","value":"Bedroom ceiling fan off"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"09d9593bf658931e","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Corner ceiling fan off","version":2,"haConfig":[{"property":"name","value":"Corner ceiling fan off"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"9e075c34a6a4b697","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Office ceiling fan light","version":2,"haConfig":[{"property":"name","value":"Office ceiling fan light"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"2590d575e38376aa","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Bedroom ceiling fan light","version":2,"haConfig":[{"property":"name","value":"Bedroom ceiling fan light"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"402ff205274b56ae","type":"ha-entity-config","server":"855a07ea.d0a178","name":"Corner ceiling fan light","version":2,"haConfig":[{"property":"name","value":"Corner ceiling fan light"},{"property":"icon","value":""},{"property":"device_class","value":""}],"entityType":"button"},{"id":"f559af01e269e27d","type":"change","z":"b689760f8cbc2ccd","name":"set green","rules":[{"t":"set","p":"color","pt":"msg","to":"[0,255,0]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"50","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":500,"y":180,"wires":[["db7d8d4b8d3f372d"]]},{"id":"f976da82df1e0e25","type":"change","z":"b689760f8cbc2ccd","name":"set red","rules":[{"t":"set","p":"color","pt":"msg","to":"[255,0,0]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"20","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":490,"y":220,"wires":[["db7d8d4b8d3f372d"]]},{"id":"db7d8d4b8d3f372d","type":"switch","z":"b689760f8cbc2ccd","name":"Entity switch","property":"data.entity_id","propertyType":"msg","rules":[{"t":"eq","v":"switch.dori_pc_relay","vt":"str"},{"t":"eq","v":"light.office_desk_strip","vt":"str"},{"t":"eq","v":"","vt":"str"}],"checkall":"true","repair":false,"outputs":3,"x":690,"y":200,"wires":[["66b953d71697285b"],["a969c9cb3de56952"],["f31b7fb79743149e"]]},{"id":"66b953d71697285b","type":"api-call-service","z":"b689760f8cbc2ccd","name":"Set Button 1","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.office_switcher_button_1_led","data":"{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}","dataType":"jsonata","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":910,"y":140,"wires":[[]]},{"id":"a969c9cb3de56952","type":"api-call-service","z":"b689760f8cbc2ccd","name":"Set Button 2","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.office_switcher_button_2_led","data":"{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}","dataType":"jsonata","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":910,"y":200,"wires":[[]]},{"id":"81eef435d04c4037","type":"switch","z":"b689760f8cbc2ccd","name":"On/Off switch","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"on","vt":"str"},{"t":"eq","v":"off","vt":"str"}],"checkall":"true","repair":false,"outputs":2,"x":300,"y":200,"wires":[["f559af01e269e27d"],["f976da82df1e0e25"]]},{"id":"9cc61ca0be019394","type":"server-state-changed","z":"b689760f8cbc2ccd","name":"State trigger","server":"855a07ea.d0a178","version":3,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"entityidfilter":"^(light|switch)\\.","entityidfiltertype":"regex","outputinitially":true,"state_type":"str","haltifstate":"","halt_if_type":"str","halt_if_compare":"is","outputs":1,"output_only_on_state_change":true,"for":0,"forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":true,"ignoreCurrentStateUnavailable":true,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":110,"y":200,"wires":[["81eef435d04c4037"]]},{"id":"f31b7fb79743149e","type":"api-call-service","z":"b689760f8cbc2ccd","name":"Set Button 4","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.office_switcher_button_4_led","data":"{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}","dataType":"jsonata","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":910,"y":260,"wires":[[]]},{"id":"99ce1c6505aedccf","type":"inject","z":"b689760f8cbc2ccd","name":"Minute trigger","props":[],"repeat":"60","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":140,"y":480,"wires":[["295636384bd834d8","eeda18ec71b14762"]]},{"id":"295636384bd834d8","type":"delay","z":"b689760f8cbc2ccd","name":"","pauseType":"delay","timeout":"15","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":160,"y":540,"wires":[["13e9c8321d0262fa","6ad7a99fcf211f73"]]},{"id":"13e9c8321d0262fa","type":"delay","z":"b689760f8cbc2ccd","name":"","pauseType":"delay","timeout":"15","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":160,"y":600,"wires":[["0a88c3182947653d","e48d14ba14caf617"]]},{"id":"0a88c3182947653d","type":"delay","z":"b689760f8cbc2ccd","name":"","pauseType":"delay","timeout":"15","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":160,"y":660,"wires":[["893fa06716a2dc3b"]]},{"id":"eeda18ec71b14762","type":"api-current-state","z":"b689760f8cbc2ccd","name":"CO2","server":"855a07ea.d0a178","version":3,"outputs":2,"halt_if":"1700","halt_if_type":"num","halt_if_compare":"gt","entity_id":"sensor.office_co2","state_type":"num","blockInputOverrides":false,"outputProperties":[{"property":"state","propertyType":"msg","value":"","valueType":"entityState"},{"property":"desc","propertyType":"msg","value":"02P","valueType":"str"}],"for":0,"forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":310,"y":480,"wires":[["5fdb3c5d3d1d78dd"],[]]},{"id":"6ad7a99fcf211f73","type":"api-current-state","z":"b689760f8cbc2ccd","name":"1.0um","server":"855a07ea.d0a178","version":3,"outputs":2,"halt_if":"5","halt_if_type":"num","halt_if_compare":"gt","entity_id":"sensor.office_particulate_matter_1_0um_concentration","state_type":"num","blockInputOverrides":false,"outputProperties":[{"property":"state","propertyType":"msg","value":"","valueType":"entityState"},{"property":"desc","propertyType":"msg","value":" 1u","valueType":"str"}],"for":0,"forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":310,"y":540,"wires":[["de8fe4e73e14590b"],[]]},{"id":"e48d14ba14caf617","type":"api-current-state","z":"b689760f8cbc2ccd","name":"2.5um","server":"855a07ea.d0a178","version":3,"outputs":2,"halt_if":"5","halt_if_type":"num","halt_if_compare":"gt","entity_id":"sensor.office_particulate_matter_2_5um_concentration","state_type":"num","blockInputOverrides":false,"outputProperties":[{"property":"state","propertyType":"msg","value":"","valueType":"entityState"},{"property":"desc","propertyType":"msg","value":" 2u","valueType":"str"}],"for":0,"forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":310,"y":600,"wires":[["de8fe4e73e14590b"],[]]},{"id":"893fa06716a2dc3b","type":"api-current-state","z":"b689760f8cbc2ccd","name":"10um","server":"855a07ea.d0a178","version":3,"outputs":2,"halt_if":"5","halt_if_type":"num","halt_if_compare":"gt","entity_id":"sensor.office_particulate_matter_10_0um_concentration","state_type":"num","blockInputOverrides":false,"outputProperties":[{"property":"state","propertyType":"msg","value":"","valueType":"entityState"},{"property":"desc","propertyType":"msg","value":"10u","valueType":"str"}],"for":0,"forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":310,"y":660,"wires":[["de8fe4e73e14590b"],[]]},{"id":"de8fe4e73e14590b","type":"change","z":"b689760f8cbc2ccd","name":"set yellow","rules":[{"t":"set","p":"color","pt":"msg","to":"442200","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":500,"y":540,"wires":[["735c96e917807126"]]},{"id":"5fdb3c5d3d1d78dd","type":"change","z":"b689760f8cbc2ccd","name":"set red","rules":[{"t":"set","p":"color","pt":"msg","to":"440000","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":490,"y":480,"wires":[["735c96e917807126"]]},{"id":"735c96e917807126","type":"function","z":"b689760f8cbc2ccd","name":"Format MQTT for Nixie","func":"const state = Math.min(msg.state, 9999).toFixed(0);\n\nmsg.payload = `F00003000000${ state.padStart(4, ' ') }  ${ msg.desc }${ msg.color }`;\n\nreturn msg;\n","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":740,"y":480,"wires":[["7bfab0236091ea8c"]]},{"id":"7bfab0236091ea8c","type":"mqtt out","z":"b689760f8cbc2ccd","name":"To Nixie clock","topic":"esp-nixie-clock-dori/in","qos":"1","retain":"false","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"8fa25b4c3543d259","x":960,"y":480,"wires":[]},{"id":"94444fd87dfc9063","type":"comment","z":"b689760f8cbc2ccd","name":"Dori switcher","info":"","x":510,"y":80,"wires":[]},{"id":"0c2c9d1dfcf70a43","type":"comment","z":"b689760f8cbc2ccd","name":"Dori Nixie clock","info":"","x":540,"y":420,"wires":[]},{"id":"4e428b289d17c476","type":"ha-button","z":"53112e8c6c9ca84a","name":"Low speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"de560318ea26a14c","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"low","valueType":"str"}],"x":280,"y":180,"wires":[["91ec8181d4c6a7f8","dafc9ac4cc23df1e"]]},{"id":"544b9a37643433ff","type":"ha-button","z":"53112e8c6c9ca84a","name":"Medium speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"54be5fa1388dc42a","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"medium","valueType":"str"}],"x":300,"y":240,"wires":[["e774f019810ec8ff"]]},{"id":"58ab73aba5e6ae04","type":"ha-button","z":"53112e8c6c9ca84a","name":"High speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"4267320f2a4ff024","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"high","valueType":"str"}],"x":290,"y":120,"wires":[["91ec8181d4c6a7f8","890ba6c5ce1603a9"]]},{"id":"04e2f79678c68061","type":"ha-button","z":"53112e8c6c9ca84a","name":"Off","version":0,"debugenabled":false,"outputs":1,"entityConfig":"44c020f7b4bfeafd","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"off","valueType":"str"}],"x":270,"y":300,"wires":[["6f951ebb64f3d3a4"]]},{"id":"91ec8181d4c6a7f8","type":"change","z":"53112e8c6c9ca84a","name":"Set fan DIP code","rules":[{"t":"set","p":"payload.id","pt":"msg","to":"00101001","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":590,"y":180,"wires":[["cb8fb8529e9aad6d"]]},{"id":"ecd8c24c9e1b805f","type":"comment","z":"53112e8c6c9ca84a","name":"Office ceiling fan","info":"","x":580,"y":120,"wires":[]},{"id":"78c6717d5b2d415b","type":"ha-entity","z":"53112e8c6c9ca84a","name":"Switch","server":"855a07ea.d0a178","version":2,"debugenabled":false,"outputs":2,"entityType":"switch","config":[{"property":"name","value":"Office ceiling fan switch"},{"property":"device_class","value":""},{"property":"icon","value":""},{"property":"unit_of_measurement","value":""},{"property":"state_class","value":""},{"property":"last_reset","value":""}],"state":"payload","stateType":"msg","attributes":[],"resend":true,"outputLocation":"payload","outputLocationType":"none","inputOverride":"allow","outputOnStateChange":true,"outputPayload":"{}","outputPayloadType":"jsonata","x":90,"y":400,"wires":[["30b1ccd29538d7cb"],["964a9184ac67de2c"]]},{"id":"6f951ebb64f3d3a4","type":"api-call-service","z":"53112e8c6c9ca84a","name":"","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"switch","service":"turn_off","entityId":"switch.office_ceiling_fan_switch","data":"{}","dataType":"json","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":590,"y":300,"wires":[[]]},{"id":"e774f019810ec8ff","type":"api-call-service","z":"53112e8c6c9ca84a","name":"","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"switch","service":"turn_on","entityId":"switch.office_ceiling_fan_switch","data":"{}","dataType":"json","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":590,"y":240,"wires":[[]]},{"id":"30b1ccd29538d7cb","type":"change","z":"53112e8c6c9ca84a","name":"Set fan medium","rules":[{"t":"set","p":"payload.command","pt":"msg","to":"medium","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":300,"y":360,"wires":[["91ec8181d4c6a7f8","fa58d8e3f09ddbb6"]]},{"id":"964a9184ac67de2c","type":"change","z":"53112e8c6c9ca84a","name":"Set fan off","rules":[{"t":"set","p":"payload.command","pt":"msg","to":"off","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":290,"y":400,"wires":[["91ec8181d4c6a7f8","48dc2c7caa32d70a"]]},{"id":"fa58d8e3f09ddbb6","type":"change","z":"53112e8c6c9ca84a","name":"set green","rules":[{"t":"set","p":"color","pt":"msg","to":"[0,255,0]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"50","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":580,"y":440,"wires":[["d39cf1c6e2cfa63b"]]},{"id":"d39cf1c6e2cfa63b","type":"api-call-service","z":"53112e8c6c9ca84a","name":"Set Button 3","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.office_switcher_button_3_led","data":"{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness,\t    \"flash\": msg.flash\t}","dataType":"jsonata","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":810,"y":520,"wires":[[]]},{"id":"dafc9ac4cc23df1e","type":"change","z":"53112e8c6c9ca84a","name":"set yellow","rules":[{"t":"set","p":"color","pt":"msg","to":"[204,255,0]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"50","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":580,"y":480,"wires":[["d39cf1c6e2cfa63b"]]},{"id":"890ba6c5ce1603a9","type":"change","z":"53112e8c6c9ca84a","name":"set blue","rules":[{"t":"set","p":"color","pt":"msg","to":"[0,0,255]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"50","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":580,"y":400,"wires":[["d39cf1c6e2cfa63b"]]},{"id":"48dc2c7caa32d70a","type":"change","z":"53112e8c6c9ca84a","name":"set red","rules":[{"t":"set","p":"color","pt":"msg","to":"[255,0,0]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"20","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":570,"y":520,"wires":[["d39cf1c6e2cfa63b"]]},{"id":"d121da9d5d49fcc7","type":"ha-button","z":"53112e8c6c9ca84a","name":"Low speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"4aee556c176bd9e6","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"low","valueType":"str"}],"x":280,"y":680,"wires":[["ea5127a584325b4a"]]},{"id":"76c6dbc7d116680c","type":"ha-button","z":"53112e8c6c9ca84a","name":"Medium speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"72056e70eddc89ba","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"medium","valueType":"str"}],"x":300,"y":740,"wires":[["8e37b0b211224346"]]},{"id":"3dcce09ebfc4ef9c","type":"ha-button","z":"53112e8c6c9ca84a","name":"High speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"9c5c5bb008a2ab3b","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"high","valueType":"str"}],"x":290,"y":620,"wires":[["ea5127a584325b4a"]]},{"id":"71241baab535cdbc","type":"mqtt out","z":"53112e8c6c9ca84a","name":"Set fan","topic":"rfcat_mqtt/control","qos":"1","retain":"false","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"8fa25b4c3543d259","x":1440,"y":680,"wires":[]},{"id":"d88b5d33b84197a2","type":"ha-button","z":"53112e8c6c9ca84a","name":"Off","version":0,"debugenabled":false,"outputs":1,"entityConfig":"ba92d4a56659babc","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"off","valueType":"str"}],"x":270,"y":800,"wires":[["5ee5e3cbea2a230d"]]},{"id":"ea5127a584325b4a","type":"change","z":"53112e8c6c9ca84a","name":"Set fan DIP code","rules":[{"t":"set","p":"payload.id","pt":"msg","to":"00011001","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":590,"y":680,"wires":[["cb8fb8529e9aad6d"]]},{"id":"4c0e64b1d58fcc72","type":"comment","z":"53112e8c6c9ca84a","name":"Bedroom ceiling fan","info":"","x":590,"y":620,"wires":[]},{"id":"cb8fb8529e9aad6d","type":"change","z":"53112e8c6c9ca84a","name":"Set fan type","rules":[{"t":"set","p":"payload.type","pt":"msg","to":"minka_aire_fan","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":1230,"y":680,"wires":[["71241baab535cdbc"]]},{"id":"29ef88acc66a645b","type":"ha-entity","z":"53112e8c6c9ca84a","name":"Switch","server":"855a07ea.d0a178","version":2,"debugenabled":false,"outputs":2,"entityType":"switch","config":[{"property":"name","value":"Bedroom ceiling fan switch"},{"property":"device_class","value":""},{"property":"icon","value":""},{"property":"unit_of_measurement","value":""},{"property":"state_class","value":""},{"property":"last_reset","value":""}],"state":"payload","stateType":"msg","attributes":[],"resend":true,"outputLocation":"payload","outputLocationType":"none","inputOverride":"allow","outputOnStateChange":true,"outputPayload":"{}","outputPayloadType":"jsonata","x":90,"y":900,"wires":[["051d083370853091"],["3eee9df417c86975"]]},{"id":"5ee5e3cbea2a230d","type":"api-call-service","z":"53112e8c6c9ca84a","name":"","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"switch","service":"turn_off","entityId":"switch.bedroom_ceiling_fan_switch","data":"{}","dataType":"json","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":590,"y":800,"wires":[[]]},{"id":"8e37b0b211224346","type":"api-call-service","z":"53112e8c6c9ca84a","name":"","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"switch","service":"turn_on","entityId":"switch.bedroom_ceiling_fan_switch","data":"{}","dataType":"json","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":590,"y":740,"wires":[[]]},{"id":"051d083370853091","type":"change","z":"53112e8c6c9ca84a","name":"Set fan medium","rules":[{"t":"set","p":"payload.command","pt":"msg","to":"medium","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":300,"y":860,"wires":[["ea5127a584325b4a"]]},{"id":"3eee9df417c86975","type":"change","z":"53112e8c6c9ca84a","name":"Set fan off","rules":[{"t":"set","p":"payload.command","pt":"msg","to":"off","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":290,"y":900,"wires":[["ea5127a584325b4a"]]},{"id":"f0ce4b2d15986022","type":"ha-button","z":"53112e8c6c9ca84a","name":"Low speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"f3b8724f1c5d093e","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"low","valueType":"str"}],"x":280,"y":1100,"wires":[["e0e39a1200936793"]]},{"id":"24a0fc25302ee995","type":"ha-button","z":"53112e8c6c9ca84a","name":"Medium speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"6f58f6ca73fd27d4","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"medium","valueType":"str"}],"x":300,"y":1160,"wires":[["b623b0855b2fdc4e"]]},{"id":"3383dc8eaac08c88","type":"ha-button","z":"53112e8c6c9ca84a","name":"High speed","version":0,"debugenabled":false,"outputs":1,"entityConfig":"419630bfa94c45b7","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"high","valueType":"str"}],"x":290,"y":1040,"wires":[["e0e39a1200936793"]]},{"id":"68d9a57a853b8017","type":"ha-button","z":"53112e8c6c9ca84a","name":"Off","version":0,"debugenabled":false,"outputs":1,"entityConfig":"09d9593bf658931e","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"off","valueType":"str"}],"x":270,"y":1220,"wires":[["27a64d042e7dab10"]]},{"id":"e0e39a1200936793","type":"change","z":"53112e8c6c9ca84a","name":"Set fan DIP code","rules":[{"t":"set","p":"payload.id","pt":"msg","to":"00001001","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":590,"y":1100,"wires":[["cb8fb8529e9aad6d"]]},{"id":"7fe55464c8e7a85a","type":"comment","z":"53112e8c6c9ca84a","name":"Corner ceiling fan","info":"","x":580,"y":1040,"wires":[]},{"id":"50009f69c1333d8f","type":"ha-entity","z":"53112e8c6c9ca84a","name":"Switch","server":"855a07ea.d0a178","version":2,"debugenabled":false,"outputs":2,"entityType":"switch","config":[{"property":"name","value":"Corner ceiling fan switch"},{"property":"device_class","value":""},{"property":"icon","value":""},{"property":"unit_of_measurement","value":""},{"property":"state_class","value":""},{"property":"last_reset","value":""}],"state":"payload","stateType":"msg","attributes":[],"resend":true,"outputLocation":"payload","outputLocationType":"none","inputOverride":"allow","outputOnStateChange":true,"outputPayload":"{}","outputPayloadType":"jsonata","x":90,"y":1320,"wires":[["2d2c9629567dd3a4"],["bf0e7da6a9771e33"]]},{"id":"27a64d042e7dab10","type":"api-call-service","z":"53112e8c6c9ca84a","name":"","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"switch","service":"turn_off","entityId":"switch.corner_ceiling_fan_switch","data":"{}","dataType":"json","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":590,"y":1220,"wires":[[]]},{"id":"b623b0855b2fdc4e","type":"api-call-service","z":"53112e8c6c9ca84a","name":"","server":"855a07ea.d0a178","version":3,"debugenabled":false,"service_domain":"switch","service":"turn_on","entityId":"switch.corner_ceiling_fan_switch","data":"{}","dataType":"json","mergecontext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":590,"y":1160,"wires":[[]]},{"id":"2d2c9629567dd3a4","type":"change","z":"53112e8c6c9ca84a","name":"Set fan medium","rules":[{"t":"set","p":"payload.command","pt":"msg","to":"medium","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":300,"y":1280,"wires":[["e0e39a1200936793"]]},{"id":"bf0e7da6a9771e33","type":"change","z":"53112e8c6c9ca84a","name":"Set fan off","rules":[{"t":"set","p":"payload.command","pt":"msg","to":"off","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":290,"y":1320,"wires":[["e0e39a1200936793"]]},{"id":"c8311414ddb5dc8c","type":"ha-button","z":"53112e8c6c9ca84a","name":"Light","version":0,"debugenabled":false,"outputs":1,"entityConfig":"9e075c34a6a4b697","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"light","valueType":"str"}],"x":270,"y":60,"wires":[["91ec8181d4c6a7f8","d34d207dcdd26627"]]},{"id":"b7eeebd717c63832","type":"ha-button","z":"53112e8c6c9ca84a","name":"Light","version":0,"debugenabled":false,"outputs":1,"entityConfig":"2590d575e38376aa","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"light","valueType":"str"}],"x":270,"y":560,"wires":[["ea5127a584325b4a"]]},{"id":"ceb247785071d9c8","type":"ha-button","z":"53112e8c6c9ca84a","name":"Light","version":0,"debugenabled":false,"outputs":1,"entityConfig":"402ff205274b56ae","outputProperties":[{"property":"payload.command","propertyType":"msg","value":"light","valueType":"str"}],"x":270,"y":980,"wires":[["e0e39a1200936793"]]},{"id":"d34d207dcdd26627","type":"change","z":"53112e8c6c9ca84a","name":"set flash","rules":[{"t":"set","p":"color","pt":"msg","to":"[128,200,255]","tot":"json"},{"t":"set","p":"brightness","pt":"msg","to":"100","tot":"str"},{"t":"set","p":"flash","pt":"msg","to":"short","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":580,"y":360,"wires":[["d39cf1c6e2cfa63b"]]},{"id":"941aad402cb53b88","type":"ha-device","z":"a7bed2fe84d7aa78","name":"Dori PC low power","server":"855a07ea.d0a178","version":0,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"inputs":0,"deviceType":"trigger","device":"1383277869fb3dc65d04345fa0816f14","event":{"type":"power","platform":"device","device_id":"1383277869fb3dc65d04345fa0816f14","entity_id":"sensor.dori_pc_power","domain":"sensor"},"capabilities":[{"name":"below","type":"float","value":50},{"name":"for","type":"positive_time_period_dict","value":30,"unit":"minutes"}],"outputProperties":[{"property":"payload.data","propertyType":"msg","value":"","valueType":"eventData"}],"x":190,"y":80,"wires":[["0503cb8aba14159e"]]},{"id":"700d4ee7f910dfef","type":"ha-device","z":"a7bed2fe84d7aa78","name":"Simon PC low power","server":"855a07ea.d0a178","version":0,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"inputs":0,"deviceType":"trigger","device":"d8f10783fd5383c71f1232f171c393e7","event":{"type":"power","platform":"device","device_id":"d8f10783fd5383c71f1232f171c393e7","entity_id":"sensor.simon_pc_power","domain":"sensor"},"capabilities":[{"name":"below","type":"float","value":50},{"name":"for","type":"positive_time_period_dict","value":30,"unit":"minutes"}],"outputProperties":[{"property":"payload.data","propertyType":"msg","value":"","valueType":"eventData"}],"x":180,"y":160,"wires":[["b07bf706447e5059"]]},{"id":"0503cb8aba14159e","type":"ha-device","z":"a7bed2fe84d7aa78","name":"Turn off Dori PC","server":"855a07ea.d0a178","version":0,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"inputs":1,"deviceType":"action","device":"1383277869fb3dc65d04345fa0816f14","event":{"type":"turn_off","device_id":"1383277869fb3dc65d04345fa0816f14","entity_id":"switch.dori_pc_relay","domain":"switch"},"capabilities":[],"outputProperties":[],"x":440,"y":80,"wires":[[]]},{"id":"b07bf706447e5059","type":"ha-device","z":"a7bed2fe84d7aa78","name":"Turn off Simon PC","server":"855a07ea.d0a178","version":0,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"inputs":1,"deviceType":"action","device":"d8f10783fd5383c71f1232f171c393e7","event":{"type":"turn_off","device_id":"d8f10783fd5383c71f1232f171c393e7","entity_id":"switch.simon_pc_relay","domain":"switch"},"capabilities":[],"outputProperties":[],"x":450,"y":160,"wires":[[]]}]
+[
+    {
+        "id": "b689760f8cbc2ccd",
+        "type": "tab",
+        "label": "Dori room special",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "53112e8c6c9ca84a",
+        "type": "tab",
+        "label": "Ceiling Fan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a7bed2fe84d7aa78",
+        "type": "tab",
+        "label": "Power saving",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "855a07ea.d0a178",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 2,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": 30
+    },
+    {
+        "id": "8fa25b4c3543d259",
+        "type": "mqtt-broker",
+        "name": "Home Assistant",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "de560318ea26a14c",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Office ceiling fan low speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Office ceiling fan low speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "54be5fa1388dc42a",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Office ceiling fan medium speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Office ceiling fan medium speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "4267320f2a4ff024",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Office ceiling fan high speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Office ceiling fan high speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "44c020f7b4bfeafd",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Office ceiling fan off",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Office ceiling fan off"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "9c5c5bb008a2ab3b",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Bedroom ceiling fan high speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bedroom ceiling fan high speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "419630bfa94c45b7",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Corner ceiling fan high speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Corner ceiling fan high speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "f3b8724f1c5d093e",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Corner ceiling fan low speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Corner ceiling fan low speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "4aee556c176bd9e6",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Bedroom ceiling fan low speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bedroom ceiling fan low speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "72056e70eddc89ba",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Bedroom ceiling fan medium speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bedroom ceiling fan medium speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "6f58f6ca73fd27d4",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Corner ceiling fan medium speed",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Corner ceiling fan medium speed"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "ba92d4a56659babc",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Bedroom ceiling fan off",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bedroom ceiling fan off"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "09d9593bf658931e",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Corner ceiling fan off",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Corner ceiling fan off"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "9e075c34a6a4b697",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Office ceiling fan light",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Office ceiling fan light"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "2590d575e38376aa",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Bedroom ceiling fan light",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bedroom ceiling fan light"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "402ff205274b56ae",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Corner ceiling fan light",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Corner ceiling fan light"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
+        "id": "f559af01e269e27d",
+        "type": "change",
+        "z": "b689760f8cbc2ccd",
+        "name": "set green",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[0,255,0]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "50",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "db7d8d4b8d3f372d"
+            ]
+        ]
+    },
+    {
+        "id": "f976da82df1e0e25",
+        "type": "change",
+        "z": "b689760f8cbc2ccd",
+        "name": "set red",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[255,0,0]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "20",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 220,
+        "wires": [
+            [
+                "db7d8d4b8d3f372d"
+            ]
+        ]
+    },
+    {
+        "id": "db7d8d4b8d3f372d",
+        "type": "switch",
+        "z": "b689760f8cbc2ccd",
+        "name": "Entity switch",
+        "property": "data.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "switch.dori_pc_relay",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "light.office_desk_strip",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 690,
+        "y": 200,
+        "wires": [
+            [
+                "66b953d71697285b"
+            ],
+            [
+                "a969c9cb3de56952"
+            ],
+            [
+                "f31b7fb79743149e"
+            ]
+        ]
+    },
+    {
+        "id": "66b953d71697285b",
+        "type": "api-call-service",
+        "z": "b689760f8cbc2ccd",
+        "name": "Set Button 1",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.office_switcher_button_1_led",
+        "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 910,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a969c9cb3de56952",
+        "type": "api-call-service",
+        "z": "b689760f8cbc2ccd",
+        "name": "Set Button 2",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.office_switcher_button_2_led",
+        "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 910,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81eef435d04c4037",
+        "type": "switch",
+        "z": "b689760f8cbc2ccd",
+        "name": "On/Off switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "f559af01e269e27d"
+            ],
+            [
+                "f976da82df1e0e25"
+            ]
+        ]
+    },
+    {
+        "id": "9cc61ca0be019394",
+        "type": "server-state-changed",
+        "z": "b689760f8cbc2ccd",
+        "name": "State trigger",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "^(light|switch)\\.",
+        "entityidfiltertype": "regex",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "81eef435d04c4037"
+            ]
+        ]
+    },
+    {
+        "id": "f31b7fb79743149e",
+        "type": "api-call-service",
+        "z": "b689760f8cbc2ccd",
+        "name": "Set Button 4",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.office_switcher_button_4_led",
+        "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 910,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99ce1c6505aedccf",
+        "type": "inject",
+        "z": "b689760f8cbc2ccd",
+        "name": "Minute trigger",
+        "props": [],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 480,
+        "wires": [
+            [
+                "295636384bd834d8",
+                "eeda18ec71b14762"
+            ]
+        ]
+    },
+    {
+        "id": "295636384bd834d8",
+        "type": "delay",
+        "z": "b689760f8cbc2ccd",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "13e9c8321d0262fa",
+                "6ad7a99fcf211f73"
+            ]
+        ]
+    },
+    {
+        "id": "13e9c8321d0262fa",
+        "type": "delay",
+        "z": "b689760f8cbc2ccd",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "0a88c3182947653d",
+                "e48d14ba14caf617"
+            ]
+        ]
+    },
+    {
+        "id": "0a88c3182947653d",
+        "type": "delay",
+        "z": "b689760f8cbc2ccd",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 660,
+        "wires": [
+            [
+                "893fa06716a2dc3b"
+            ]
+        ]
+    },
+    {
+        "id": "eeda18ec71b14762",
+        "type": "api-current-state",
+        "z": "b689760f8cbc2ccd",
+        "name": "CO2",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "1700",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "entity_id": "sensor.office_co2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "desc",
+                "propertyType": "msg",
+                "value": "02P",
+                "valueType": "str"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 310,
+        "y": 480,
+        "wires": [
+            [
+                "5fdb3c5d3d1d78dd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6ad7a99fcf211f73",
+        "type": "api-current-state",
+        "z": "b689760f8cbc2ccd",
+        "name": "1.0um",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "5",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "entity_id": "sensor.office_particulate_matter_1_0um_concentration",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "desc",
+                "propertyType": "msg",
+                "value": " 1u",
+                "valueType": "str"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "de8fe4e73e14590b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e48d14ba14caf617",
+        "type": "api-current-state",
+        "z": "b689760f8cbc2ccd",
+        "name": "2.5um",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "5",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "entity_id": "sensor.office_particulate_matter_2_5um_concentration",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "desc",
+                "propertyType": "msg",
+                "value": " 2u",
+                "valueType": "str"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 310,
+        "y": 600,
+        "wires": [
+            [
+                "de8fe4e73e14590b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "893fa06716a2dc3b",
+        "type": "api-current-state",
+        "z": "b689760f8cbc2ccd",
+        "name": "10um",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "5",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "entity_id": "sensor.office_particulate_matter_10_0um_concentration",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "desc",
+                "propertyType": "msg",
+                "value": "10u",
+                "valueType": "str"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 310,
+        "y": 660,
+        "wires": [
+            [
+                "de8fe4e73e14590b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "de8fe4e73e14590b",
+        "type": "change",
+        "z": "b689760f8cbc2ccd",
+        "name": "set yellow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "442200",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 540,
+        "wires": [
+            [
+                "735c96e917807126"
+            ]
+        ]
+    },
+    {
+        "id": "5fdb3c5d3d1d78dd",
+        "type": "change",
+        "z": "b689760f8cbc2ccd",
+        "name": "set red",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "440000",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 480,
+        "wires": [
+            [
+                "735c96e917807126"
+            ]
+        ]
+    },
+    {
+        "id": "735c96e917807126",
+        "type": "function",
+        "z": "b689760f8cbc2ccd",
+        "name": "Format MQTT for Nixie",
+        "func": "const state = Math.min(msg.state, 9999).toFixed(0);\n\nmsg.payload = `F00003000000${ state.padStart(4, ' ') }  ${ msg.desc }${ msg.color }`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 480,
+        "wires": [
+            [
+                "7bfab0236091ea8c"
+            ]
+        ]
+    },
+    {
+        "id": "7bfab0236091ea8c",
+        "type": "mqtt out",
+        "z": "b689760f8cbc2ccd",
+        "name": "To Nixie clock",
+        "topic": "esp-nixie-clock-dori/in",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8fa25b4c3543d259",
+        "x": 960,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "94444fd87dfc9063",
+        "type": "comment",
+        "z": "b689760f8cbc2ccd",
+        "name": "Dori switcher",
+        "info": "",
+        "x": 510,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0c2c9d1dfcf70a43",
+        "type": "comment",
+        "z": "b689760f8cbc2ccd",
+        "name": "Dori Nixie clock",
+        "info": "",
+        "x": 540,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4e428b289d17c476",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Low speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "de560318ea26a14c",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "low",
+                "valueType": "str"
+            }
+        ],
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8",
+                "dafc9ac4cc23df1e"
+            ]
+        ]
+    },
+    {
+        "id": "544b9a37643433ff",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Medium speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "54be5fa1388dc42a",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "medium",
+                "valueType": "str"
+            }
+        ],
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "e774f019810ec8ff"
+            ]
+        ]
+    },
+    {
+        "id": "58ab73aba5e6ae04",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "High speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "4267320f2a4ff024",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "high",
+                "valueType": "str"
+            }
+        ],
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8",
+                "890ba6c5ce1603a9"
+            ]
+        ]
+    },
+    {
+        "id": "04e2f79678c68061",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Off",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "44c020f7b4bfeafd",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "off",
+                "valueType": "str"
+            }
+        ],
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "6f951ebb64f3d3a4"
+            ]
+        ]
+    },
+    {
+        "id": "91ec8181d4c6a7f8",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan DIP code",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.id",
+                "pt": "msg",
+                "to": "00101001",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "cb8fb8529e9aad6d"
+            ]
+        ]
+    },
+    {
+        "id": "ecd8c24c9e1b805f",
+        "type": "comment",
+        "z": "53112e8c6c9ca84a",
+        "name": "Office ceiling fan",
+        "info": "",
+        "x": 580,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "78c6717d5b2d415b",
+        "type": "ha-entity",
+        "z": "53112e8c6c9ca84a",
+        "name": "Switch",
+        "server": "855a07ea.d0a178",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 2,
+        "entityType": "switch",
+        "config": [
+            {
+                "property": "name",
+                "value": "Office ceiling fan switch"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": true,
+        "outputPayload": "{}",
+        "outputPayloadType": "jsonata",
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "30b1ccd29538d7cb"
+            ],
+            [
+                "964a9184ac67de2c"
+            ]
+        ]
+    },
+    {
+        "id": "6f951ebb64f3d3a4",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.office_ceiling_fan_switch",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e774f019810ec8ff",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.office_ceiling_fan_switch",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30b1ccd29538d7cb",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan medium",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "medium",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8",
+                "fa58d8e3f09ddbb6"
+            ]
+        ]
+    },
+    {
+        "id": "964a9184ac67de2c",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8",
+                "48dc2c7caa32d70a"
+            ]
+        ]
+    },
+    {
+        "id": "fa58d8e3f09ddbb6",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set green",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[0,255,0]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "50",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "d39cf1c6e2cfa63b"
+            ]
+        ]
+    },
+    {
+        "id": "d39cf1c6e2cfa63b",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set Button 3",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.office_switcher_button_3_led",
+        "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness,\t    \"flash\": msg.flash\t}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 810,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dafc9ac4cc23df1e",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set yellow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[204,255,0]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "50",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "d39cf1c6e2cfa63b"
+            ]
+        ]
+    },
+    {
+        "id": "890ba6c5ce1603a9",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set blue",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[0,0,255]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "50",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "d39cf1c6e2cfa63b"
+            ]
+        ]
+    },
+    {
+        "id": "48dc2c7caa32d70a",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set red",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[255,0,0]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "20",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 520,
+        "wires": [
+            [
+                "d39cf1c6e2cfa63b"
+            ]
+        ]
+    },
+    {
+        "id": "d121da9d5d49fcc7",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Low speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "4aee556c176bd9e6",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "low",
+                "valueType": "str"
+            }
+        ],
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "ea5127a584325b4a"
+            ]
+        ]
+    },
+    {
+        "id": "76c6dbc7d116680c",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Medium speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "72056e70eddc89ba",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "medium",
+                "valueType": "str"
+            }
+        ],
+        "x": 300,
+        "y": 740,
+        "wires": [
+            [
+                "8e37b0b211224346"
+            ]
+        ]
+    },
+    {
+        "id": "3dcce09ebfc4ef9c",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "High speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "9c5c5bb008a2ab3b",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "high",
+                "valueType": "str"
+            }
+        ],
+        "x": 290,
+        "y": 620,
+        "wires": [
+            [
+                "ea5127a584325b4a"
+            ]
+        ]
+    },
+    {
+        "id": "71241baab535cdbc",
+        "type": "mqtt out",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan",
+        "topic": "rfcat_mqtt/control",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8fa25b4c3543d259",
+        "x": 1440,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "d88b5d33b84197a2",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Off",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "ba92d4a56659babc",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "off",
+                "valueType": "str"
+            }
+        ],
+        "x": 270,
+        "y": 800,
+        "wires": [
+            [
+                "5ee5e3cbea2a230d"
+            ]
+        ]
+    },
+    {
+        "id": "ea5127a584325b4a",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan DIP code",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.id",
+                "pt": "msg",
+                "to": "00011001",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 680,
+        "wires": [
+            [
+                "cb8fb8529e9aad6d"
+            ]
+        ]
+    },
+    {
+        "id": "4c0e64b1d58fcc72",
+        "type": "comment",
+        "z": "53112e8c6c9ca84a",
+        "name": "Bedroom ceiling fan",
+        "info": "",
+        "x": 590,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "cb8fb8529e9aad6d",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan type",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "minka_aire_fan",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 680,
+        "wires": [
+            [
+                "71241baab535cdbc"
+            ]
+        ]
+    },
+    {
+        "id": "29ef88acc66a645b",
+        "type": "ha-entity",
+        "z": "53112e8c6c9ca84a",
+        "name": "Switch",
+        "server": "855a07ea.d0a178",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 2,
+        "entityType": "switch",
+        "config": [
+            {
+                "property": "name",
+                "value": "Bedroom ceiling fan switch"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": true,
+        "outputPayload": "{}",
+        "outputPayloadType": "jsonata",
+        "x": 90,
+        "y": 900,
+        "wires": [
+            [
+                "051d083370853091"
+            ],
+            [
+                "3eee9df417c86975"
+            ]
+        ]
+    },
+    {
+        "id": "5ee5e3cbea2a230d",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.bedroom_ceiling_fan_switch",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e37b0b211224346",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.bedroom_ceiling_fan_switch",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "051d083370853091",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan medium",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "medium",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 860,
+        "wires": [
+            [
+                "ea5127a584325b4a"
+            ]
+        ]
+    },
+    {
+        "id": "3eee9df417c86975",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 900,
+        "wires": [
+            [
+                "ea5127a584325b4a"
+            ]
+        ]
+    },
+    {
+        "id": "f0ce4b2d15986022",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Low speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "f3b8724f1c5d093e",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "low",
+                "valueType": "str"
+            }
+        ],
+        "x": 280,
+        "y": 1100,
+        "wires": [
+            [
+                "e0e39a1200936793"
+            ]
+        ]
+    },
+    {
+        "id": "24a0fc25302ee995",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Medium speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "6f58f6ca73fd27d4",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "medium",
+                "valueType": "str"
+            }
+        ],
+        "x": 300,
+        "y": 1160,
+        "wires": [
+            [
+                "b623b0855b2fdc4e"
+            ]
+        ]
+    },
+    {
+        "id": "3383dc8eaac08c88",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "High speed",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "419630bfa94c45b7",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "high",
+                "valueType": "str"
+            }
+        ],
+        "x": 290,
+        "y": 1040,
+        "wires": [
+            [
+                "e0e39a1200936793"
+            ]
+        ]
+    },
+    {
+        "id": "68d9a57a853b8017",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Off",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "09d9593bf658931e",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "off",
+                "valueType": "str"
+            }
+        ],
+        "x": 270,
+        "y": 1220,
+        "wires": [
+            [
+                "27a64d042e7dab10"
+            ]
+        ]
+    },
+    {
+        "id": "e0e39a1200936793",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan DIP code",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.id",
+                "pt": "msg",
+                "to": "00001001",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 1100,
+        "wires": [
+            [
+                "cb8fb8529e9aad6d"
+            ]
+        ]
+    },
+    {
+        "id": "7fe55464c8e7a85a",
+        "type": "comment",
+        "z": "53112e8c6c9ca84a",
+        "name": "Corner ceiling fan",
+        "info": "",
+        "x": 580,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "50009f69c1333d8f",
+        "type": "ha-entity",
+        "z": "53112e8c6c9ca84a",
+        "name": "Switch",
+        "server": "855a07ea.d0a178",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 2,
+        "entityType": "switch",
+        "config": [
+            {
+                "property": "name",
+                "value": "Corner ceiling fan switch"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": true,
+        "outputPayload": "{}",
+        "outputPayloadType": "jsonata",
+        "x": 90,
+        "y": 1320,
+        "wires": [
+            [
+                "2d2c9629567dd3a4"
+            ],
+            [
+                "bf0e7da6a9771e33"
+            ]
+        ]
+    },
+    {
+        "id": "27a64d042e7dab10",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.corner_ceiling_fan_switch",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b623b0855b2fdc4e",
+        "type": "api-call-service",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.corner_ceiling_fan_switch",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2d2c9629567dd3a4",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan medium",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "medium",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 1280,
+        "wires": [
+            [
+                "e0e39a1200936793"
+            ]
+        ]
+    },
+    {
+        "id": "bf0e7da6a9771e33",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set fan off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1320,
+        "wires": [
+            [
+                "e0e39a1200936793"
+            ]
+        ]
+    },
+    {
+        "id": "c8311414ddb5dc8c",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Light",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "9e075c34a6a4b697",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "light",
+                "valueType": "str"
+            }
+        ],
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8",
+                "d34d207dcdd26627"
+            ]
+        ]
+    },
+    {
+        "id": "b7eeebd717c63832",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Light",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "2590d575e38376aa",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "light",
+                "valueType": "str"
+            }
+        ],
+        "x": 270,
+        "y": 560,
+        "wires": [
+            [
+                "ea5127a584325b4a"
+            ]
+        ]
+    },
+    {
+        "id": "ceb247785071d9c8",
+        "type": "ha-button",
+        "z": "53112e8c6c9ca84a",
+        "name": "Light",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "402ff205274b56ae",
+        "outputProperties": [
+            {
+                "property": "payload.command",
+                "propertyType": "msg",
+                "value": "light",
+                "valueType": "str"
+            }
+        ],
+        "x": 270,
+        "y": 980,
+        "wires": [
+            [
+                "e0e39a1200936793"
+            ]
+        ]
+    },
+    {
+        "id": "d34d207dcdd26627",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set flash",
+        "rules": [
+            {
+                "t": "set",
+                "p": "color",
+                "pt": "msg",
+                "to": "[128,200,255]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "100",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "flash",
+                "pt": "msg",
+                "to": "short",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 360,
+        "wires": [
+            [
+                "d39cf1c6e2cfa63b"
+            ]
+        ]
+    },
+    {
+        "id": "941aad402cb53b88",
+        "type": "ha-device",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Dori PC low power",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "1383277869fb3dc65d04345fa0816f14",
+        "event": {
+            "type": "power",
+            "platform": "device",
+            "device_id": "1383277869fb3dc65d04345fa0816f14",
+            "entity_id": "sensor.dori_pc_power",
+            "domain": "sensor"
+        },
+        "capabilities": [
+            {
+                "name": "below",
+                "type": "float",
+                "value": 50
+            },
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 30,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [
+            {
+                "property": "payload.data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            }
+        ],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "0503cb8aba14159e"
+            ]
+        ]
+    },
+    {
+        "id": "700d4ee7f910dfef",
+        "type": "ha-device",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Simon PC low power",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "d8f10783fd5383c71f1232f171c393e7",
+        "event": {
+            "type": "power",
+            "platform": "device",
+            "device_id": "d8f10783fd5383c71f1232f171c393e7",
+            "entity_id": "sensor.simon_pc_power",
+            "domain": "sensor"
+        },
+        "capabilities": [
+            {
+                "name": "below",
+                "type": "float",
+                "value": 50
+            },
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 30,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [
+            {
+                "property": "payload.data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            }
+        ],
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "b07bf706447e5059"
+            ]
+        ]
+    },
+    {
+        "id": "0503cb8aba14159e",
+        "type": "ha-device",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Turn off Dori PC",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "1383277869fb3dc65d04345fa0816f14",
+        "event": {
+            "type": "turn_off",
+            "device_id": "1383277869fb3dc65d04345fa0816f14",
+            "entity_id": "switch.dori_pc_relay",
+            "domain": "switch"
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 440,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b07bf706447e5059",
+        "type": "ha-device",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Turn off Simon PC",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "d8f10783fd5383c71f1232f171c393e7",
+        "event": {
+            "type": "turn_off",
+            "device_id": "d8f10783fd5383c71f1232f171c393e7",
+            "entity_id": "switch.simon_pc_relay",
+            "domain": "switch"
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 450,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    }
+]
