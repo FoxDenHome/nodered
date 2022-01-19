@@ -412,7 +412,7 @@
                 "t": "set",
                 "p": "brightness",
                 "pt": "msg",
-                "to": "50",
+                "to": "20",
                 "tot": "str"
             }
         ],
@@ -1372,7 +1372,7 @@
                 "t": "set",
                 "p": "brightness",
                 "pt": "msg",
-                "to": "50",
+                "to": "20",
                 "tot": "str"
             }
         ],
@@ -1422,14 +1422,14 @@
                 "t": "set",
                 "p": "color",
                 "pt": "msg",
-                "to": "[204,255,0]",
+                "to": "[220,255,0]",
                 "tot": "json"
             },
             {
                 "t": "set",
                 "p": "brightness",
                 "pt": "msg",
-                "to": "50",
+                "to": "20",
                 "tot": "str"
             }
         ],
@@ -1463,7 +1463,7 @@
                 "t": "set",
                 "p": "brightness",
                 "pt": "msg",
-                "to": "50",
+                "to": "20",
                 "tot": "str"
             }
         ],
@@ -2240,7 +2240,7 @@
                 "t": "set",
                 "p": "brightness",
                 "pt": "msg",
-                "to": "100",
+                "to": "50",
                 "tot": "str"
             },
             {
