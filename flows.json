@@ -2265,7 +2265,7 @@
         ]
     },
     {
-        "id": "941aad402cb53b88",
+        "id": "65c2658aa3b20b32",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
         "name": "Dori PC low power",
@@ -2313,17 +2313,17 @@
                 "valueType": "eventData"
             }
         ],
-        "x": 190,
+        "x": 170,
         "y": 80,
         "wires": [
             [
-                "0503cb8aba14159e",
-                "f735d46570aa88c4"
+                "c42a3063b035f55a",
+                "b06ae4538cd1f0b7"
             ]
         ]
     },
     {
-        "id": "700d4ee7f910dfef",
+        "id": "4d2d86d92baeae3a",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
         "name": "Simon PC low power",
@@ -2371,16 +2371,16 @@
                 "valueType": "eventData"
             }
         ],
-        "x": 180,
+        "x": 160,
         "y": 220,
         "wires": [
             [
-                "b07bf706447e5059"
+                "70539c414a38c86e"
             ]
         ]
     },
     {
-        "id": "0503cb8aba14159e",
+        "id": "c42a3063b035f55a",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
         "name": "Turn off Dori PC",
@@ -2408,14 +2408,14 @@
         },
         "capabilities": [],
         "outputProperties": [],
-        "x": 440,
+        "x": 420,
         "y": 80,
         "wires": [
             []
         ]
     },
     {
-        "id": "b07bf706447e5059",
+        "id": "70539c414a38c86e",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
         "name": "Turn off Simon PC",
@@ -2443,14 +2443,14 @@
         },
         "capabilities": [],
         "outputProperties": [],
-        "x": 450,
+        "x": 430,
         "y": 220,
         "wires": [
             []
         ]
     },
     {
-        "id": "f735d46570aa88c4",
+        "id": "b06ae4538cd1f0b7",
         "type": "api-call-service",
         "z": "a7bed2fe84d7aa78",
         "name": "Turn off Office lights",
@@ -2466,7 +2466,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 460,
+        "x": 440,
         "y": 120,
         "wires": [
             []
