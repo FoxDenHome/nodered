@@ -2317,7 +2317,8 @@
         "y": 80,
         "wires": [
             [
-                "0503cb8aba14159e"
+                "0503cb8aba14159e",
+                "f735d46570aa88c4"
             ]
         ]
     },
@@ -2371,7 +2372,7 @@
             }
         ],
         "x": 180,
-        "y": 160,
+        "y": 220,
         "wires": [
             [
                 "b07bf706447e5059"
@@ -2443,7 +2444,30 @@
         "capabilities": [],
         "outputProperties": [],
         "x": 450,
-        "y": 160,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f735d46570aa88c4",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Turn off Office lights",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.office",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 120,
         "wires": [
             []
         ]
