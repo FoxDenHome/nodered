@@ -2305,14 +2305,7 @@
                 "unit": "minutes"
             }
         ],
-        "outputProperties": [
-            {
-                "property": "payload.data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            }
-        ],
+        "outputProperties": [],
         "x": 170,
         "y": 80,
         "wires": [
@@ -2363,14 +2356,7 @@
                 "unit": "minutes"
             }
         ],
-        "outputProperties": [
-            {
-                "property": "payload.data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            }
-        ],
+        "outputProperties": [],
         "x": 160,
         "y": 220,
         "wires": [
@@ -2467,7 +2453,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 120,
+        "y": 140,
         "wires": [
             []
         ]
