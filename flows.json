@@ -396,6 +396,25 @@
         "entityType": "button"
     },
     {
+        "id": "520c9422e32a2caf",
+        "type": "serial-port",
+        "serialport": "/dev/serial/by-id/usb-SHK_NANO_CUL_433-if00-port0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "^",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
         "id": "f559af01e269e27d",
         "type": "change",
         "z": "b689760f8cbc2ccd",
@@ -1182,7 +1201,7 @@
         "y": 180,
         "wires": [
             [
-                "cb8fb8529e9aad6d"
+                "91bd57db4b5ca388"
             ]
         ]
     },
@@ -1590,24 +1609,6 @@
         ]
     },
     {
-        "id": "71241baab535cdbc",
-        "type": "mqtt out",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan",
-        "topic": "rfcat_mqtt/control",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "8fa25b4c3543d259",
-        "x": 1440,
-        "y": 700,
-        "wires": []
-    },
-    {
         "id": "d88b5d33b84197a2",
         "type": "ha-button",
         "z": "53112e8c6c9ca84a",
@@ -1655,7 +1656,7 @@
         "y": 700,
         "wires": [
             [
-                "cb8fb8529e9aad6d"
+                "91bd57db4b5ca388"
             ]
         ]
     },
@@ -1668,33 +1669,6 @@
         "x": 590,
         "y": 640,
         "wires": []
-    },
-    {
-        "id": "cb8fb8529e9aad6d",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan type",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.type",
-                "pt": "msg",
-                "to": "minka_aire_fan",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1230,
-        "y": 700,
-        "wires": [
-            [
-                "71241baab535cdbc"
-            ]
-        ]
     },
     {
         "id": "29ef88acc66a645b",
@@ -1976,7 +1950,7 @@
         "y": 1120,
         "wires": [
             [
-                "cb8fb8529e9aad6d"
+                "91bd57db4b5ca388"
             ]
         ]
     },
@@ -2261,6 +2235,35 @@
         "wires": [
             [
                 "d39cf1c6e2cfa63b"
+            ]
+        ]
+    },
+    {
+        "id": "887b804055799844",
+        "type": "serial out",
+        "z": "53112e8c6c9ca84a",
+        "name": "CC1101",
+        "serial": "520c9422e32a2caf",
+        "x": 1560,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "91bd57db4b5ca388",
+        "type": "function",
+        "z": "53112e8c6c9ca84a",
+        "name": "Minka aire encoder",
+        "func": "const _COMMANDS = {\n\t'off':     '10100',\n\t'low':     '00100',\n\t'medium':  '01000',\n\t'high':    '10000',\n\t'light_1': '01010',\n\t'light_2': '10010',\n};\n_COMMANDS['light'] = _COMMANDS['light_1'];\n\n\nconst dip = msg.payload.id;\nconst command = _COMMANDS[msg.payload.command];\n\nconst data = `${dip}${command}`;\n\nlet rawData = '';\nfor (const c of data) {\n    rawData += `10${c}`;\n}\n\nmsg.payload = `\n^F304.2\n^R20\n^T10000\n^E01a1${rawData}\n`;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 700,
+        "wires": [
+            [
+                "887b804055799844"
             ]
         ]
     },
