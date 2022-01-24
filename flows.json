@@ -973,21 +973,21 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.red",
+                "p": "red",
                 "pt": "msg",
                 "to": "68",
                 "tot": "str"
             },
             {
                 "t": "set",
-                "p": "payload.green",
+                "p": "green",
                 "pt": "msg",
                 "to": "0",
                 "tot": "str"
             },
             {
                 "t": "set",
-                "p": "payload.blue",
+                "p": "blue",
                 "pt": "msg",
                 "to": "0",
                 "tot": "str"
@@ -1034,21 +1034,21 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.red",
+                "p": "red",
                 "pt": "msg",
                 "to": "68",
                 "tot": "str"
             },
             {
                 "t": "set",
-                "p": "payload.green",
+                "p": "green",
                 "pt": "msg",
                 "to": "34",
                 "tot": "str"
             },
             {
                 "t": "set",
-                "p": "payload.blue",
+                "p": "blue",
                 "pt": "msg",
                 "to": "0",
                 "tot": "str"
@@ -1078,7 +1078,7 @@
         "service_domain": "esphome",
         "service": "custom_nixie_clock_dori_nixie_clock_flash",
         "entityId": "",
-        "data": "{\t   \"red\": payload.red,\t   \"green\": payload.green,\t   \"blue\": payload.blue,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
+        "data": "{\t   \"red\": red,\t   \"green\": green,\t   \"blue\": blue,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
         "dataType": "jsonata",
         "mergecontext": "",
         "mustacheAltTags": false,
