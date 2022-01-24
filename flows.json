@@ -870,7 +870,7 @@
         "y": 540,
         "wires": [
             [
-                "de8fe4e73e14590b"
+                "ec0d210e48540e1a"
             ],
             []
         ]
@@ -915,7 +915,7 @@
         "y": 600,
         "wires": [
             [
-                "de8fe4e73e14590b"
+                "ec0d210e48540e1a"
             ],
             []
         ]
@@ -960,36 +960,9 @@
         "y": 660,
         "wires": [
             [
-                "de8fe4e73e14590b"
+                "ec0d210e48540e1a"
             ],
             []
-        ]
-    },
-    {
-        "id": "de8fe4e73e14590b",
-        "type": "change",
-        "z": "b689760f8cbc2ccd",
-        "name": "set yellow",
-        "rules": [
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "442200",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 540,
-        "wires": [
-            [
-                "735c96e917807126"
-            ]
         ]
     },
     {
@@ -1000,9 +973,23 @@
         "rules": [
             {
                 "t": "set",
-                "p": "color",
+                "p": "payload.red",
                 "pt": "msg",
-                "to": "440000",
+                "to": "68",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.green",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.blue",
+                "pt": "msg",
+                "to": "0",
                 "tot": "str"
             }
         ],
@@ -1015,46 +1002,9 @@
         "y": 480,
         "wires": [
             [
-                "735c96e917807126"
+                "b439118176f9f9fe"
             ]
         ]
-    },
-    {
-        "id": "735c96e917807126",
-        "type": "function",
-        "z": "b689760f8cbc2ccd",
-        "name": "Format MQTT for Nixie",
-        "func": "const state = Math.min(msg.state, 9999).toFixed(0);\n\nmsg.payload = `F00003000000${ state.padStart(4, ' ') }  ${ msg.desc }${ msg.color }`;\n\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 740,
-        "y": 480,
-        "wires": [
-            [
-                "7bfab0236091ea8c"
-            ]
-        ]
-    },
-    {
-        "id": "7bfab0236091ea8c",
-        "type": "mqtt out",
-        "z": "b689760f8cbc2ccd",
-        "name": "To Nixie clock",
-        "topic": "esp-nixie-clock-dori/in",
-        "qos": "1",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "8fa25b4c3543d259",
-        "x": 960,
-        "y": 480,
-        "wires": []
     },
     {
         "id": "94444fd87dfc9063",
@@ -1075,6 +1025,70 @@
         "x": 480,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "ec0d210e48540e1a",
+        "type": "change",
+        "z": "b689760f8cbc2ccd",
+        "name": "set yellow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.red",
+                "pt": "msg",
+                "to": "68",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.green",
+                "pt": "msg",
+                "to": "34",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.blue",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 540,
+        "wires": [
+            [
+                "b439118176f9f9fe"
+            ]
+        ]
+    },
+    {
+        "id": "b439118176f9f9fe",
+        "type": "api-call-service",
+        "z": "b689760f8cbc2ccd",
+        "name": "Send to Nixie",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "esphome",
+        "service": "custom_nixie_clock_dori_nixie_clock_flash",
+        "entityId": "",
+        "data": "{\t   \"red\": payload.red,\t   \"green\": payload.green,\t   \"blue\": payload.blue,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 740,
+        "y": 480,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4e428b289d17c476",
