@@ -696,7 +696,7 @@
         "props": [],
         "repeat": "60",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "x": 140,
@@ -2349,7 +2349,7 @@
         ],
         "outputProperties": [],
         "x": 170,
-        "y": 80,
+        "y": 120,
         "wires": [
             [
                 "c42a3063b035f55a",
@@ -2400,7 +2400,7 @@
         ],
         "outputProperties": [],
         "x": 160,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "70539c414a38c86e",
@@ -2438,7 +2438,7 @@
         "capabilities": [],
         "outputProperties": [],
         "x": 420,
-        "y": 80,
+        "y": 120,
         "wires": [
             []
         ]
@@ -2473,7 +2473,7 @@
         "capabilities": [],
         "outputProperties": [],
         "x": 430,
-        "y": 220,
+        "y": 260,
         "wires": [
             []
         ]
@@ -2496,7 +2496,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 140,
+        "y": 180,
         "wires": [
             []
         ]
@@ -2519,7 +2519,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 280,
+        "y": 320,
         "wires": [
             []
         ]
@@ -2531,7 +2531,7 @@
         "name": "CC1101 serial",
         "serial": "520c9422e32a2caf",
         "x": 540,
-        "y": 660,
+        "y": 480,
         "wires": []
     },
     {
@@ -2546,7 +2546,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 660,
+        "y": 480,
         "wires": [
             [
                 "bb1c7c57cf03d3cb"
@@ -2562,11 +2562,157 @@
             "ccf15fbe4a6faf12"
         ],
         "x": 75,
-        "y": 660,
+        "y": 480,
         "wires": [
             [
                 "4a1eecea68023c32"
             ]
         ]
+    },
+    {
+        "id": "bf394a6cae264fd7",
+        "type": "comment",
+        "z": "a7bed2fe84d7aa78",
+        "name": "CC1101 control",
+        "info": "",
+        "x": 320,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "576f9df55033c5d1",
+        "type": "comment",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Auto-power-off",
+        "info": "",
+        "x": 320,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5eb073e951765b10",
+        "type": "ha-get-entities",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Get unavailable entities",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "rules": [
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "unavailable",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "array",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 990,
+        "y": 180,
+        "wires": [
+            [
+                "b94c4daf1e5d6a50"
+            ]
+        ]
+    },
+    {
+        "id": "91880383edd3415a",
+        "type": "inject",
+        "z": "a7bed2fe84d7aa78",
+        "name": "5 Minute trigger",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 990,
+        "y": 120,
+        "wires": [
+            [
+                "5eb073e951765b10"
+            ]
+        ]
+    },
+    {
+        "id": "9dcbb61b4a14697e",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Ping nodes",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "zwave_js",
+        "service": "ping",
+        "entityId": "",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 990,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b94c4daf1e5d6a50",
+        "type": "split",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Split entities apart",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 990,
+        "y": 240,
+        "wires": [
+            [
+                "a165d4cad3bfc27e"
+            ]
+        ]
+    },
+    {
+        "id": "a165d4cad3bfc27e",
+        "type": "change",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Move payload to data.entity_id",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"data\": {\t        \"entity_id\": payload.entity_id\t    }\t}\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 300,
+        "wires": [
+            [
+                "9dcbb61b4a14697e"
+            ]
+        ]
+    },
+    {
+        "id": "f5031c08bc486c74",
+        "type": "comment",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Ping unavailable (Z-Wave) entities every 5 minutes",
+        "info": "",
+        "x": 990,
+        "y": 60,
+        "wires": []
     }
 ]
