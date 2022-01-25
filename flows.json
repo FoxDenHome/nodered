@@ -398,7 +398,7 @@
     {
         "id": "520c9422e32a2caf",
         "type": "serial-port",
-        "serialport": "/dev/serial/by-id/usb-SHK_NANO_CUL_433-if00-port0",
+        "serialport": "/dev/serial/by-id/usb-FOXDEN_CC1101Duino_1101-if00-port0",
         "serialbaud": "115200",
         "databits": "8",
         "parity": "none",
