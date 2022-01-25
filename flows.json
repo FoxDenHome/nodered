@@ -18,15 +18,7 @@
     {
         "id": "a7bed2fe84d7aa78",
         "type": "tab",
-        "label": "Power saving",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "3b9760bc05e7d414",
-        "type": "tab",
-        "label": "CC1101",
+        "label": "Misc small flows",
         "disabled": false,
         "info": "",
         "env": []
@@ -2307,7 +2299,8 @@
         "name": "CC1101",
         "mode": "link",
         "links": [
-            "9f1f2844e20719be"
+            "9f1f2844e20719be",
+            "13ac0bdf1218eacd"
         ],
         "x": 1505,
         "y": 700,
@@ -2532,19 +2525,19 @@
         ]
     },
     {
-        "id": "d0af3f24c05af2af",
+        "id": "bb1c7c57cf03d3cb",
         "type": "serial out",
-        "z": "3b9760bc05e7d414",
+        "z": "a7bed2fe84d7aa78",
         "name": "CC1101 serial",
         "serial": "520c9422e32a2caf",
-        "x": 520,
-        "y": 60,
+        "x": 540,
+        "y": 660,
         "wires": []
     },
     {
-        "id": "5a41242e575e3a34",
+        "id": "4a1eecea68023c32",
         "type": "function",
-        "z": "3b9760bc05e7d414",
+        "z": "a7bed2fe84d7aa78",
         "name": "Encode CC1101 serial commands",
         "func": "const MODULATIONS = {\n    '2FSK': 0,\n    'GFSK': 1,\n    'ASK': 2,\n    'OOK': 2,\n    '4FSK': 3,\n    'MSK': 4,\n};\n\nmsg.payload = `\n^F${ msg.frequency }\n^M${ MODULATIONS[msg.modulation] }\n^R${ msg.repetitions || 20 }\n^T${ msg.reptition_delay || 10000 }\n^E${ msg.symbol_time.toString(16).padStart(4, '0') }${ msg.payload }\n`;\n\nreturn msg;\n",
         "outputs": 1,
@@ -2552,27 +2545,27 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 60,
+        "x": 280,
+        "y": 660,
         "wires": [
             [
-                "d0af3f24c05af2af"
+                "bb1c7c57cf03d3cb"
             ]
         ]
     },
     {
-        "id": "9f1f2844e20719be",
+        "id": "13ac0bdf1218eacd",
         "type": "link in",
-        "z": "3b9760bc05e7d414",
+        "z": "a7bed2fe84d7aa78",
         "name": "CC1101",
         "links": [
             "ccf15fbe4a6faf12"
         ],
-        "x": 55,
-        "y": 60,
+        "x": 75,
+        "y": 660,
         "wires": [
             [
-                "5a41242e575e3a34"
+                "4a1eecea68023c32"
             ]
         ]
     }
