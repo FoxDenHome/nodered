@@ -1212,6 +1212,13 @@
                 "pt": "msg",
                 "to": "00101001",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "room",
+                "pt": "msg",
+                "to": "Office",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1667,6 +1674,13 @@
                 "pt": "msg",
                 "to": "00011001",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "room",
+                "pt": "msg",
+                "to": "Bedroom",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1960,6 +1974,13 @@
                 "p": "payload.id",
                 "pt": "msg",
                 "to": "00001001",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "room",
+                "pt": "msg",
+                "to": "Corner",
                 "tot": "str"
             }
         ],
