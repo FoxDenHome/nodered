@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "3b9760bc05e7d414",
+        "type": "tab",
+        "label": "CC1101",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "855a07ea.d0a178",
         "type": "server",
         "name": "Home Assistant",
@@ -2253,21 +2261,11 @@
         ]
     },
     {
-        "id": "887b804055799844",
-        "type": "serial out",
-        "z": "53112e8c6c9ca84a",
-        "name": "CC1101",
-        "serial": "520c9422e32a2caf",
-        "x": 1560,
-        "y": 700,
-        "wires": []
-    },
-    {
         "id": "91bd57db4b5ca388",
         "type": "function",
         "z": "53112e8c6c9ca84a",
         "name": "Minka aire encoder",
-        "func": "const _COMMANDS = {\n\t'off':     '10100',\n\t'low':     '00100',\n\t'medium':  '01000',\n\t'high':    '10000',\n\t'light_1': '01010',\n\t'light_2': '10010',\n};\n_COMMANDS['light'] = _COMMANDS['light_1'];\n\n\nconst dip = msg.payload.id;\nconst command = _COMMANDS[msg.payload.command];\n\nconst data = `${dip}${command}`;\n\nlet rawData = '';\nfor (const c of data) {\n    rawData += `10${c}`;\n}\n\nmsg.payload = `\n^F304.2\n^M2\n^R10\n^T10000\n^E01a1${rawData}\n`;\nreturn msg;\n",
+        "func": "const _COMMANDS = {\n\t'off':     '10100',\n\t'low':     '00100',\n\t'medium':  '01000',\n\t'high':    '10000',\n\t'light_1': '01010',\n\t'light_2': '10010',\n};\n_COMMANDS['light'] = _COMMANDS['light_1'];\n\nconst dip = msg.payload.id;\nconst command = _COMMANDS[msg.payload.command];\n\nconst data = `${dip}${command}`;\n\nlet rawData = '';\nfor (const c of data) {\n    rawData += `10${c}`;\n}\n\nreturn {\n    symbol_time: 417,\n    frequency: 304.2,\n    modulation: 'OOK',\n    repetitions: 10,\n    repetition_delay: 10000,\n    payload: rawData,\n};\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2277,9 +2275,22 @@
         "y": 700,
         "wires": [
             [
-                "887b804055799844"
+                "ccf15fbe4a6faf12"
             ]
         ]
+    },
+    {
+        "id": "ccf15fbe4a6faf12",
+        "type": "link out",
+        "z": "53112e8c6c9ca84a",
+        "name": "CC1101",
+        "mode": "link",
+        "links": [
+            "9f1f2844e20719be"
+        ],
+        "x": 1505,
+        "y": 700,
+        "wires": []
     },
     {
         "id": "65c2658aa3b20b32",
@@ -2497,6 +2508,51 @@
         "y": 280,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "d0af3f24c05af2af",
+        "type": "serial out",
+        "z": "3b9760bc05e7d414",
+        "name": "CC1101 serial",
+        "serial": "520c9422e32a2caf",
+        "x": 520,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5a41242e575e3a34",
+        "type": "function",
+        "z": "3b9760bc05e7d414",
+        "name": "Encode CC1101 serial commands",
+        "func": "const MODULATIONS = {\n    '2FSK': 0,\n    'GFSK': 1,\n    'ASK': 2,\n    'OOK': 2,\n    '4FSK': 3,\n    'MSK': 4,\n};\n\nmsg.payload = `\n^F${ msg.frequency }\n^M${ MODULATIONS[msg.modulation] }\n^R${ msg.repetitions || 20 }\n^T${ msg.reptition_delay || 10000 }\n^E${ msg.symbol_time.toString(16).padStart(4, '0') }${ msg.payload }\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 60,
+        "wires": [
+            [
+                "d0af3f24c05af2af"
+            ]
+        ]
+    },
+    {
+        "id": "9f1f2844e20719be",
+        "type": "link in",
+        "z": "3b9760bc05e7d414",
+        "name": "CC1101",
+        "links": [
+            "ccf15fbe4a6faf12"
+        ],
+        "x": 55,
+        "y": 60,
+        "wires": [
+            [
+                "5a41242e575e3a34"
+            ]
         ]
     }
 ]
