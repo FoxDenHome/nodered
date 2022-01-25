@@ -1204,7 +1204,7 @@
         "id": "91ec8181d4c6a7f8",
         "type": "change",
         "z": "53112e8c6c9ca84a",
-        "name": "Set fan DIP code",
+        "name": "Set fan DIP code / room",
         "rules": [
             {
                 "t": "set",
@@ -1226,7 +1226,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 610,
         "y": 180,
         "wires": [
             [
@@ -1666,7 +1666,7 @@
         "id": "ea5127a584325b4a",
         "type": "change",
         "z": "53112e8c6c9ca84a",
-        "name": "Set fan DIP code",
+        "name": "Set fan DIP code / room",
         "rules": [
             {
                 "t": "set",
@@ -1688,7 +1688,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 610,
         "y": 700,
         "wires": [
             [
@@ -1967,7 +1967,7 @@
         "id": "e0e39a1200936793",
         "type": "change",
         "z": "53112e8c6c9ca84a",
-        "name": "Set fan DIP code",
+        "name": "Set fan DIP code / room",
         "rules": [
             {
                 "t": "set",
@@ -1989,7 +1989,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 610,
         "y": 1120,
         "wires": [
             [
