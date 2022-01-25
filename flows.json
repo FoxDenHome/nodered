@@ -2378,7 +2378,8 @@
         "y": 220,
         "wires": [
             [
-                "70539c414a38c86e"
+                "70539c414a38c86e",
+                "e4bfd7d5fa54b89c"
             ]
         ]
     },
@@ -2471,6 +2472,29 @@
         "queue": "none",
         "x": 440,
         "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4bfd7d5fa54b89c",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Turn off Corner lights",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.corner",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 280,
         "wires": [
             []
         ]
