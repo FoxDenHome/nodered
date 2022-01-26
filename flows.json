@@ -1076,7 +1076,7 @@
         "version": 3,
         "debugenabled": false,
         "service_domain": "esphome",
-        "service": "custom_nixie_clock_dori_nixie_clock_flash",
+        "service": "custom_nixie_clock_dori_notify",
         "entityId": "",
         "data": "{\t   \"red\": red,\t   \"green\": green,\t   \"blue\": blue,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
         "dataType": "jsonata",
