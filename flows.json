@@ -973,24 +973,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "red",
+                "p": "color",
                 "pt": "msg",
-                "to": "68",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "green",
-                "pt": "msg",
-                "to": "0",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "blue",
-                "pt": "msg",
-                "to": "0",
-                "tot": "str"
+                "to": "[68,0,0]",
+                "tot": "json"
             }
         ],
         "action": "",
@@ -1034,24 +1020,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "red",
+                "p": "color",
                 "pt": "msg",
-                "to": "68",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "green",
-                "pt": "msg",
-                "to": "34",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "blue",
-                "pt": "msg",
-                "to": "0",
-                "tot": "str"
+                "to": "[68,34,0]",
+                "tot": "json"
             }
         ],
         "action": "",
@@ -1078,7 +1050,7 @@
         "service_domain": "esphome",
         "service": "custom_nixie_clock_dori_notify",
         "entityId": "",
-        "data": "{\t   \"red\": red,\t   \"green\": green,\t   \"blue\": blue,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
+        "data": "{\t   \"color\": color,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
         "dataType": "jsonata",
         "mergecontext": "",
         "mustacheAltTags": false,
