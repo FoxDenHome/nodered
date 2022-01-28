@@ -415,6 +415,28 @@
         "responsetimeout": "10000"
     },
     {
+        "id": "a72de8113aebe45e",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "name": "Office lighting apply adaptive",
+        "version": 2,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Office lighting apply adaptive"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "entityType": "button"
+    },
+    {
         "id": "f559af01e269e27d",
         "type": "change",
         "z": "b689760f8cbc2ccd",
@@ -1060,6 +1082,76 @@
         "y": 480,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "81d0f12761022b13",
+        "type": "comment",
+        "z": "b689760f8cbc2ccd",
+        "name": "Re-enable adaptive lighting",
+        "info": "",
+        "x": 1160,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "24a89ecfdcf86a27",
+        "type": "api-call-service",
+        "z": "b689760f8cbc2ccd",
+        "name": "Adaptive lighting apply",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "adaptive_lighting",
+        "service": "apply",
+        "entityId": "switch.adaptive_lighting_global",
+        "data": "{\"lights\":[\"light.office_side_light\",\"light.office_desk_strip\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1280,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59a75159d425f91b",
+        "type": "ha-button",
+        "z": "b689760f8cbc2ccd",
+        "name": "Apply adaptive office",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "a72de8113aebe45e",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 1040,
+        "y": 480,
+        "wires": [
+            [
+                "24a89ecfdcf86a27"
+            ]
         ]
     },
     {
@@ -2693,8 +2785,8 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Re-enable adaptive lightin every night",
         "info": "",
-        "x": 970,
-        "y": 420,
+        "x": 330,
+        "y": 560,
         "wires": []
     },
     {
@@ -2718,8 +2810,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 840,
-        "y": 480,
+        "x": 200,
+        "y": 620,
         "wires": [
             [
                 "2fabb693b9caa04a"
@@ -2743,8 +2835,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1100,
-        "y": 480,
+        "x": 460,
+        "y": 620,
         "wires": [
             []
         ]
