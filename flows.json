@@ -2686,5 +2686,67 @@
         "x": 990,
         "y": 60,
         "wires": []
+    },
+    {
+        "id": "92c238c7540e4bfe",
+        "type": "comment",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Re-enable adaptive lightin every night",
+        "info": "",
+        "x": 970,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "1d7fc16f29cbdc0f",
+        "type": "inject",
+        "z": "a7bed2fe84d7aa78",
+        "name": "4am every day",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 04 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 840,
+        "y": 480,
+        "wires": [
+            [
+                "2fabb693b9caa04a"
+            ]
+        ]
+    },
+    {
+        "id": "2fabb693b9caa04a",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "adaptive_lighting",
+        "service": "apply",
+        "entityId": "switch.adaptive_lighting_global",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1100,
+        "y": 480,
+        "wires": [
+            []
+        ]
     }
 ]
