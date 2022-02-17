@@ -529,17 +529,15 @@
         "z": "b689760f8cbc2ccd",
         "name": "Set Button 1",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "light",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "light.office_switcher_button_1_led"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.office_switcher_button_1_led"
+        ],
         "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}",
         "dataType": "jsonata",
         "mergeContext": "",
@@ -558,17 +556,15 @@
         "z": "b689760f8cbc2ccd",
         "name": "Set Button 2",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "light",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "light.office_switcher_button_2_led"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.office_switcher_button_2_led"
+        ],
         "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}",
         "dataType": "jsonata",
         "mergeContext": "",
@@ -683,17 +679,15 @@
         "z": "b689760f8cbc2ccd",
         "name": "Set Button 4",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "light",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "light.office_switcher_button_4_led"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.office_switcher_button_4_led"
+        ],
         "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness\t}",
         "dataType": "jsonata",
         "mergeContext": "",
@@ -1063,15 +1057,13 @@
         "z": "b689760f8cbc2ccd",
         "name": "Send to Nixie",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "esphome",
         "service": "custom_nixie_clock_dori_notify",
-        "target": {
-            "entityId": [],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
         "data": "{\t   \"color\": color,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000\t}\t",
         "dataType": "jsonata",
         "mergeContext": "",
@@ -1293,17 +1285,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "switch",
         "service": "turn_off",
-        "target": {
-            "entityId": [
-                "switch.office_ceiling_fan_switch"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.office_ceiling_fan_switch"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -1322,17 +1312,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "switch",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "switch.office_ceiling_fan_switch"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.office_ceiling_fan_switch"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -1441,17 +1429,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "Set Button 3",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "light",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "light.office_switcher_button_3_led"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.office_switcher_button_3_led"
+        ],
         "data": "{\t    \"rgb_color\": msg.color,\t    \"brightness_pct\": msg.brightness,\t    \"flash\": msg.flash\t}",
         "dataType": "jsonata",
         "mergeContext": "",
@@ -1773,17 +1759,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "switch",
         "service": "turn_off",
-        "target": {
-            "entityId": [
-                "switch.bedroom_ceiling_fan_switch"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.bedroom_ceiling_fan_switch"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -1802,17 +1786,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "switch",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "switch.bedroom_ceiling_fan_switch"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.bedroom_ceiling_fan_switch"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -2086,17 +2068,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "switch",
         "service": "turn_off",
-        "target": {
-            "entityId": [
-                "switch.corner_ceiling_fan_switch"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.corner_ceiling_fan_switch"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -2115,17 +2095,15 @@
         "z": "53112e8c6c9ca84a",
         "name": "",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "switch",
         "service": "turn_on",
-        "target": {
-            "entityId": [
-                "switch.corner_ceiling_fan_switch"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.corner_ceiling_fan_switch"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -2520,17 +2498,15 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Turn off Office lights",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "light",
         "service": "turn_off",
-        "target": {
-            "entityId": [
-                "light.office"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.office"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -2549,17 +2525,15 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Turn off Corner lights",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "light",
         "service": "turn_off",
-        "target": {
-            "entityId": [
-                "light.corner"
-            ],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.corner"
+        ],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
@@ -2690,15 +2664,13 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Ping nodes",
         "server": "855a07ea.d0a178",
-        "version": 4,
+        "version": 5,
         "debugenabled": false,
         "domain": "zwave_js",
         "service": "ping",
-        "target": {
-            "entityId": [],
-            "areaId": [],
-            "deviceId": []
-        },
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
         "data": "{}",
         "dataType": "json",
         "mergeContext": "",
