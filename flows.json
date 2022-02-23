@@ -1177,8 +1177,8 @@
         "correl": "",
         "expiry": "",
         "broker": "8fa25b4c3543d259",
-        "x": 1260,
-        "y": 980,
+        "x": 600,
+        "y": 1260,
         "wires": []
     },
     {
@@ -1200,8 +1200,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 980,
+        "x": 400,
+        "y": 1260,
         "wires": [
             [
                 "86a93c8b6b43f613"
@@ -1254,8 +1254,8 @@
         "outputOnStateChange": false,
         "outputPayload": "",
         "outputPayloadType": "str",
-        "x": 770,
-        "y": 740,
+        "x": 750,
+        "y": 800,
         "wires": [
             []
         ]
@@ -1278,7 +1278,7 @@
         "repair": false,
         "outputs": 1,
         "x": 500,
-        "y": 740,
+        "y": 800,
         "wires": [
             [
                 "c42557133b7e65d7",
@@ -1297,8 +1297,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 820,
-        "y": 840,
+        "x": 160,
+        "y": 1120,
         "wires": [
             [
                 "cf2554d96566968a"
@@ -1324,8 +1324,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 800,
-        "y": 900,
+        "x": 140,
+        "y": 1180,
         "wires": [
             [
                 "768b160f64a54242"
@@ -1360,8 +1360,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 740,
-        "y": 980,
+        "x": 80,
+        "y": 1260,
         "wires": [
             [
                 "768b160f64a54242"
@@ -1391,8 +1391,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 750,
-        "y": 1040,
+        "x": 90,
+        "y": 1320,
         "wires": [
             [
                 "768b160f64a54242"
@@ -1422,8 +1422,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 760,
-        "y": 1100,
+        "x": 100,
+        "y": 1380,
         "wires": [
             [
                 "768b160f64a54242"
@@ -1634,6 +1634,13 @@
             },
             {
                 "t": "set",
+                "p": "target",
+                "pt": "msg",
+                "to": "msg.payload.target",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
                 "to": "{}",
@@ -1649,7 +1656,8 @@
         "y": 740,
         "wires": [
             [
-                "6afddbbe39723d42"
+                "6afddbbe39723d42",
+                "eec94d7e3acd89aa"
             ]
         ]
     },
@@ -1715,6 +1723,83 @@
         "wires": [
             [
                 "4524d05cb0f2c424"
+            ]
+        ]
+    },
+    {
+        "id": "3c2859c9d6d77945",
+        "type": "ha-entity",
+        "z": "b689760f8cbc2ccd",
+        "name": "Office Desk Target",
+        "server": "855a07ea.d0a178",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "Office Desk Target"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "mm"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "target",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 750,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eec94d7e3acd89aa",
+        "type": "switch",
+        "z": "b689760f8cbc2ccd",
+        "name": "Only pass valid target",
+        "property": "target",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 740,
+        "wires": [
+            [
+                "3c2859c9d6d77945"
             ]
         ]
     },
