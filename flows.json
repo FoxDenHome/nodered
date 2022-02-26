@@ -1616,9 +1616,9 @@
             },
             {
                 "t": "set",
-                "p": "moving",
+                "p": "direction",
                 "pt": "msg",
-                "to": "msg.payload.moving",
+                "to": "msg.payload.direction",
                 "tot": "jsonata"
             },
             {
@@ -1655,7 +1655,7 @@
         "type": "switch",
         "z": "b689760f8cbc2ccd",
         "name": "Height LED type",
-        "property": "moving",
+        "property": "direction",
         "propertyType": "msg",
         "rules": [
             {
