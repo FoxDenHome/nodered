@@ -1654,7 +1654,7 @@
         "id": "efb57a864a77f113",
         "type": "switch",
         "z": "b689760f8cbc2ccd",
-        "name": "Height LED type",
+        "name": "Split moving or not",
         "property": "direction",
         "propertyType": "msg",
         "rules": [
@@ -1670,11 +1670,12 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 140,
+        "x": 150,
         "y": 940,
         "wires": [
             [
-                "d5c24445f8461695"
+                "d5c24445f8461695",
+                "749196dc1071446b"
             ],
             [
                 "a940ad886517a07d"
@@ -1801,6 +1802,31 @@
         "x": 480,
         "y": 760,
         "wires": []
+    },
+    {
+        "id": "749196dc1071446b",
+        "type": "api-call-service",
+        "z": "b689760f8cbc2ccd",
+        "name": "Send to Nixie",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "esphome",
+        "service": "custom_nixie_clock_dori_notify",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\t   \"color\": [255,0,255],\t   \"dots\": \"100\",\t   \"text\": $pad($string(range), -5, ' ') & '0  m',\t   \"duration\": 1000\t}\t",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 270,
+        "y": 880,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4e428b289d17c476",
