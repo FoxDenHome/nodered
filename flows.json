@@ -34,7 +34,7 @@
         "connectionDelay": true,
         "cacheJson": true,
         "heartbeat": false,
-        "heartbeatInterval": 30
+        "heartbeatInterval": "30"
     },
     {
         "id": "8fa25b4c3543d259",
@@ -1136,7 +1136,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 740,
+        "x": 730,
         "y": 480,
         "wires": [
             []
@@ -1159,7 +1159,8 @@
         "y": 820,
         "wires": [
             [
-                "7b7694a73a71171b"
+                "7b7694a73a71171b",
+                "bebdc1accf65a4c6"
             ]
         ]
     },
@@ -1384,7 +1385,8 @@
         "y": 1280,
         "wires": [
             [
-                "768b160f64a54242"
+                "768b160f64a54242",
+                "2393800eb4dc9a95"
             ]
         ]
     },
@@ -1415,7 +1417,8 @@
         "y": 1340,
         "wires": [
             [
-                "768b160f64a54242"
+                "768b160f64a54242",
+                "c1665596a840f9bb"
             ]
         ]
     },
@@ -1827,6 +1830,60 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "bebdc1accf65a4c6",
+        "type": "debug",
+        "z": "b689760f8cbc2ccd",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "2393800eb4dc9a95",
+        "type": "debug",
+        "z": "b689760f8cbc2ccd",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "\"SIT\"",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "c1665596a840f9bb",
+        "type": "debug",
+        "z": "b689760f8cbc2ccd",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "\"STAND\"",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1340,
+        "wires": []
     },
     {
         "id": "4e428b289d17c476",
