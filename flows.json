@@ -1159,8 +1159,7 @@
         "y": 820,
         "wires": [
             [
-                "7b7694a73a71171b",
-                "bebdc1accf65a4c6"
+                "7b7694a73a71171b"
             ]
         ]
     },
@@ -1377,7 +1376,7 @@
             {
                 "property": "payload.target",
                 "propertyType": "msg",
-                "value": "650",
+                "value": "630",
                 "valueType": "str"
             }
         ],
@@ -1409,7 +1408,7 @@
             {
                 "property": "payload.target",
                 "propertyType": "msg",
-                "value": "1100",
+                "value": "1050",
                 "valueType": "str"
             }
         ],
@@ -1835,7 +1834,6 @@
         "id": "bebdc1accf65a4c6",
         "type": "debug",
         "z": "b689760f8cbc2ccd",
-        "d": true,
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -1884,6 +1882,27 @@
         "x": 420,
         "y": 1340,
         "wires": []
+    },
+    {
+        "id": "942890ceba0637fa",
+        "type": "mqtt in",
+        "z": "b689760f8cbc2ccd",
+        "name": "Desk MQTT in",
+        "topic": "custom-office-desk-control/state",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "8fa25b4c3543d259",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 760,
+        "wires": [
+            [
+                "bebdc1accf65a4c6"
+            ]
+        ]
     },
     {
         "id": "4e428b289d17c476",
