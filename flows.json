@@ -415,72 +415,6 @@
         "responsetimeout": "10000"
     },
     {
-        "id": "61922e1dda08168a",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office Desk Stop",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office Desk Stop"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "26829fe55abf98cd",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office Desk Sitting",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office Desk Sitting"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "7bbe26eb9959c45b",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office Desk Standing",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office Desk Standing"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
         "id": "f559af01e269e27d",
         "type": "change",
         "z": "b689760f8cbc2ccd",
@@ -1143,285 +1077,6 @@
         ]
     },
     {
-        "id": "a7507c65745f5e94",
-        "type": "mqtt in",
-        "z": "b689760f8cbc2ccd",
-        "name": "Desk MQTT in",
-        "topic": "custom-office-desk-control/state",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "8fa25b4c3543d259",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 100,
-        "y": 820,
-        "wires": [
-            [
-                "7b7694a73a71171b"
-            ]
-        ]
-    },
-    {
-        "id": "86a93c8b6b43f613",
-        "type": "mqtt out",
-        "z": "b689760f8cbc2ccd",
-        "name": "Desk MQTT out",
-        "topic": "custom-office-desk-control/command",
-        "qos": "2",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "8fa25b4c3543d259",
-        "x": 640,
-        "y": 1220,
-        "wires": []
-    },
-    {
-        "id": "768b160f64a54242",
-        "type": "change",
-        "z": "b689760f8cbc2ccd",
-        "name": "Set fixed attribs",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.id",
-                "pt": "msg",
-                "to": "nodered",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 1220,
-        "wires": [
-            [
-                "86a93c8b6b43f613"
-            ]
-        ]
-    },
-    {
-        "id": "c42557133b7e65d7",
-        "type": "ha-entity",
-        "z": "b689760f8cbc2ccd",
-        "name": "Office Desk Height",
-        "server": "855a07ea.d0a178",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityType": "sensor",
-        "config": [
-            {
-                "property": "name",
-                "value": "Office Desk Height"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": "mm"
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "range",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "payload",
-        "outputLocationType": "none",
-        "inputOverride": "allow",
-        "outputOnStateChange": false,
-        "outputPayload": "",
-        "outputPayloadType": "str",
-        "x": 750,
-        "y": 880,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6afddbbe39723d42",
-        "type": "switch",
-        "z": "b689760f8cbc2ccd",
-        "name": "Only pass valid range",
-        "property": "range",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "0",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 500,
-        "y": 880,
-        "wires": [
-            [
-                "c42557133b7e65d7",
-                "efb57a864a77f113"
-            ]
-        ]
-    },
-    {
-        "id": "0d9bb33ac74797d5",
-        "type": "inject",
-        "z": "b689760f8cbc2ccd",
-        "name": "Minute trigger",
-        "props": [],
-        "repeat": "60",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 140,
-        "y": 1140,
-        "wires": [
-            [
-                "cf2554d96566968a"
-            ]
-        ]
-    },
-    {
-        "id": "cf2554d96566968a",
-        "type": "change",
-        "z": "b689760f8cbc2ccd",
-        "name": "Get range command",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"command\":\"range\"}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 1140,
-        "wires": [
-            [
-                "768b160f64a54242"
-            ]
-        ]
-    },
-    {
-        "id": "b4c34d58adcff053",
-        "type": "ha-button",
-        "z": "b689760f8cbc2ccd",
-        "name": "Office Desk Stop",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "61922e1dda08168a",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "stop",
-                "valueType": "str"
-            }
-        ],
-        "x": 120,
-        "y": 1220,
-        "wires": [
-            [
-                "768b160f64a54242"
-            ]
-        ]
-    },
-    {
-        "id": "4bfef32c2f6d4b1e",
-        "type": "ha-button",
-        "z": "b689760f8cbc2ccd",
-        "name": "Office Desk Sitting",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "26829fe55abf98cd",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "adjust",
-                "valueType": "str"
-            },
-            {
-                "property": "payload.target",
-                "propertyType": "msg",
-                "value": "630",
-                "valueType": "str"
-            }
-        ],
-        "x": 130,
-        "y": 1280,
-        "wires": [
-            [
-                "768b160f64a54242",
-                "2393800eb4dc9a95"
-            ]
-        ]
-    },
-    {
-        "id": "54440cca5bf63a71",
-        "type": "ha-button",
-        "z": "b689760f8cbc2ccd",
-        "name": "Office Desk Standing",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "7bbe26eb9959c45b",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "adjust",
-                "valueType": "str"
-            },
-            {
-                "property": "payload.target",
-                "propertyType": "msg",
-                "value": "1050",
-                "valueType": "str"
-            }
-        ],
-        "x": 140,
-        "y": 1340,
-        "wires": [
-            [
-                "768b160f64a54242",
-                "c1665596a840f9bb"
-            ]
-        ]
-    },
-    {
         "id": "4524d05cb0f2c424",
         "type": "api-call-service",
         "z": "b689760f8cbc2ccd",
@@ -1453,7 +1108,7 @@
         "type": "switch",
         "z": "b689760f8cbc2ccd",
         "name": "Height LED range",
-        "property": "range",
+        "property": "payload",
         "propertyType": "msg",
         "rules": [
             {
@@ -1590,74 +1245,11 @@
         ]
     },
     {
-        "id": "7b7694a73a71171b",
-        "type": "change",
-        "z": "b689760f8cbc2ccd",
-        "name": "Extract payload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "range",
-                "pt": "msg",
-                "to": "msg.payload.range",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "msgType",
-                "pt": "msg",
-                "to": "msg.payload.type",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "data",
-                "pt": "msg",
-                "to": "msg.payload.data",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "direction",
-                "pt": "msg",
-                "to": "msg.payload.direction",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "target",
-                "pt": "msg",
-                "to": "msg.payload.target",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 820,
-        "wires": [
-            [
-                "6afddbbe39723d42",
-                "eec94d7e3acd89aa"
-            ]
-        ]
-    },
-    {
         "id": "efb57a864a77f113",
         "type": "switch",
         "z": "b689760f8cbc2ccd",
         "name": "Split moving or not",
-        "property": "direction",
+        "property": "data.new_state.attributes.direction",
         "propertyType": "msg",
         "rules": [
             {
@@ -1719,83 +1311,6 @@
         ]
     },
     {
-        "id": "3c2859c9d6d77945",
-        "type": "ha-entity",
-        "z": "b689760f8cbc2ccd",
-        "name": "Office Desk Target",
-        "server": "855a07ea.d0a178",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityType": "sensor",
-        "config": [
-            {
-                "property": "name",
-                "value": "Office Desk Target"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": "mm"
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "target",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "payload",
-        "outputLocationType": "none",
-        "inputOverride": "allow",
-        "outputOnStateChange": false,
-        "outputPayload": "",
-        "outputPayloadType": "str",
-        "x": 750,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "eec94d7e3acd89aa",
-        "type": "switch",
-        "z": "b689760f8cbc2ccd",
-        "name": "Only pass valid target",
-        "property": "target",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "0",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 500,
-        "y": 820,
-        "wires": [
-            [
-                "3c2859c9d6d77945"
-            ]
-        ]
-    },
-    {
         "id": "a4f6594ab89e2dbc",
         "type": "comment",
         "z": "b689760f8cbc2ccd",
@@ -1818,90 +1333,80 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\t   \"color\": [255,0,255],\t   \"dots\": \"100\",\t   \"text\": $pad($string(range), -5, ' ') & '0  m',\t   \"duration\": 1000\t}\t",
+        "data": "{\t   \"color\": [255,0,255],\t   \"dots\": \"100\",\t   \"text\": $pad($string(payload), -5, ' ') & '0  m',\t   \"duration\": 1000\t}\t",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 270,
-        "y": 880,
+        "x": 530,
+        "y": 820,
         "wires": [
             []
         ]
     },
     {
-        "id": "bebdc1accf65a4c6",
-        "type": "debug",
+        "id": "5cd2c0d470468d26",
+        "type": "server-state-changed",
         "z": "b689760f8cbc2ccd",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 270,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "2393800eb4dc9a95",
-        "type": "debug",
-        "z": "b689760f8cbc2ccd",
-        "d": true,
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "\"SIT\"",
-        "targetType": "jsonata",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "c1665596a840f9bb",
-        "type": "debug",
-        "z": "b689760f8cbc2ccd",
-        "d": true,
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "\"STAND\"",
-        "targetType": "jsonata",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 1340,
-        "wires": []
-    },
-    {
-        "id": "942890ceba0637fa",
-        "type": "mqtt in",
-        "z": "b689760f8cbc2ccd",
-        "name": "Desk MQTT in",
-        "topic": "custom-office-desk-control/state",
-        "qos": "2",
-        "datatype": "utf8",
-        "broker": "8fa25b4c3543d259",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 100,
-        "y": 760,
+        "name": "Desk height",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.office_desk_height_state",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "0",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "milliseconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 840,
         "wires": [
             [
-                "bebdc1accf65a4c6"
-            ]
+                "efb57a864a77f113"
+            ],
+            []
         ]
     },
     {
