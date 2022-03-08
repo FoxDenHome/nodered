@@ -1097,8 +1097,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 530,
-        "y": 1020,
+        "x": 730,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -1128,8 +1128,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 150,
-        "y": 1020,
+        "x": 350,
+        "y": 1000,
         "wires": [
             [
                 "74f0944215517f60"
@@ -1168,8 +1168,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 980,
+        "x": 540,
+        "y": 960,
         "wires": [
             [
                 "4524d05cb0f2c424"
@@ -1202,8 +1202,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 940,
+        "x": 540,
+        "y": 920,
         "wires": [
             [
                 "4524d05cb0f2c424"
@@ -1236,8 +1236,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 1020,
+        "x": 540,
+        "y": 1000,
         "wires": [
             [
                 "4524d05cb0f2c424"
@@ -1264,8 +1264,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 150,
-        "y": 940,
+        "x": 350,
+        "y": 920,
         "wires": [
             [
                 "d5c24445f8461695",
@@ -1302,8 +1302,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 1060,
+        "x": 540,
+        "y": 1040,
         "wires": [
             [
                 "4524d05cb0f2c424"
@@ -1339,7 +1339,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 530,
+        "x": 590,
         "y": 820,
         "wires": [
             []
@@ -1400,8 +1400,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
-        "y": 840,
+        "x": 110,
+        "y": 920,
         "wires": [
             [
                 "efb57a864a77f113"
