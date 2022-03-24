@@ -1060,7 +1060,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "esphome",
-        "service": "custom_nixie_clock_dori_notify",
+        "service": "custom_clock_nixie_office_notify",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -1329,7 +1329,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "esphome",
-        "service": "custom_nixie_clock_dori_notify",
+        "service": "custom_clock_nixie_office_notify",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -1363,7 +1363,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "sensor.office_desk_height_state",
+        "entityidfilter": "sensor.office_desk_current_height",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "num",
