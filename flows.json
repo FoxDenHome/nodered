@@ -40,7 +40,7 @@
         "id": "8fa25b4c3543d259",
         "type": "mqtt-broker",
         "name": "Home Assistant",
-        "broker": "localhost",
+        "broker": "addon_core_mosquitto",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
