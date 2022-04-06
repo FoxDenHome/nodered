@@ -1371,7 +1371,7 @@
         "halt_if_type": "num",
         "halt_if_compare": "gt",
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "output_only_on_state_change": false,
         "for": "0",
         "forType": "num",
         "forUnits": "milliseconds",
