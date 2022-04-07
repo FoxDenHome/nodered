@@ -3010,7 +3010,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 990,
-        "y": 360,
+        "y": 420,
         "wires": [
             []
         ]
@@ -3030,7 +3030,7 @@
         "y": 240,
         "wires": [
             [
-                "a165d4cad3bfc27e"
+                "86b3f759d4097a48"
             ]
         ]
     },
@@ -3054,7 +3054,7 @@
         "to": "",
         "reg": false,
         "x": 990,
-        "y": 300,
+        "y": 360,
         "wires": [
             [
                 "9dcbb61b4a14697e"
@@ -3070,5 +3070,37 @@
         "x": 990,
         "y": 60,
         "wires": []
+    },
+    {
+        "id": "86b3f759d4097a48",
+        "type": "switch",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Strip out lights",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "^light.",
+                "vt": "str",
+                "case": false
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 980,
+        "y": 300,
+        "wires": [
+            [],
+            [
+                "a165d4cad3bfc27e"
+            ]
+        ]
     }
 ]
