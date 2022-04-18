@@ -24,19 +24,6 @@
         "env": []
     },
     {
-        "id": "855a07ea.d0a178",
-        "type": "server",
-        "name": "Home Assistant",
-        "version": 2,
-        "addon": true,
-        "rejectUnauthorizedCerts": true,
-        "ha_boolean": "y|yes|true|on|home|open",
-        "connectionDelay": true,
-        "cacheJson": true,
-        "heartbeat": false,
-        "heartbeatInterval": "30"
-    },
-    {
         "id": "8fa25b4c3543d259",
         "type": "mqtt-broker",
         "name": "Home Assistant",
@@ -413,6 +400,19 @@
         "out": "char",
         "addchar": "",
         "responsetimeout": "10000"
+    },
+    {
+        "id": "855a07ea.d0a178",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 2,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30"
     },
     {
         "id": "f559af01e269e27d",
@@ -2672,7 +2672,7 @@
         ],
         "inputs": 0,
         "deviceType": "trigger",
-        "device": "1383277869fb3dc65d04345fa0816f14",
+        "device": "37505fe0e1bccefa3df00e6a48fd9213",
         "event": {
             "type": "power",
             "platform": "device",
