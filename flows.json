@@ -53,270 +53,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "de560318ea26a14c",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office ceiling fan low speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office ceiling fan low speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "54be5fa1388dc42a",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office ceiling fan medium speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office ceiling fan medium speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "4267320f2a4ff024",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office ceiling fan high speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office ceiling fan high speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "44c020f7b4bfeafd",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Office ceiling fan off",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Office ceiling fan off"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "9c5c5bb008a2ab3b",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Bedroom ceiling fan high speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Bedroom ceiling fan high speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "419630bfa94c45b7",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Corner ceiling fan high speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Corner ceiling fan high speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "f3b8724f1c5d093e",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Corner ceiling fan low speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Corner ceiling fan low speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "4aee556c176bd9e6",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Bedroom ceiling fan low speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Bedroom ceiling fan low speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "72056e70eddc89ba",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Bedroom ceiling fan medium speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Bedroom ceiling fan medium speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "6f58f6ca73fd27d4",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Corner ceiling fan medium speed",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Corner ceiling fan medium speed"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "ba92d4a56659babc",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Bedroom ceiling fan off",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Bedroom ceiling fan off"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
-        "id": "09d9593bf658931e",
-        "type": "ha-entity-config",
-        "server": "855a07ea.d0a178",
-        "name": "Corner ceiling fan off",
-        "version": 2,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "Corner ceiling fan off"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "entityType": "button"
-    },
-    {
         "id": "9e075c34a6a4b697",
         "type": "ha-entity-config",
         "server": "855a07ea.d0a178",
@@ -1410,108 +1146,6 @@
         ]
     },
     {
-        "id": "4e428b289d17c476",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Low speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "de560318ea26a14c",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "low",
-                "valueType": "str"
-            }
-        ],
-        "x": 280,
-        "y": 180,
-        "wires": [
-            [
-                "91ec8181d4c6a7f8",
-                "dafc9ac4cc23df1e"
-            ]
-        ]
-    },
-    {
-        "id": "544b9a37643433ff",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Medium speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "54be5fa1388dc42a",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "medium",
-                "valueType": "str"
-            }
-        ],
-        "x": 300,
-        "y": 240,
-        "wires": [
-            [
-                "e774f019810ec8ff"
-            ]
-        ]
-    },
-    {
-        "id": "58ab73aba5e6ae04",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "High speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "4267320f2a4ff024",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "high",
-                "valueType": "str"
-            }
-        ],
-        "x": 290,
-        "y": 120,
-        "wires": [
-            [
-                "91ec8181d4c6a7f8",
-                "890ba6c5ce1603a9"
-            ]
-        ]
-    },
-    {
-        "id": "04e2f79678c68061",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Off",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "44c020f7b4bfeafd",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "off",
-                "valueType": "str"
-            }
-        ],
-        "x": 270,
-        "y": 300,
-        "wires": [
-            [
-                "6f951ebb64f3d3a4"
-            ]
-        ]
-    },
-    {
         "id": "91ec8181d4c6a7f8",
         "type": "change",
         "z": "53112e8c6c9ca84a",
@@ -1537,7 +1171,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
+        "x": 1270,
         "y": 180,
         "wires": [
             [
@@ -1551,176 +1185,9 @@
         "z": "53112e8c6c9ca84a",
         "name": "Office ceiling fan",
         "info": "",
-        "x": 600,
+        "x": 1240,
         "y": 120,
         "wires": []
-    },
-    {
-        "id": "78c6717d5b2d415b",
-        "type": "ha-entity",
-        "z": "53112e8c6c9ca84a",
-        "name": "Switch",
-        "server": "855a07ea.d0a178",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 2,
-        "entityType": "switch",
-        "config": [
-            {
-                "property": "name",
-                "value": "Office ceiling fan switch"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "payload",
-        "outputLocationType": "none",
-        "inputOverride": "allow",
-        "outputOnStateChange": true,
-        "outputPayload": "{}",
-        "outputPayloadType": "jsonata",
-        "x": 90,
-        "y": 400,
-        "wires": [
-            [
-                "30b1ccd29538d7cb"
-            ],
-            [
-                "964a9184ac67de2c"
-            ]
-        ]
-    },
-    {
-        "id": "6f951ebb64f3d3a4",
-        "type": "api-call-service",
-        "z": "53112e8c6c9ca84a",
-        "name": "",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.office_ceiling_fan_switch"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 610,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e774f019810ec8ff",
-        "type": "api-call-service",
-        "z": "53112e8c6c9ca84a",
-        "name": "",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.office_ceiling_fan_switch"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 610,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "30b1ccd29538d7cb",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan medium",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "medium",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 360,
-        "wires": [
-            [
-                "91ec8181d4c6a7f8",
-                "fa58d8e3f09ddbb6"
-            ]
-        ]
-    },
-    {
-        "id": "964a9184ac67de2c",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
-        "y": 400,
-        "wires": [
-            [
-                "91ec8181d4c6a7f8",
-                "48dc2c7caa32d70a"
-            ]
-        ]
     },
     {
         "id": "fa58d8e3f09ddbb6",
@@ -1748,7 +1215,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 1220,
         "y": 440,
         "wires": [
             [
@@ -1777,7 +1244,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 830,
+        "x": 1470,
         "y": 520,
         "wires": [
             []
@@ -1809,7 +1276,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 1220,
         "y": 480,
         "wires": [
             [
@@ -1843,7 +1310,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 1220,
         "y": 400,
         "wires": [
             [
@@ -1877,111 +1344,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 1220,
         "y": 520,
         "wires": [
             [
                 "d39cf1c6e2cfa63b"
-            ]
-        ]
-    },
-    {
-        "id": "d121da9d5d49fcc7",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Low speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "4aee556c176bd9e6",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "low",
-                "valueType": "str"
-            }
-        ],
-        "x": 280,
-        "y": 700,
-        "wires": [
-            [
-                "ea5127a584325b4a"
-            ]
-        ]
-    },
-    {
-        "id": "76c6dbc7d116680c",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Medium speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "72056e70eddc89ba",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "medium",
-                "valueType": "str"
-            }
-        ],
-        "x": 300,
-        "y": 760,
-        "wires": [
-            [
-                "8e37b0b211224346"
-            ]
-        ]
-    },
-    {
-        "id": "3dcce09ebfc4ef9c",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "High speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "9c5c5bb008a2ab3b",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "high",
-                "valueType": "str"
-            }
-        ],
-        "x": 290,
-        "y": 640,
-        "wires": [
-            [
-                "ea5127a584325b4a"
-            ]
-        ]
-    },
-    {
-        "id": "d88b5d33b84197a2",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Off",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "ba92d4a56659babc",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "off",
-                "valueType": "str"
-            }
-        ],
-        "x": 270,
-        "y": 820,
-        "wires": [
-            [
-                "5ee5e3cbea2a230d"
             ]
         ]
     },
@@ -2011,7 +1378,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
+        "x": 1270,
         "y": 700,
         "wires": [
             [
@@ -2025,274 +1392,9 @@
         "z": "53112e8c6c9ca84a",
         "name": "Bedroom ceiling fan",
         "info": "",
-        "x": 610,
+        "x": 1250,
         "y": 640,
         "wires": []
-    },
-    {
-        "id": "29ef88acc66a645b",
-        "type": "ha-entity",
-        "z": "53112e8c6c9ca84a",
-        "name": "Switch",
-        "server": "855a07ea.d0a178",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 2,
-        "entityType": "switch",
-        "config": [
-            {
-                "property": "name",
-                "value": "Bedroom ceiling fan switch"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "payload",
-        "outputLocationType": "none",
-        "inputOverride": "allow",
-        "outputOnStateChange": true,
-        "outputPayload": "{}",
-        "outputPayloadType": "jsonata",
-        "x": 90,
-        "y": 920,
-        "wires": [
-            [
-                "051d083370853091"
-            ],
-            [
-                "3eee9df417c86975"
-            ]
-        ]
-    },
-    {
-        "id": "5ee5e3cbea2a230d",
-        "type": "api-call-service",
-        "z": "53112e8c6c9ca84a",
-        "name": "",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.bedroom_ceiling_fan_switch"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 610,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8e37b0b211224346",
-        "type": "api-call-service",
-        "z": "53112e8c6c9ca84a",
-        "name": "",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.bedroom_ceiling_fan_switch"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 610,
-        "y": 760,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "051d083370853091",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan medium",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "medium",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 880,
-        "wires": [
-            [
-                "ea5127a584325b4a"
-            ]
-        ]
-    },
-    {
-        "id": "3eee9df417c86975",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
-        "y": 920,
-        "wires": [
-            [
-                "ea5127a584325b4a"
-            ]
-        ]
-    },
-    {
-        "id": "f0ce4b2d15986022",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Low speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "f3b8724f1c5d093e",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "low",
-                "valueType": "str"
-            }
-        ],
-        "x": 280,
-        "y": 1120,
-        "wires": [
-            [
-                "e0e39a1200936793"
-            ]
-        ]
-    },
-    {
-        "id": "24a0fc25302ee995",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Medium speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "6f58f6ca73fd27d4",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "medium",
-                "valueType": "str"
-            }
-        ],
-        "x": 300,
-        "y": 1180,
-        "wires": [
-            [
-                "b623b0855b2fdc4e"
-            ]
-        ]
-    },
-    {
-        "id": "3383dc8eaac08c88",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "High speed",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "419630bfa94c45b7",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "high",
-                "valueType": "str"
-            }
-        ],
-        "x": 290,
-        "y": 1060,
-        "wires": [
-            [
-                "e0e39a1200936793"
-            ]
-        ]
-    },
-    {
-        "id": "68d9a57a853b8017",
-        "type": "ha-button",
-        "z": "53112e8c6c9ca84a",
-        "name": "Off",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "09d9593bf658931e",
-        "outputProperties": [
-            {
-                "property": "payload.command",
-                "propertyType": "msg",
-                "value": "off",
-                "valueType": "str"
-            }
-        ],
-        "x": 270,
-        "y": 1240,
-        "wires": [
-            [
-                "27a64d042e7dab10"
-            ]
-        ]
     },
     {
         "id": "e0e39a1200936793",
@@ -2320,7 +1422,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
+        "x": 1270,
         "y": 1120,
         "wires": [
             [
@@ -2334,174 +1436,9 @@
         "z": "53112e8c6c9ca84a",
         "name": "Corner ceiling fan",
         "info": "",
-        "x": 600,
+        "x": 1240,
         "y": 1060,
         "wires": []
-    },
-    {
-        "id": "50009f69c1333d8f",
-        "type": "ha-entity",
-        "z": "53112e8c6c9ca84a",
-        "name": "Switch",
-        "server": "855a07ea.d0a178",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 2,
-        "entityType": "switch",
-        "config": [
-            {
-                "property": "name",
-                "value": "Corner ceiling fan switch"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "payload",
-        "outputLocationType": "none",
-        "inputOverride": "allow",
-        "outputOnStateChange": true,
-        "outputPayload": "{}",
-        "outputPayloadType": "jsonata",
-        "x": 90,
-        "y": 1340,
-        "wires": [
-            [
-                "2d2c9629567dd3a4"
-            ],
-            [
-                "bf0e7da6a9771e33"
-            ]
-        ]
-    },
-    {
-        "id": "27a64d042e7dab10",
-        "type": "api-call-service",
-        "z": "53112e8c6c9ca84a",
-        "name": "",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.corner_ceiling_fan_switch"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 610,
-        "y": 1240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b623b0855b2fdc4e",
-        "type": "api-call-service",
-        "z": "53112e8c6c9ca84a",
-        "name": "",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.corner_ceiling_fan_switch"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 610,
-        "y": 1180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2d2c9629567dd3a4",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan medium",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "medium",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 1300,
-        "wires": [
-            [
-                "e0e39a1200936793"
-            ]
-        ]
-    },
-    {
-        "id": "bf0e7da6a9771e33",
-        "type": "change",
-        "z": "53112e8c6c9ca84a",
-        "name": "Set fan off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.command",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
-        "y": 1340,
-        "wires": [
-            [
-                "e0e39a1200936793"
-            ]
-        ]
     },
     {
         "id": "c8311414ddb5dc8c",
@@ -2520,8 +1457,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 270,
-        "y": 60,
+        "x": 1050,
+        "y": 180,
         "wires": [
             [
                 "91ec8181d4c6a7f8",
@@ -2546,8 +1483,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 270,
-        "y": 580,
+        "x": 1050,
+        "y": 700,
         "wires": [
             [
                 "ea5127a584325b4a"
@@ -2571,8 +1508,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 270,
-        "y": 1000,
+        "x": 1050,
+        "y": 1120,
         "wires": [
             [
                 "e0e39a1200936793"
@@ -2612,7 +1549,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 1220,
         "y": 360,
         "wires": [
             [
@@ -2631,7 +1568,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1270,
+        "x": 1910,
         "y": 700,
         "wires": [
             [
@@ -2648,9 +1585,328 @@
         "links": [
             "13ac0bdf1218eacd"
         ],
-        "x": 1505,
+        "x": 2145,
         "y": 700,
         "wires": []
+    },
+    {
+        "id": "96d6d60d3647490f",
+        "type": "server-events",
+        "z": "53112e8c6c9ca84a",
+        "name": "Fan change event",
+        "server": "855a07ea.d0a178",
+        "version": 1,
+        "event_type": "config_ceiling_fan_set",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").entity_id",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "05842694cbafe11c"
+            ]
+        ]
+    },
+    {
+        "id": "05842694cbafe11c",
+        "type": "ha-get-entities",
+        "z": "53112e8c6c9ca84a",
+        "name": "Get fan",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "topic",
+                "valueType": "jsonata"
+            }
+        ],
+        "output_type": "random",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "entity",
+        "output_results_count": 1,
+        "x": 180,
+        "y": 720,
+        "wires": [
+            [
+                "80cfec191c71fe13"
+            ]
+        ]
+    },
+    {
+        "id": "69c49cf5772fb253",
+        "type": "switch",
+        "z": "53112e8c6c9ca84a",
+        "name": "Speed",
+        "property": "entity.attributes.percentage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "70",
+                "vt": "str"
+            },
+            {
+                "t": "gt",
+                "v": "40",
+                "vt": "str"
+            },
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 190,
+        "y": 560,
+        "wires": [
+            [
+                "4115a758e30d13ed"
+            ],
+            [
+                "5d334144c37179fe"
+            ],
+            [
+                "7cff34f0b9cf88bb"
+            ],
+            [
+                "4f675d5c0c2aa807"
+            ]
+        ]
+    },
+    {
+        "id": "4f675d5c0c2aa807",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "313a902f08e85d96"
+            ]
+        ]
+    },
+    {
+        "id": "5d334144c37179fe",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set low",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "low",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 540,
+        "wires": [
+            [
+                "313a902f08e85d96"
+            ]
+        ]
+    },
+    {
+        "id": "7cff34f0b9cf88bb",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set medium",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "medium",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 600,
+        "wires": [
+            [
+                "313a902f08e85d96"
+            ]
+        ]
+    },
+    {
+        "id": "4115a758e30d13ed",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "set high",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command",
+                "pt": "msg",
+                "to": "high",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 480,
+        "wires": [
+            [
+                "313a902f08e85d96"
+            ]
+        ]
+    },
+    {
+        "id": "24b6a607fac1ce82",
+        "type": "switch",
+        "z": "53112e8c6c9ca84a",
+        "name": "Target",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "fan.office_ceiling_fan",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fan.bedroom_ceiling_fan",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fan.corner_ceiling_fan",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 830,
+        "y": 600,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8"
+            ],
+            [
+                "ea5127a584325b4a"
+            ],
+            [
+                "e0e39a1200936793"
+            ]
+        ]
+    },
+    {
+        "id": "80cfec191c71fe13",
+        "type": "switch",
+        "z": "53112e8c6c9ca84a",
+        "name": "On/Off",
+        "property": "entity.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 190,
+        "y": 640,
+        "wires": [
+            [
+                "69c49cf5772fb253"
+            ],
+            [
+                "4f675d5c0c2aa807"
+            ]
+        ]
+    },
+    {
+        "id": "313a902f08e85d96",
+        "type": "rbe",
+        "z": "53112e8c6c9ca84a",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload.command",
+        "topi": "topic",
+        "x": 650,
+        "y": 600,
+        "wires": [
+            [
+                "24b6a607fac1ce82"
+            ]
+        ]
     },
     {
         "id": "65c2658aa3b20b32",
