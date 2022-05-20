@@ -1696,10 +1696,10 @@
                 "4115a758e30d13ed"
             ],
             [
-                "5d334144c37179fe"
+                "7cff34f0b9cf88bb"
             ],
             [
-                "7cff34f0b9cf88bb"
+                "5d334144c37179fe"
             ],
             [
                 "4f675d5c0c2aa807"
@@ -1753,7 +1753,7 @@
         "to": "",
         "reg": false,
         "x": 390,
-        "y": 540,
+        "y": 600,
         "wires": [
             [
                 "313a902f08e85d96"
@@ -1780,7 +1780,7 @@
         "to": "",
         "reg": false,
         "x": 410,
-        "y": 600,
+        "y": 540,
         "wires": [
             [
                 "313a902f08e85d96"
@@ -1845,7 +1845,8 @@
         "y": 600,
         "wires": [
             [
-                "91ec8181d4c6a7f8"
+                "91ec8181d4c6a7f8",
+                "7c19792b83d4fa74"
             ],
             [
                 "ea5127a584325b4a"
@@ -1905,6 +1906,55 @@
         "wires": [
             [
                 "24b6a607fac1ce82"
+            ]
+        ]
+    },
+    {
+        "id": "7c19792b83d4fa74",
+        "type": "switch",
+        "z": "53112e8c6c9ca84a",
+        "name": "Cmd",
+        "property": "payload.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "high",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "medium",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "low",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 1050,
+        "y": 440,
+        "wires": [
+            [
+                "890ba6c5ce1603a9"
+            ],
+            [
+                "fa58d8e3f09ddbb6"
+            ],
+            [
+                "dafc9ac4cc23df1e"
+            ],
+            [
+                "48dc2c7caa32d70a"
             ]
         ]
     },
