@@ -1893,7 +1893,7 @@
         "id": "313a902f08e85d96",
         "type": "rbe",
         "z": "53112e8c6c9ca84a",
-        "name": "",
+        "name": "Dedupe",
         "func": "rbe",
         "gap": "",
         "start": "",
@@ -1901,7 +1901,7 @@
         "septopics": true,
         "property": "payload.command",
         "topi": "topic",
-        "x": 650,
+        "x": 660,
         "y": 600,
         "wires": [
             [
