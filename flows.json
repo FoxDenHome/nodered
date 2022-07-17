@@ -24,33 +24,17 @@
         "env": []
     },
     {
-        "id": "8fa25b4c3543d259",
-        "type": "mqtt-broker",
-        "name": "Home Assistant",
-        "broker": "addon_core_mosquitto",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "id": "707dafcba1f4e6dd",
+        "type": "junction",
+        "z": "53112e8c6c9ca84a",
+        "x": 980,
+        "y": 440,
+        "wires": [
+            [
+                "91ec8181d4c6a7f8",
+                "7c19792b83d4fa74"
+            ]
+        ]
     },
     {
         "id": "9e075c34a6a4b697",
@@ -1171,7 +1155,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1270,
+        "x": 1290,
         "y": 180,
         "wires": [
             [
@@ -1185,7 +1169,7 @@
         "z": "53112e8c6c9ca84a",
         "name": "Office ceiling fan",
         "info": "",
-        "x": 1240,
+        "x": 1280,
         "y": 120,
         "wires": []
     },
@@ -1378,7 +1362,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1270,
+        "x": 1310,
         "y": 700,
         "wires": [
             [
@@ -1392,7 +1376,7 @@
         "z": "53112e8c6c9ca84a",
         "name": "Bedroom ceiling fan",
         "info": "",
-        "x": 1250,
+        "x": 1310,
         "y": 640,
         "wires": []
     },
@@ -1422,7 +1406,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1270,
+        "x": 1330,
         "y": 1120,
         "wires": [
             [
@@ -1436,7 +1420,7 @@
         "z": "53112e8c6c9ca84a",
         "name": "Corner ceiling fan",
         "info": "",
-        "x": 1240,
+        "x": 1310,
         "y": 1060,
         "wires": []
     },
@@ -1457,7 +1441,7 @@
                 "valueType": "str"
             }
         ],
-        "x": 1050,
+        "x": 1030,
         "y": 180,
         "wires": [
             [
@@ -1483,7 +1467,7 @@
                 "valueType": "str"
             }
         ],
-        "x": 1050,
+        "x": 1030,
         "y": 700,
         "wires": [
             [
@@ -1845,8 +1829,7 @@
         "y": 600,
         "wires": [
             [
-                "91ec8181d4c6a7f8",
-                "7c19792b83d4fa74"
+                "707dafcba1f4e6dd"
             ],
             [
                 "ea5127a584325b4a"
@@ -1942,7 +1925,7 @@
         "repair": false,
         "outputs": 4,
         "x": 1090,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "890ba6c5ce1603a9"
