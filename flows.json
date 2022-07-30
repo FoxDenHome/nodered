@@ -2177,16 +2177,6 @@
         ]
     },
     {
-        "id": "bb1c7c57cf03d3cb",
-        "type": "serial out",
-        "z": "a7bed2fe84d7aa78",
-        "name": "CC1101 serial",
-        "serial": "520c9422e32a2caf",
-        "x": 540,
-        "y": 480,
-        "wires": []
-    },
-    {
         "id": "4a1eecea68023c32",
         "type": "function",
         "z": "a7bed2fe84d7aa78",
@@ -2399,6 +2389,186 @@
             [
                 "a165d4cad3bfc27e"
             ]
+        ]
+    },
+    {
+        "id": "7ddec40756041310",
+        "type": "serial in",
+        "z": "a7bed2fe84d7aa78",
+        "name": "CC1101 in",
+        "serial": "520c9422e32a2caf",
+        "x": 100,
+        "y": 580,
+        "wires": [
+            [
+                "580516836e581a35"
+            ]
+        ]
+    },
+    {
+        "id": "bb1c7c57cf03d3cb",
+        "type": "serial out",
+        "z": "a7bed2fe84d7aa78",
+        "name": "CC1101 serial",
+        "serial": "520c9422e32a2caf",
+        "x": 540,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "580516836e581a35",
+        "type": "function",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Decode CC1101 serial commands",
+        "func": "const data = msg.payload;\n\nconst cmd = data[1];\nswitch (cmd) {\n    case 'S':\n        const spl = data.trim().split('|');\n        msg.payload = {\n            type: spl[1],\n            unit: spl[2],\n            id: spl[3],\n            value: parseFloat(spl[4]),\n        };\n        msg.payload.type_id = `${msg.payload.type}|${msg.payload.id}`;\n        return msg;\n    default:\n        return undefined;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 580,
+        "wires": [
+            [
+                "cdc8a0912ef29822"
+            ]
+        ]
+    },
+    {
+        "id": "cdc8a0912ef29822",
+        "type": "switch",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Switch sensor type ID",
+        "property": "payload.type_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "T|56",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "H|56",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "7641b4a91907c96a"
+            ],
+            [
+                "1d2c2b675ffcc80c"
+            ]
+        ]
+    },
+    {
+        "id": "7641b4a91907c96a",
+        "type": "ha-entity",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Fridge temperature",
+        "server": "855a07ea.d0a178",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "Fridge temperature"
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "payload.value",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 890,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d2c2b675ffcc80c",
+        "type": "ha-entity",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Fridge humidity",
+        "server": "855a07ea.d0a178",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "Fridge humidity"
+            },
+            {
+                "property": "device_class",
+                "value": "humidity"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "%"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "payload.value",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 880,
+        "y": 640,
+        "wires": [
+            []
         ]
     }
 ]
