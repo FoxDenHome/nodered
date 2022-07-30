@@ -2401,7 +2401,8 @@
         "y": 580,
         "wires": [
             [
-                "580516836e581a35"
+                "580516836e581a35",
+                "b153ac6b5169273c"
             ]
         ]
     },
@@ -2420,7 +2421,7 @@
         "type": "function",
         "z": "a7bed2fe84d7aa78",
         "name": "Decode CC1101 serial commands",
-        "func": "const data = msg.payload;\n\nconst cmd = data[1];\nswitch (cmd) {\n    case 'S':\n        const spl = data.trim().split('|');\n        msg.payload = {\n            type: spl[1],\n            unit: spl[2],\n            id: spl[3],\n            value: parseFloat(spl[4]),\n        };\n        msg.payload.type_id = `${msg.payload.type}|${msg.payload.id}`;\n        return msg;\n    default:\n        return undefined;\n}\n",
+        "func": "const data = msg.payload;\n\nconst cmd = data[1];\nswitch (cmd) {\n    case 'S':\n        const spl = data.trim().substr(2).split('|');\n        msg.payload = {\n            type: spl[0],\n            unit: spl[1],\n            id: spl[2],\n            value: parseFloat(spl[3]),\n        };\n        msg.payload.type_id = `${msg.payload.type}|${msg.payload.id}`;\n        return msg;\n    default:\n        return undefined;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2570,5 +2571,22 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "b153ac6b5169273c",
+        "type": "debug",
+        "z": "a7bed2fe84d7aa78",
+        "name": "CC1101 serial in",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 640,
+        "wires": []
     }
 ]
