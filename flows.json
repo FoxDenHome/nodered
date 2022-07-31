@@ -2401,8 +2401,7 @@
         "y": 580,
         "wires": [
             [
-                "580516836e581a35",
-                "b153ac6b5169273c"
+                "eb9d47cab8f907ae"
             ]
         ]
     },
@@ -2417,47 +2416,28 @@
         "wires": []
     },
     {
-        "id": "580516836e581a35",
-        "type": "function",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Decode CC1101 serial commands",
-        "func": "const data = msg.payload;\n\nconst cmd = data[1];\nswitch (cmd) {\n    case 'S':\n        const spl = data.trim().substr(2).split('|');\n        msg.payload = {\n            type: spl[0],\n            unit: spl[1],\n            id: spl[2],\n            value: parseFloat(spl[3]),\n        };\n        msg.payload.type_id = `${msg.payload.type}|${msg.payload.id}`;\n        return msg;\n    default:\n        return undefined;\n}\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 580,
-        "wires": [
-            [
-                "cdc8a0912ef29822"
-            ]
-        ]
-    },
-    {
         "id": "cdc8a0912ef29822",
         "type": "switch",
         "z": "a7bed2fe84d7aa78",
         "name": "Switch sensor type ID",
-        "property": "payload.type_id",
+        "property": "sensorSwitch",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "T|56",
+                "v": "lacrosse_temperature_56",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "H|56",
+                "v": "lacrosse_humidity_56",
                 "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 580,
+        "x": 620,
         "y": 580,
         "wires": [
             [
@@ -2573,20 +2553,35 @@
         ]
     },
     {
-        "id": "b153ac6b5169273c",
-        "type": "debug",
+        "id": "eb9d47cab8f907ae",
+        "type": "cc1101duino-decoder",
         "z": "a7bed2fe84d7aa78",
-        "name": "CC1101 serial in",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 320,
-        "y": 640,
-        "wires": []
+        "name": "",
+        "x": 220,
+        "y": 660,
+        "wires": [
+            [
+                "b0611c488c545468"
+            ]
+        ]
+    },
+    {
+        "id": "b0611c488c545468",
+        "type": "template",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Set SensorSwitch",
+        "field": "sensorSwitch",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.origin}}_{{payload.sensorType}}_{{payload.sensorId}}",
+        "output": "str",
+        "x": 370,
+        "y": 580,
+        "wires": [
+            [
+                "cdc8a0912ef29822"
+            ]
+        ]
     }
 ]
