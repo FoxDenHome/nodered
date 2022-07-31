@@ -1146,7 +1146,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.id",
+                "p": "payload.dip",
                 "pt": "msg",
                 "to": "00101001",
                 "tot": "str"
@@ -1168,7 +1168,7 @@
         "y": 180,
         "wires": [
             [
-                "91bd57db4b5ca388"
+                "5621f1fdb6d88bef"
             ]
         ]
     },
@@ -1353,7 +1353,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.id",
+                "p": "payload.dip",
                 "pt": "msg",
                 "to": "00011001",
                 "tot": "str"
@@ -1375,7 +1375,7 @@
         "y": 700,
         "wires": [
             [
-                "91bd57db4b5ca388"
+                "5621f1fdb6d88bef"
             ]
         ]
     },
@@ -1397,7 +1397,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.id",
+                "p": "payload.dip",
                 "pt": "msg",
                 "to": "00001001",
                 "tot": "str"
@@ -1419,7 +1419,7 @@
         "y": 1120,
         "wires": [
             [
-                "91bd57db4b5ca388"
+                "5621f1fdb6d88bef"
             ]
         ]
     },
@@ -1547,25 +1547,6 @@
         "wires": [
             [
                 "d39cf1c6e2cfa63b"
-            ]
-        ]
-    },
-    {
-        "id": "91bd57db4b5ca388",
-        "type": "function",
-        "z": "53112e8c6c9ca84a",
-        "name": "Minka aire encoder",
-        "func": "const COMMANDS = {\n\toff:     '10100',\n\tlow:     '00100',\n\tmedium:  '01000',\n\thigh:    '10000',\n\tlight_1: '01010',\n\tlight_2: '10010',\n};\nCOMMANDS.light = COMMANDS.light_1;\n\nconst dip = msg.payload.id;\nconst command = COMMANDS[msg.payload.command];\n\nconst data = `${dip}${command}`;\n\nlet rawData = '';\nfor (const c of data) {\n    rawData += `10${c}`;\n}\n\nreturn {\n    symbol_time: 417,\n    frequency: 304.2,\n    modulation: 'OOK',\n    repetitions: 10,\n    repetition_delay: 10000,\n    payload: rawData,\n};\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1910,
-        "y": 700,
-        "wires": [
-            [
-                "ccf15fbe4a6faf12"
             ]
         ]
     },
@@ -1951,6 +1932,33 @@
         ]
     },
     {
+        "id": "5621f1fdb6d88bef",
+        "type": "change",
+        "z": "53112e8c6c9ca84a",
+        "name": "Set Coder",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.coder",
+                "pt": "msg",
+                "to": "minka_aire",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1970,
+        "y": 700,
+        "wires": [
+            [
+                "ccf15fbe4a6faf12"
+            ]
+        ]
+    },
+    {
         "id": "65c2658aa3b20b32",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
@@ -2177,25 +2185,6 @@
         ]
     },
     {
-        "id": "4a1eecea68023c32",
-        "type": "function",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Encode CC1101 serial commands",
-        "func": "const MODULATIONS = {\n    '2FSK': 0,\n    'GFSK': 1,\n    'ASK':  2,\n    'OOK':  2,\n    '4FSK': 3,\n    'MSK':  4,\n};\n\nmsg.payload = `\n^F${ msg.frequency }\n^M${ MODULATIONS[msg.modulation] }\n^R${ msg.repetitions || 20 }\n^T${ msg.reptition_delay || 10000 }\n^E${ msg.symbol_time.toString(16).padStart(4, '0') }${ msg.payload }\n`;\n\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 280,
-        "y": 480,
-        "wires": [
-            [
-                "bb1c7c57cf03d3cb"
-            ]
-        ]
-    },
-    {
         "id": "13ac0bdf1218eacd",
         "type": "link in",
         "z": "a7bed2fe84d7aa78",
@@ -2207,7 +2196,7 @@
         "y": 480,
         "wires": [
             [
-                "4a1eecea68023c32"
+                "16e40ff17b786c65"
             ]
         ]
     },
@@ -2581,6 +2570,19 @@
         "wires": [
             [
                 "cdc8a0912ef29822"
+            ]
+        ]
+    },
+    {
+        "id": "16e40ff17b786c65",
+        "type": "cc1101duino-encoder",
+        "z": "a7bed2fe84d7aa78",
+        "name": "",
+        "x": 280,
+        "y": 480,
+        "wires": [
+            [
+                "bb1c7c57cf03d3cb"
             ]
         ]
     }
