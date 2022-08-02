@@ -37,6 +37,18 @@
         ]
     },
     {
+        "id": "f93d98e293b81e36",
+        "type": "junction",
+        "z": "a7bed2fe84d7aa78",
+        "x": 240,
+        "y": 680,
+        "wires": [
+            [
+                "8355ba94a8dc78df"
+            ]
+        ]
+    },
+    {
         "id": "9e075c34a6a4b697",
         "type": "ha-entity-config",
         "server": "855a07ea.d0a178",
@@ -2428,11 +2440,14 @@
                 "t": "eq",
                 "v": "lacrosse_humidity_56",
                 "vt": "str"
+            },
+            {
+                "t": "nnull"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 2,
+        "outputs": 3,
         "x": 570,
         "y": 620,
         "wires": [
@@ -2441,6 +2456,9 @@
             ],
             [
                 "1d2c2b675ffcc80c"
+            ],
+            [
+                "8355ba94a8dc78df"
             ]
         ]
     },
@@ -2605,17 +2623,40 @@
                 "t": "eq",
                 "v": "sensor",
                 "vt": "str"
+            },
+            {
+                "t": "nnull"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 110,
         "y": 620,
         "wires": [
             [
                 "b0611c488c545468"
+            ],
+            [
+                "f93d98e293b81e36"
             ]
         ]
+    },
+    {
+        "id": "8355ba94a8dc78df",
+        "type": "debug",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Show unhanlded signals",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 900,
+        "y": 680,
+        "wires": []
     }
 ]
