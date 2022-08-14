@@ -817,7 +817,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\t   \"color\": color,\t   \"dots\": \"000\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000,\t   \"animations\": true\t}\t",
+        "data": "{\t   \"color\": color,\t   \"dots\": \"\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000,\t   \"animations\": true\t}\t",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -2009,19 +2009,22 @@
         ],
         "inputs": 0,
         "deviceType": "trigger",
-        "device": "37505fe0e1bccefa3df00e6a48fd9213",
+        "device": "1383277869fb3dc65d04345fa0816f14",
         "event": {
             "type": "power",
             "platform": "device",
             "device_id": "1383277869fb3dc65d04345fa0816f14",
             "entity_id": "sensor.dori_pc_power",
-            "domain": "sensor"
+            "domain": "sensor",
+            "metadata": {
+                "secondary": false
+            }
         },
         "capabilities": [
             {
                 "name": "below",
                 "type": "float",
-                "value": 60
+                "value": 70
             },
             {
                 "name": "for",
@@ -2066,7 +2069,10 @@
             "platform": "device",
             "device_id": "d8f10783fd5383c71f1232f171c393e7",
             "entity_id": "sensor.simon_pc_power",
-            "domain": "sensor"
+            "domain": "sensor",
+            "metadata": {
+                "secondary": false
+            }
         },
         "capabilities": [
             {
