@@ -188,7 +188,7 @@
         "halt_if": "1700",
         "halt_if_type": "num",
         "halt_if_compare": "gt",
-        "entity_id": "sensor.office_co2",
+        "entity_id": "sensor.dori_office_co2",
         "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -233,7 +233,7 @@
         "halt_if": "5",
         "halt_if_type": "num",
         "halt_if_compare": "gt",
-        "entity_id": "sensor.office_particulate_matter_1_0um_concentration",
+        "entity_id": "sensor.dori_office_particulate_matter_1_0um_concentration",
         "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -278,7 +278,7 @@
         "halt_if": "5",
         "halt_if_type": "num",
         "halt_if_compare": "gt",
-        "entity_id": "sensor.office_particulate_matter_2_5um_concentration",
+        "entity_id": "sensor.dori_office_particulate_matter_2_5um_concentration",
         "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -323,7 +323,7 @@
         "halt_if": "5",
         "halt_if_type": "num",
         "halt_if_compare": "gt",
-        "entity_id": "sensor.office_particulate_matter_10_0um_concentration",
+        "entity_id": "sensor.dori_office_particulate_matter_10_0um_concentration",
         "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -430,7 +430,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "esphome",
-        "service": "custom_clock_nixie_office_notify",
+        "service": "custom_clock_nixie_dori_notify",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -494,7 +494,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "esphome",
-        "service": "custom_clock_nixie_office_notify",
+        "service": "custom_clock_nixie_dori_notify",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -623,8 +623,7 @@
         "y": 120,
         "wires": [
             [
-                "c42a3063b035f55a",
-                "b06ae4538cd1f0b7"
+                "c42a3063b035f55a"
             ]
         ]
     },
@@ -677,8 +676,7 @@
         "y": 260,
         "wires": [
             [
-                "70539c414a38c86e",
-                "e4bfd7d5fa54b89c"
+                "70539c414a38c86e"
             ]
         ]
     },
@@ -748,60 +746,6 @@
         "outputProperties": [],
         "x": 430,
         "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b06ae4538cd1f0b7",
-        "type": "api-call-service",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Turn off Office lights",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.office"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 440,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e4bfd7d5fa54b89c",
-        "type": "api-call-service",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Turn off Corner lights",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.corner"
-        ],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 440,
-        "y": 320,
         "wires": [
             []
         ]
@@ -1270,7 +1214,7 @@
         "type": "function",
         "z": "a7bed2fe84d7aa78",
         "name": "Calculate AQI",
-        "func": "const re = /^sensor\\.(.+)_(particulate_matter_.*_concentration|co2)$/;\n\nconst breakpoints = {};\nbreakpoints.aqi = [\n    {\n        lo: 0,\n        hi: 50,\n    },\n    {\n        lo: 51,\n        hi: 100,\n    },\n    {\n        lo: 101,\n        hi: 150,\n    },\n    {\n        lo: 151,\n        hi: 200,\n    },\n    {\n        lo: 201,\n        hi: 300,\n    },\n    {\n        lo: 301,\n        hi: 400,\n    },\n    {\n        lo: 401,\n        hi: 500,\n    },\n]\nbreakpoints.particulate_matter_2_5um_concentration = [\n    {\n        lo: 0.0,\n        hi: 12.0,\n    },\n    {\n        lo: 12.1,\n        hi: 35.4,\n    },\n    {\n        lo: 35.5,\n        hi: 55.4,\n    },\n    {\n        lo: 55.5,\n        hi: 150.4,\n    },\n    {\n        lo: 150.5,\n        hi: 250.4,\n    },\n    {\n        lo: 250.5,\n        hi: 350.4,\n    },\n    {\n        lo: 350.5,\n        hi: 500.4,\n    },\n];\nbreakpoints.particulate_matter_10_0um_concentration = [\n    {\n        lo: 0.0,\n        hi: 54.0,\n    },\n    {\n        lo: 55.0,\n        hi: 154.0,\n    },\n    {\n        lo: 155.0,\n        hi: 254.0,\n    },\n    {\n        lo: 255.0,\n        hi: 354.0,\n    },\n    {\n        lo: 355.0,\n        hi: 424.0,\n    },\n    {\n        lo: 425.0,\n        hi: 504.0,\n    },\n    {\n        lo: 505.0,\n        hi: 604.0,\n    },\n];\n\nconst aqiValues = {};\n\nfor (const ent of msg.payload) {\n    const m = ent.entity_id.match(re);\n    if (!m) {\n        continue;\n    }\n    const sensorName = m[1];\n    const sensorType = m[2];\n\n    const val = parseFloat(ent.state);\n    \n    const valBreakpointsAll = breakpoints[sensorType];\n    if (!valBreakpointsAll) {\n        continue;\n    }\n\n    let i = valBreakpointsAll.length - 1;\n    for (; i >= 0; i--) {\n        if (val >= valBreakpointsAll[i].lo) {\n            break;\n        }\n    }\n\n    const valBreakpoints = valBreakpointsAll[i];\n    const aqiBreakpoints = breakpoints.aqi[i];\n\n    const bpRatio = (aqiBreakpoints.hi - aqiBreakpoints.lo) / (valBreakpoints.hi - valBreakpoints.lo);\n    const aqi = Math.round((bpRatio * (val - valBreakpoints.lo)) + aqiBreakpoints.lo);\n\n    const cur = aqiValues[sensorName];\n    if (cur && cur.aqi > aqi) {\n        continue;\n    }\n\n    aqiValues[sensorName] = {\n        aqi,\n        sensorName,\n        sensorType,\n    };\n}\nmsg.payload = aqiValues;\nreturn msg;\n",
+        "func": "const re = /^sensor\\.(.+)_(particulate_matter_.*_concentration|co2)$/;\n\nconst breakpoints = {};\nbreakpoints.aqi = [\n    {\n        lo: 0,\n        hi: 50,\n    },\n    {\n        lo: 51,\n        hi: 100,\n    },\n    {\n        lo: 101,\n        hi: 150,\n    },\n    {\n        lo: 151,\n        hi: 200,\n    },\n    {\n        lo: 201,\n        hi: 300,\n    },\n    {\n        lo: 301,\n        hi: 400,\n    },\n    {\n        lo: 401,\n        hi: 500,\n    },\n]\nbreakpoints.particulate_matter_2_5um_concentration = [\n    {\n        lo: 0.0,\n        hi: 12.0,\n    },\n    {\n        lo: 12.1,\n        hi: 35.4,\n    },\n    {\n        lo: 35.5,\n        hi: 55.4,\n    },\n    {\n        lo: 55.5,\n        hi: 150.4,\n    },\n    {\n        lo: 150.5,\n        hi: 250.4,\n    },\n    {\n        lo: 250.5,\n        hi: 350.4,\n    },\n    {\n        lo: 350.5,\n        hi: 500.4,\n    },\n];\nbreakpoints.particulate_matter_10_0um_concentration = [\n    {\n        lo: 0.0,\n        hi: 54.0,\n    },\n    {\n        lo: 55.0,\n        hi: 154.0,\n    },\n    {\n        lo: 155.0,\n        hi: 254.0,\n    },\n    {\n        lo: 255.0,\n        hi: 354.0,\n    },\n    {\n        lo: 355.0,\n        hi: 424.0,\n    },\n    {\n        lo: 425.0,\n        hi: 504.0,\n    },\n    {\n        lo: 505.0,\n        hi: 604.0,\n    },\n];\n\nconst aqiValues = {};\n\nfor (const ent of msg.payload) {\n    const m = ent.entity_id.match(re);\n    if (!m) {\n        continue;\n    }\n    const sensorName = m[1];\n    const sensorType = m[2];\n\n    const val = parseFloat(ent.state);\n\n    if (isNaN(val)) {\n        continue;\n    }\n\n    const valBreakpointsAll = breakpoints[sensorType];\n    if (!valBreakpointsAll) {\n        continue;\n    }\n\n    let i = valBreakpointsAll.length - 1;\n    for (; i >= 0; i--) {\n        if (val >= valBreakpointsAll[i].lo) {\n            break;\n        }\n    }\n\n    const valBreakpoints = valBreakpointsAll[i];\n    const aqiBreakpoints = breakpoints.aqi[i];\n\n    const bpRatio = (aqiBreakpoints.hi - aqiBreakpoints.lo) / (valBreakpoints.hi - valBreakpoints.lo);\n    const aqi = Math.round((bpRatio * (val - valBreakpoints.lo)) + aqiBreakpoints.lo);\n\n    const cur = aqiValues[sensorName];\n    if (cur && cur.aqi > aqi) {\n        continue;\n    }\n\n    aqiValues[sensorName] = {\n        aqi,\n        sensorName,\n        sensorType,\n    };\n}\nmsg.payload = aqiValues;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1351,7 +1295,7 @@
         "id": "794e0cc2794248b4",
         "type": "ha-entity",
         "z": "a7bed2fe84d7aa78",
-        "name": "Office AQI",
+        "name": "Dori Office AQI",
         "server": "855a07ea.d0a178",
         "version": 2,
         "debugenabled": false,
@@ -1360,7 +1304,7 @@
         "config": [
             {
                 "property": "name",
-                "value": "Office AQI"
+                "value": "Dori Office AQI"
             },
             {
                 "property": "device_class",
@@ -1393,7 +1337,7 @@
         "outputOnStateChange": false,
         "outputPayload": "",
         "outputPayloadType": "str",
-        "x": 670,
+        "x": 680,
         "y": 820,
         "wires": [
             []
@@ -1513,7 +1457,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "office",
+                "v": "dori_office",
                 "vt": "str"
             },
             {
