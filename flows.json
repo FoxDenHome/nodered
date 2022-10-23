@@ -631,7 +631,7 @@
         "id": "4d2d86d92baeae3a",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
-        "name": "Simon PC low power",
+        "name": "Wizzy PC low power",
         "server": "855a07ea.d0a178",
         "version": 0,
         "exposeToHomeAssistant": false,
@@ -652,7 +652,7 @@
             "type": "power",
             "platform": "device",
             "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "sensor.simon_pc_power",
+            "entity_id": "sensor.wizzy_pc_power",
             "domain": "sensor",
             "metadata": {
                 "secondary": false
@@ -662,7 +662,7 @@
             {
                 "name": "below",
                 "type": "float",
-                "value": 50
+                "value": 30
             },
             {
                 "name": "for",
@@ -672,7 +672,7 @@
             }
         ],
         "outputProperties": [],
-        "x": 160,
+        "x": 150,
         "y": 260,
         "wires": [
             [
@@ -719,7 +719,7 @@
         "id": "70539c414a38c86e",
         "type": "ha-device",
         "z": "a7bed2fe84d7aa78",
-        "name": "Turn off Simon PC",
+        "name": "Turn off Wizzy PC",
         "server": "855a07ea.d0a178",
         "version": 0,
         "exposeToHomeAssistant": false,
@@ -739,8 +739,11 @@
         "event": {
             "type": "turn_off",
             "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "switch.simon_pc_relay",
-            "domain": "switch"
+            "entity_id": "switch.wizzy_pc_relay",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
         },
         "capabilities": [],
         "outputProperties": [],
@@ -1214,7 +1217,7 @@
         "type": "function",
         "z": "a7bed2fe84d7aa78",
         "name": "Calculate AQI",
-        "func": "const re = /^sensor\\.(.+)_(particulate_matter_.*_concentration|co2)$/;\n\nconst breakpoints = {};\nbreakpoints.aqi = [\n    {\n        lo: 0,\n        hi: 50,\n    },\n    {\n        lo: 51,\n        hi: 100,\n    },\n    {\n        lo: 101,\n        hi: 150,\n    },\n    {\n        lo: 151,\n        hi: 200,\n    },\n    {\n        lo: 201,\n        hi: 300,\n    },\n    {\n        lo: 301,\n        hi: 400,\n    },\n    {\n        lo: 401,\n        hi: 500,\n    },\n]\nbreakpoints.particulate_matter_2_5um_concentration = [\n    {\n        lo: 0.0,\n        hi: 12.0,\n    },\n    {\n        lo: 12.1,\n        hi: 35.4,\n    },\n    {\n        lo: 35.5,\n        hi: 55.4,\n    },\n    {\n        lo: 55.5,\n        hi: 150.4,\n    },\n    {\n        lo: 150.5,\n        hi: 250.4,\n    },\n    {\n        lo: 250.5,\n        hi: 350.4,\n    },\n    {\n        lo: 350.5,\n        hi: 500.4,\n    },\n];\nbreakpoints.particulate_matter_10_0um_concentration = [\n    {\n        lo: 0.0,\n        hi: 54.0,\n    },\n    {\n        lo: 55.0,\n        hi: 154.0,\n    },\n    {\n        lo: 155.0,\n        hi: 254.0,\n    },\n    {\n        lo: 255.0,\n        hi: 354.0,\n    },\n    {\n        lo: 355.0,\n        hi: 424.0,\n    },\n    {\n        lo: 425.0,\n        hi: 504.0,\n    },\n    {\n        lo: 505.0,\n        hi: 604.0,\n    },\n];\n\nconst aqiValues = {};\n\nfor (const ent of msg.payload) {\n    const m = ent.entity_id.match(re);\n    if (!m) {\n        continue;\n    }\n    const sensorName = m[1];\n    const sensorType = m[2];\n\n    const val = parseFloat(ent.state);\n\n    if (isNaN(val)) {\n        continue;\n    }\n\n    const valBreakpointsAll = breakpoints[sensorType];\n    if (!valBreakpointsAll) {\n        continue;\n    }\n\n    let i = valBreakpointsAll.length - 1;\n    for (; i >= 0; i--) {\n        if (val >= valBreakpointsAll[i].lo) {\n            break;\n        }\n    }\n\n    const valBreakpoints = valBreakpointsAll[i];\n    const aqiBreakpoints = breakpoints.aqi[i];\n\n    const bpRatio = (aqiBreakpoints.hi - aqiBreakpoints.lo) / (valBreakpoints.hi - valBreakpoints.lo);\n    const aqi = Math.round((bpRatio * (val - valBreakpoints.lo)) + aqiBreakpoints.lo);\n\n    const cur = aqiValues[sensorName];\n    if (cur && cur.aqi > aqi) {\n        continue;\n    }\n\n    aqiValues[sensorName] = {\n        aqi,\n        sensorName,\n        sensorType,\n    };\n}\nmsg.payload = aqiValues;\nreturn msg;\n",
+        "func": "const re = /^sensor\\.(.+)_(particulate_matter_.*_concentration|co2)$/;\n\nconst breakpoints = {};\nbreakpoints.aqi = [\n    {\n        lo: 0,\n        hi: 50,\n    },\n    {\n        lo: 51,\n        hi: 100,\n    },\n    {\n        lo: 101,\n        hi: 150,\n    },\n    {\n        lo: 151,\n        hi: 200,\n    },\n    {\n        lo: 201,\n        hi: 300,\n    },\n    {\n        lo: 301,\n        hi: 400,\n    },\n    {\n        lo: 401,\n        hi: 500,\n    },\n]\nbreakpoints.particulate_matter_2_5um_concentration = [\n    {\n        lo: 0.0,\n        hi: 12.0,\n    },\n    {\n        lo: 12.1,\n        hi: 35.4,\n    },\n    {\n        lo: 35.5,\n        hi: 55.4,\n    },\n    {\n        lo: 55.5,\n        hi: 150.4,\n    },\n    {\n        lo: 150.5,\n        hi: 250.4,\n    },\n    {\n        lo: 250.5,\n        hi: 350.4,\n    },\n    {\n        lo: 350.5,\n        hi: 500.4,\n    },\n];\nbreakpoints.particulate_matter_10_0um_concentration = [\n    {\n        lo: 0.0,\n        hi: 54.0,\n    },\n    {\n        lo: 55.0,\n        hi: 154.0,\n    },\n    {\n        lo: 155.0,\n        hi: 254.0,\n    },\n    {\n        lo: 255.0,\n        hi: 354.0,\n    },\n    {\n        lo: 355.0,\n        hi: 424.0,\n    },\n    {\n        lo: 425.0,\n        hi: 504.0,\n    },\n    {\n        lo: 505.0,\n        hi: 604.0,\n    },\n];\n\nconst aqiValues = {};\n\nfor (const ent of msg.payload) {\n    const m = ent.entity_id.match(re);\n    if (!m) {\n        continue;\n    }\n    const sensorName = m[1];\n    const sensorType = m[2];\n\n    const val = parseFloat(ent.state) - 1.0;\n\n    if (isNaN(val)) {\n        continue;\n    }\n\n    const valBreakpointsAll = breakpoints[sensorType];\n    if (!valBreakpointsAll) {\n        continue;\n    }\n\n    let i = valBreakpointsAll.length - 1;\n    for (; i >= 0; i--) {\n        if (val >= valBreakpointsAll[i].lo) {\n            break;\n        }\n    }\n\n    const valBreakpoints = valBreakpointsAll[i];\n    const aqiBreakpoints = breakpoints.aqi[i];\n\n    const bpRatio = (aqiBreakpoints.hi - aqiBreakpoints.lo) / (valBreakpoints.hi - valBreakpoints.lo);\n    const aqi = Math.round((bpRatio * (val - valBreakpoints.lo)) + aqiBreakpoints.lo);\n\n    const cur = aqiValues[sensorName];\n    if (cur && cur.aqi > aqi) {\n        continue;\n    }\n\n    aqiValues[sensorName] = {\n        aqi,\n        sensorName,\n        sensorType,\n    };\n}\nmsg.payload = aqiValues;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1308,7 +1311,7 @@
             },
             {
                 "property": "device_class",
-                "value": ""
+                "value": "aqi"
             },
             {
                 "property": "icon",
@@ -1360,7 +1363,7 @@
             },
             {
                 "property": "device_class",
-                "value": ""
+                "value": "aqi"
             },
             {
                 "property": "icon",
@@ -1412,7 +1415,7 @@
             },
             {
                 "property": "device_class",
-                "value": ""
+                "value": "aqi"
             },
             {
                 "property": "icon",
