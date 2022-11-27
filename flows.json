@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "a53edd6419cf925b",
+        "type": "tab",
+        "label": "Bambu X1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f93d98e293b81e36",
         "type": "junction",
         "z": "a7bed2fe84d7aa78",
@@ -260,6 +268,70 @@
             }
         ],
         "resend": true
+    },
+    {
+        "id": "60409f974cd5a619",
+        "type": "mqtt-broker",
+        "name": "Bambu X1",
+        "broker": "bambu-x1.foxden.network",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "device/00M00A280102436/request",
+        "birthQos": "0",
+        "birthPayload": "{\"pushing\": {\"sequence_id\": \"0\",\"command\": \"pushall\"}}",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "27e6a9b3bbae9c7e",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 stage",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 stage"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
     },
     {
         "id": "99ce1c6505aedccf",
@@ -1527,6 +1599,129 @@
         "outputProperties": [],
         "x": 680,
         "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8bbc06ba4f763df5",
+        "type": "mqtt in",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 report",
+        "topic": "device/00M00A280102436/report",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "60409f974cd5a619",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "01d6827915f07e49"
+            ]
+        ]
+    },
+    {
+        "id": "01d6827915f07e49",
+        "type": "function",
+        "z": "a53edd6419cf925b",
+        "name": "Map stg_cur",
+        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined) {\n    return;\n}\n\nconst out_msg = {\n    payload: stage_names[stage_cur + 1] || \"Unknown\",\n};\n\nif (stage_cur >= 0) {\n    out_msg.reset = true;\n}\n\nreturn out_msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "9f8825bfe35d0491",
+                "6c2d38245803f51b"
+            ]
+        ]
+    },
+    {
+        "id": "9f8825bfe35d0491",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 Stage",
+        "entityConfig": "27e6a9b3bbae9c7e",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 690,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c2d38245803f51b",
+        "type": "trigger",
+        "z": "a53edd6419cf925b",
+        "name": "Idle 30min?",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "30",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "fb951deb469bc3b4"
+            ]
+        ]
+    },
+    {
+        "id": "fb951deb469bc3b4",
+        "type": "ha-device",
+        "z": "a53edd6419cf925b",
+        "name": "Turn off",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "debugenabled": false,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "43130b67504c4acc558137b527001959",
+        "event": {
+            "type": "turn_off",
+            "device_id": "43130b67504c4acc558137b527001959",
+            "entity_id": "switch.bambu_x1_relay",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 910,
+        "y": 300,
         "wires": [
             []
         ]
