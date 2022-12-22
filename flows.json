@@ -239,7 +239,7 @@
         "server": "855a07ea.d0a178",
         "deviceConfig": "",
         "name": "sensor config for Living room AQI",
-        "version": 6,
+        "version": "6",
         "entityType": "sensor",
         "haConfig": [
             {
@@ -247,12 +247,16 @@
                 "value": "Living room AQI"
             },
             {
-                "property": "device_class",
-                "value": "aqi"
-            },
-            {
                 "property": "icon",
                 "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "aqi"
             },
             {
                 "property": "unit_of_measurement",
@@ -261,13 +265,10 @@
             {
                 "property": "state_class",
                 "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
             }
         ],
-        "resend": true
+        "resend": true,
+        "debugEnabled": false
     },
     {
         "id": "60409f974cd5a619",
@@ -328,6 +329,80 @@
             {
                 "property": "state_class",
                 "value": "measurement"
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "c19819a7716b9af4",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Wizzy Office AQI",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Wizzy Office AQI"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "aqi"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "ef5e1961536b2f76",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Den AQI",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Den AQI"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "aqi"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "aqi"
+            },
+            {
+                "property": "state_class",
+                "value": ""
             }
         ],
         "resend": false,
@@ -1465,11 +1540,21 @@
                 "t": "eq",
                 "v": "living_room",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wizzy_office",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "den",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 3,
+        "outputs": 5,
         "x": 470,
         "y": 900,
         "wires": [
@@ -1481,6 +1566,12 @@
             ],
             [
                 "224d410083e539f4"
+            ],
+            [
+                "deada6aedc0afa7e"
+            ],
+            [
+                "da635b248cf0596a"
             ]
         ]
     },
@@ -1604,6 +1695,42 @@
         ]
     },
     {
+        "id": "deada6aedc0afa7e",
+        "type": "ha-sensor",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Wizzy office AQI",
+        "entityConfig": "c19819a7716b9af4",
+        "version": 0,
+        "state": "payload.aqi",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 680,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da635b248cf0596a",
+        "type": "ha-sensor",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Den AQI",
+        "entityConfig": "ef5e1961536b2f76",
+        "version": 0,
+        "state": "payload.aqi",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 660,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "8bbc06ba4f763df5",
         "type": "mqtt in",
         "z": "a53edd6419cf925b",
@@ -1616,8 +1743,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 220,
-        "y": 240,
+        "x": 140,
+        "y": 140,
         "wires": [
             [
                 "01d6827915f07e49"
@@ -1635,8 +1762,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 240,
+        "x": 390,
+        "y": 140,
         "wires": [
             [
                 "9f8825bfe35d0491",
@@ -1656,8 +1783,8 @@
         "attributes": [],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 690,
-        "y": 240,
+        "x": 610,
+        "y": 140,
         "wires": [
             []
         ]
@@ -1679,8 +1806,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 670,
-        "y": 300,
+        "x": 590,
+        "y": 200,
         "wires": [
             [
                 "fb951deb469bc3b4"
@@ -1691,6 +1818,7 @@
         "id": "fb951deb469bc3b4",
         "type": "ha-device",
         "z": "a53edd6419cf925b",
+        "d": true,
         "name": "Turn off",
         "server": "855a07ea.d0a178",
         "version": 0,
@@ -1720,8 +1848,8 @@
         },
         "capabilities": [],
         "outputProperties": [],
-        "x": 910,
-        "y": 300,
+        "x": 830,
+        "y": 200,
         "wires": [
             []
         ]
