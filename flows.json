@@ -48,6 +48,23 @@
         ]
     },
     {
+        "id": "0545db8219987d92",
+        "type": "junction",
+        "z": "a53edd6419cf925b",
+        "x": 640,
+        "y": 200,
+        "wires": [
+            [
+                "e79be807708ff94e",
+                "9f8825bfe35d0491",
+                "058de403c9c507f0",
+                "98e37f64446b861b",
+                "85e2841a8d0f7ce9",
+                "548dbed9334436d5"
+            ]
+        ]
+    },
+    {
         "id": "520c9422e32a2caf",
         "type": "serial-port",
         "serialport": "/dev/serial/by-id/usb-FoxDen_CC1101Duino_1101-if00-port0",
@@ -280,7 +297,7 @@
         "autoConnect": true,
         "usetls": false,
         "protocolVersion": "4",
-        "keepalive": "60",
+        "keepalive": "15",
         "cleansession": true,
         "birthTopic": "device/00M00A280102436/request",
         "birthQos": "0",
@@ -399,6 +416,191 @@
             {
                 "property": "unit_of_measurement",
                 "value": "aqi"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "2cc9d2a08df3c267",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 bed temperature",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 bed temperature"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "97a234ae0ec48b36",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 bed target temperature",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 bed target temperature"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "b5631a916eb39e67",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 nozzle temperature",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 nozzle temperature"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "fdbaee93fea15004",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 nozzle target temperature",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 nozzle target temperature"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "9bce5769ad2d5bed",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 enclosure temperature",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 enclosure temperature"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
             },
             {
                 "property": "state_class",
@@ -1747,7 +1949,8 @@
         "y": 140,
         "wires": [
             [
-                "01d6827915f07e49"
+                "01d6827915f07e49",
+                "3702019e179eaaac"
             ]
         ]
     },
@@ -1755,19 +1958,19 @@
         "id": "01d6827915f07e49",
         "type": "function",
         "z": "a53edd6419cf925b",
-        "name": "Map stg_cur",
-        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined) {\n    return;\n}\n\nconst out_msg = {\n    payload: stage_names[stage_cur + 1] || \"Unknown\",\n};\n\nif (stage_cur >= 0) {\n    out_msg.reset = true;\n}\n\nreturn out_msg;",
+        "name": "Map stg_cur and filter",
+        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined) {\n    return;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 && msg.payload.print.nozzle_temper < 80) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 420,
         "y": 140,
         "wires": [
             [
-                "9f8825bfe35d0491",
-                "6c2d38245803f51b"
+                "6c2d38245803f51b",
+                "0545db8219987d92"
             ]
         ]
     },
@@ -1778,12 +1981,12 @@
         "name": "Bambu X1 Stage",
         "entityConfig": "27e6a9b3bbae9c7e",
         "version": 0,
-        "state": "payload",
+        "state": "payload.stage_name",
         "stateType": "msg",
         "attributes": [],
-        "inputOverride": "allow",
+        "inputOverride": "block",
         "outputProperties": [],
-        "x": 610,
+        "x": 830,
         "y": 140,
         "wires": [
             []
@@ -1806,8 +2009,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 590,
-        "y": 200,
+        "x": 810,
+        "y": 60,
         "wires": [
             [
                 "fb951deb469bc3b4"
@@ -1818,7 +2021,6 @@
         "id": "fb951deb469bc3b4",
         "type": "ha-device",
         "z": "a53edd6419cf925b",
-        "d": true,
         "name": "Turn off",
         "server": "855a07ea.d0a178",
         "version": 0,
@@ -1848,10 +2050,193 @@
         },
         "capabilities": [],
         "outputProperties": [],
-        "x": 830,
+        "x": 970,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "058de403c9c507f0",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 bed temperature",
+        "entityConfig": "2cc9d2a08df3c267",
+        "version": 0,
+        "state": "payload.print.bed_temper",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 860,
         "y": 200,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e79be807708ff94e",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 bed target temperature",
+        "entityConfig": "97a234ae0ec48b36",
+        "version": 0,
+        "state": "payload.print.bed_target_temper",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 880,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98e37f64446b861b",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 nozzle temperature",
+        "entityConfig": "b5631a916eb39e67",
+        "version": 0,
+        "state": "payload.print.nozzle_temper",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 870,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "85e2841a8d0f7ce9",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 nozzle target temperature",
+        "entityConfig": "fdbaee93fea15004",
+        "version": 0,
+        "state": "payload.print.nozzle_target_temper",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 890,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "548dbed9334436d5",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 enclosure temperature",
+        "entityConfig": "9bce5769ad2d5bed",
+        "version": 0,
+        "state": "payload.print.chamber_temper",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 880,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3702019e179eaaac",
+        "type": "trigger",
+        "z": "a53edd6419cf925b",
+        "name": "5 min no updates",
+        "op1": "",
+        "op2": "{\"print\":{\"bed_target_temper\":\"unavailable\",\"bed_temper\":\"unavailable\",\"nozzle_temper\":\"unavailable\",\"nozzle_target_temper\":\"unavailable\",\"chamber_temper\":\"unavailable\"},\"stage_name\":\"unavailable\"}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": true,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "0545db8219987d92"
+            ]
+        ]
+    },
+    {
+        "id": "a6d09c849c7ea582",
+        "type": "status",
+        "z": "a53edd6419cf925b",
+        "name": "MQTT status",
+        "scope": [
+            "8bbc06ba4f763df5"
+        ],
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "5b1255d9535f5b72"
+            ]
+        ]
+    },
+    {
+        "id": "266c43cb393271ce",
+        "type": "change",
+        "z": "a53edd6419cf925b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "1000",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "3702019e179eaaac"
+            ]
+        ]
+    },
+    {
+        "id": "5b1255d9535f5b72",
+        "type": "switch",
+        "z": "a53edd6419cf925b",
+        "name": "Filter not connected",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "node-red:common.status.connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "266c43cb393271ce"
+            ]
         ]
     }
 ]
