@@ -2191,13 +2191,13 @@
         "id": "266c43cb393271ce",
         "type": "change",
         "z": "a53edd6419cf925b",
-        "name": "",
+        "name": "Delay 1",
         "rules": [
             {
                 "t": "set",
                 "p": "delay",
                 "pt": "msg",
-                "to": "1000",
+                "to": "1",
                 "tot": "num"
             }
         ],
@@ -2206,7 +2206,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 380,
         "y": 260,
         "wires": [
             [
