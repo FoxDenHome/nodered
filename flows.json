@@ -1933,6 +1933,96 @@
         ]
     },
     {
+        "id": "197267f67efe6167",
+        "type": "server-state-changed",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Wizzy Room Light Read",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "light.wizzy_office",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "milliseconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 1340,
+        "y": 60,
+        "wires": [
+            [
+                "2ee13913398d6704"
+            ]
+        ]
+    },
+    {
+        "id": "2ee13913398d6704",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Nanoleaf sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "fbbd4a18b4b0933bac36df6d9c258815"
+        ],
+        "entityId": [],
+        "data": "{\t    \"brightness\": data.new_state.attributes.brightness\t}\t",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1540,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "8bbc06ba4f763df5",
         "type": "mqtt in",
         "z": "a53edd6419cf925b",
