@@ -1703,7 +1703,7 @@
         "y": 120,
         "wires": [
             [
-                "2ee13913398d6704"
+                "6e99e179202ff709"
             ]
         ]
     },
@@ -1727,8 +1727,8 @@
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
-        "queue": "none",
-        "x": 800,
+        "queue": "last",
+        "x": 940,
         "y": 120,
         "wires": [
             []
@@ -1790,10 +1790,10 @@
             }
         ],
         "x": 600,
-        "y": 180,
+        "y": 240,
         "wires": [
             [
-                "3e4606c543305e16"
+                "752e7246d78efac5"
             ]
         ]
     },
@@ -1817,9 +1817,9 @@
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
-        "queue": "none",
-        "x": 800,
-        "y": 180,
+        "queue": "last",
+        "x": 940,
+        "y": 240,
         "wires": [
             []
         ]
@@ -1830,9 +1830,279 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Nanoleaf brightness sync",
         "info": "",
-        "x": 690,
+        "x": 770,
         "y": 60,
         "wires": []
+    },
+    {
+        "id": "c938f468c57cfef1",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Nanoleaf sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "fbbd4a18b4b0933bac36df6d9c258815"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "last",
+        "x": 940,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "068a445697c5808d",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Nanoleaf sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "94cb1c74cfdfaae7611819d7cb0f4d8f"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "last",
+        "x": 940,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e99e179202ff709",
+        "type": "switch",
+        "z": "a7bed2fe84d7aa78",
+        "name": "on/off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 120,
+        "wires": [
+            [
+                "2ee13913398d6704"
+            ],
+            [
+                "c938f468c57cfef1"
+            ]
+        ]
+    },
+    {
+        "id": "752e7246d78efac5",
+        "type": "switch",
+        "z": "a7bed2fe84d7aa78",
+        "name": "on/off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 240,
+        "wires": [
+            [
+                "3e4606c543305e16"
+            ],
+            [
+                "068a445697c5808d"
+            ]
+        ]
+    },
+    {
+        "id": "07a75f3759c420bc",
+        "type": "server-state-changed",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Closet sensor read",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.corridor_upper_closet_iaszone",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "milliseconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 1230,
+        "y": 120,
+        "wires": [
+            [
+                "c18a28a34441eb37"
+            ]
+        ]
+    },
+    {
+        "id": "bb8ff90bfc046062",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Light sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "c35d8ec95b387438a368a93ed7fd4a7f"
+        ],
+        "entityId": [],
+        "data": "{}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "last",
+        "x": 1590,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f68ec679bc420014",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Light sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "c35d8ec95b387438a368a93ed7fd4a7f"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "last",
+        "x": 1590,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c18a28a34441eb37",
+        "type": "switch",
+        "z": "a7bed2fe84d7aa78",
+        "name": "on/off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1410,
+        "y": 120,
+        "wires": [
+            [
+                "bb8ff90bfc046062"
+            ],
+            [
+                "f68ec679bc420014"
+            ]
+        ]
     },
     {
         "id": "8bbc06ba4f763df5",
