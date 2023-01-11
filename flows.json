@@ -28,7 +28,7 @@
         "type": "junction",
         "z": "a7bed2fe84d7aa78",
         "x": 240,
-        "y": 580,
+        "y": 660,
         "wires": [
             [
                 "2826408677e6ac1c"
@@ -40,7 +40,7 @@
         "type": "junction",
         "z": "a7bed2fe84d7aa78",
         "x": 520,
-        "y": 580,
+        "y": 660,
         "wires": [
             [
                 "8355ba94a8dc78df"
@@ -1164,7 +1164,7 @@
             "ccf15fbe4a6faf12"
         ],
         "x": 75,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
                 "16e40ff17b786c65"
@@ -1178,7 +1178,7 @@
         "name": "CC1101 control",
         "info": "",
         "x": 500,
-        "y": 300,
+        "y": 380,
         "wires": []
     },
     {
@@ -1198,7 +1198,7 @@
         "name": "CC1101 in",
         "serial": "520c9422e32a2caf",
         "x": 120,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
                 "eb9d47cab8f907ae"
@@ -1212,7 +1212,7 @@
         "name": "CC1101 out",
         "serial": "520c9422e32a2caf",
         "x": 530,
-        "y": 360,
+        "y": 440,
         "wires": []
     },
     {
@@ -1241,7 +1241,7 @@
         "repair": false,
         "outputs": 3,
         "x": 630,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "4e2cf910d7bf2a0f"
@@ -1260,7 +1260,7 @@
         "z": "a7bed2fe84d7aa78",
         "name": "",
         "x": 340,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
                 "49208a0c26524124"
@@ -1282,7 +1282,7 @@
         "template": "{{payload.coder}}_{{payload.subtype}}_{{payload.id}}",
         "output": "str",
         "x": 330,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "cdc8a0912ef29822"
@@ -1295,7 +1295,7 @@
         "z": "a7bed2fe84d7aa78",
         "name": "",
         "x": 280,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
                 "bb1c7c57cf03d3cb"
@@ -1323,7 +1323,7 @@
         "repair": false,
         "outputs": 2,
         "x": 110,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "b0611c488c545468"
@@ -1347,7 +1347,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 920,
-        "y": 580,
+        "y": 660,
         "wires": []
     },
     {
@@ -1362,7 +1362,7 @@
         "finalize": "",
         "libs": [],
         "x": 140,
-        "y": 800,
+        "y": 880,
         "wires": [
             [
                 "5df8a322f7028685"
@@ -1396,7 +1396,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 260,
-        "y": 720,
+        "y": 800,
         "wires": [
             [
                 "635d57f74d91c14e"
@@ -1425,7 +1425,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 720,
+        "y": 800,
         "wires": [
             [
                 "82a073564e3aac66"
@@ -1470,7 +1470,7 @@
         "repair": false,
         "outputs": 5,
         "x": 470,
-        "y": 800,
+        "y": 880,
         "wires": [
             [
                 "1f76e6c59c8338d3"
@@ -1501,7 +1501,7 @@
         "stream": false,
         "addname": "",
         "x": 310,
-        "y": 800,
+        "y": 880,
         "wires": [
             [
                 "0db01b1d7b73ee53"
@@ -1515,7 +1515,7 @@
         "name": "Calculate AQI",
         "info": "",
         "x": 490,
-        "y": 660,
+        "y": 740,
         "wires": []
     },
     {
@@ -1531,7 +1531,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 890,
-        "y": 460,
+        "y": 540,
         "wires": [
             []
         ]
@@ -1549,7 +1549,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 880,
-        "y": 520,
+        "y": 600,
         "wires": [
             []
         ]
@@ -1567,7 +1567,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 680,
-        "y": 720,
+        "y": 800,
         "wires": [
             []
         ]
@@ -1585,7 +1585,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 680,
-        "y": 780,
+        "y": 860,
         "wires": [
             []
         ]
@@ -1603,7 +1603,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 680,
-        "y": 840,
+        "y": 920,
         "wires": [
             []
         ]
@@ -1621,7 +1621,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 680,
-        "y": 900,
+        "y": 980,
         "wires": [
             []
         ]
@@ -1639,7 +1639,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 660,
-        "y": 960,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -2032,7 +2032,7 @@
             "c35d8ec95b387438a368a93ed7fd4a7f"
         ],
         "entityId": [],
-        "data": "{}",
+        "data": "{\t    \"transition\": 0\t}",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -2059,7 +2059,7 @@
             "c35d8ec95b387438a368a93ed7fd4a7f"
         ],
         "entityId": [],
-        "data": "",
+        "data": "{\t    \"transition\": 0\t}",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -2131,7 +2131,7 @@
         "type": "function",
         "z": "a53edd6419cf925b",
         "name": "Map stg_cur and filter",
-        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined) {\n    return;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 && msg.payload.print.nozzle_temper < 80) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
+        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined) {\n    return;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 || msg.payload.print.nozzle_temper >= 80) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
