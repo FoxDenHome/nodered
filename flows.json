@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "eb94bf0469e27a01",
+        "type": "tab",
+        "label": "Door/Window Sensors",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f93d98e293b81e36",
         "type": "junction",
         "z": "a7bed2fe84d7aa78",
@@ -184,7 +192,7 @@
         "server": "855a07ea.d0a178",
         "deviceConfig": "",
         "name": "sensor config for Dori Office AQI",
-        "version": 6,
+        "version": "6",
         "entityType": "sensor",
         "haConfig": [
             {
@@ -192,27 +200,28 @@
                 "value": "Dori Office AQI"
             },
             {
-                "property": "device_class",
-                "value": "aqi"
-            },
-            {
                 "property": "icon",
                 "value": ""
             },
             {
-                "property": "unit_of_measurement",
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
                 "value": "aqi"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
             },
             {
                 "property": "state_class",
                 "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
             }
         ],
-        "resend": true
+        "resend": true,
+        "debugEnabled": false
     },
     {
         "id": "0287e15098f66094",
@@ -220,7 +229,7 @@
         "server": "855a07ea.d0a178",
         "deviceConfig": "",
         "name": "sensor config for Bedroom AQI",
-        "version": 6,
+        "version": "6",
         "entityType": "sensor",
         "haConfig": [
             {
@@ -228,27 +237,28 @@
                 "value": "Bedroom AQI"
             },
             {
-                "property": "device_class",
-                "value": "aqi"
-            },
-            {
                 "property": "icon",
                 "value": ""
             },
             {
-                "property": "unit_of_measurement",
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
                 "value": "aqi"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
             },
             {
                 "property": "state_class",
                 "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
             }
         ],
-        "resend": true
+        "resend": true,
+        "debugEnabled": false
     },
     {
         "id": "5f1e3dd0b721b114",
@@ -277,7 +287,7 @@
             },
             {
                 "property": "unit_of_measurement",
-                "value": "aqi"
+                "value": ""
             },
             {
                 "property": "state_class",
@@ -415,7 +425,7 @@
             },
             {
                 "property": "unit_of_measurement",
-                "value": "aqi"
+                "value": ""
             },
             {
                 "property": "state_class",
@@ -1955,156 +1965,6 @@
         ]
     },
     {
-        "id": "07a75f3759c420bc",
-        "type": "server-state-changed",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Closet sensor read",
-        "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.corridor_upper_closet_iaszone",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "gt",
-        "outputs": 1,
-        "output_only_on_state_change": false,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "milliseconds",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 1230,
-        "y": 120,
-        "wires": [
-            [
-                "c18a28a34441eb37"
-            ]
-        ]
-    },
-    {
-        "id": "bb8ff90bfc046062",
-        "type": "api-call-service",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Light sync",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [
-            "c35d8ec95b387438a368a93ed7fd4a7f"
-        ],
-        "entityId": [],
-        "data": "{\t    \"transition\": 0\t}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "last",
-        "x": 1590,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f68ec679bc420014",
-        "type": "api-call-service",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Light sync",
-        "server": "855a07ea.d0a178",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [
-            "c35d8ec95b387438a368a93ed7fd4a7f"
-        ],
-        "entityId": [],
-        "data": "{\t    \"transition\": 0\t}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "last",
-        "x": 1590,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c18a28a34441eb37",
-        "type": "switch",
-        "z": "a7bed2fe84d7aa78",
-        "name": "on/off",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "on",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "off",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 1410,
-        "y": 120,
-        "wires": [
-            [
-                "bb8ff90bfc046062"
-            ],
-            [
-                "f68ec679bc420014"
-            ]
-        ]
-    },
-    {
         "id": "8bbc06ba4f763df5",
         "type": "mqtt in",
         "z": "a53edd6419cf925b",
@@ -2131,7 +1991,7 @@
         "type": "function",
         "z": "a53edd6419cf925b",
         "name": "Map stg_cur and filter",
-        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined) {\n    return;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 || msg.payload.print.nozzle_temper >= 80) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
+        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined || !isFinite(stage_cur)) {\n    msg.reset = true;\n    return msg;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 ||\n    msg.payload.print.nozzle_temper >= 80 ||\n    msg.payload.print.bed_temper >= 40) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2408,6 +2268,156 @@
         "wires": [
             [
                 "266c43cb393271ce"
+            ]
+        ]
+    },
+    {
+        "id": "07a75f3759c420bc",
+        "type": "server-state-changed",
+        "z": "eb94bf0469e27a01",
+        "name": "Closet sensor read",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.corridor_upper_closet_iaszone",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "milliseconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "c18a28a34441eb37"
+            ]
+        ]
+    },
+    {
+        "id": "bb8ff90bfc046062",
+        "type": "api-call-service",
+        "z": "eb94bf0469e27a01",
+        "name": "Light sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "c35d8ec95b387438a368a93ed7fd4a7f"
+        ],
+        "entityId": [],
+        "data": "{\t    \"transition\": 0\t}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "last",
+        "x": 530,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f68ec679bc420014",
+        "type": "api-call-service",
+        "z": "eb94bf0469e27a01",
+        "name": "Light sync",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "c35d8ec95b387438a368a93ed7fd4a7f"
+        ],
+        "entityId": [],
+        "data": "{\t    \"transition\": 0\t}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "last",
+        "x": 530,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c18a28a34441eb37",
+        "type": "switch",
+        "z": "eb94bf0469e27a01",
+        "name": "on/off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 60,
+        "wires": [
+            [
+                "bb8ff90bfc046062"
+            ],
+            [
+                "f68ec679bc420014"
             ]
         ]
     }
