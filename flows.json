@@ -1235,12 +1235,12 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "lacrosse_temperature_56",
+                "v": "lacrosse_temperature_31",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "lacrosse_humidity_56",
+                "v": "lacrosse_humidity_31",
                 "vt": "str"
             },
             {
@@ -1350,13 +1350,13 @@
         "name": "Show unhanlded signals",
         "active": true,
         "tosidebar": true,
-        "console": true,
-        "tostatus": true,
+        "console": false,
+        "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "statusVal": "payload",
+        "statusVal": "",
         "statusType": "auto",
-        "x": 920,
+        "x": 910,
         "y": 660,
         "wires": []
     },
@@ -2338,7 +2338,7 @@
         "id": "bb8ff90bfc046062",
         "type": "api-call-service",
         "z": "eb94bf0469e27a01",
-        "name": "Light sync",
+        "name": "Light ON",
         "server": "855a07ea.d0a178",
         "version": 5,
         "debugenabled": false,
@@ -2349,13 +2349,13 @@
             "c35d8ec95b387438a368a93ed7fd4a7f"
         ],
         "entityId": [],
-        "data": "{\t    \"transition\": 0\t}",
+        "data": "{\t    \"transition\": 0,\t    \"kelvin\": 4500,\t    \"brightness_pct\": 100\t}",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 530,
+        "x": 520,
         "y": 60,
         "wires": [
             []
@@ -2365,7 +2365,7 @@
         "id": "f68ec679bc420014",
         "type": "api-call-service",
         "z": "eb94bf0469e27a01",
-        "name": "Light sync",
+        "name": "Light OFF",
         "server": "855a07ea.d0a178",
         "version": 5,
         "debugenabled": false,
@@ -2382,7 +2382,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 530,
+        "x": 520,
         "y": 120,
         "wires": [
             []
