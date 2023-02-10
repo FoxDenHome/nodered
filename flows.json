@@ -59,8 +59,8 @@
         "id": "0545db8219987d92",
         "type": "junction",
         "z": "a53edd6419cf925b",
-        "x": 640,
-        "y": 200,
+        "x": 620,
+        "y": 260,
         "wires": [
             [
                 "e79be807708ff94e",
@@ -302,10 +302,11 @@
         "type": "mqtt-broker",
         "name": "Bambu X1",
         "broker": "bambu-x1.foxden.network",
-        "port": "1883",
+        "port": "8883",
+        "tls": "80edc06439db051f",
         "clientid": "",
         "autoConnect": true,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": "4",
         "keepalive": "15",
         "cleansession": true,
@@ -619,6 +620,20 @@
         ],
         "resend": false,
         "debugEnabled": false
+    },
+    {
+        "id": "80edc06439db051f",
+        "type": "tls-config",
+        "name": "TLS-No-Vefiy",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
     },
     {
         "id": "99ce1c6505aedccf",
@@ -1978,7 +1993,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 140,
+        "y": 200,
         "wires": [
             [
                 "01d6827915f07e49",
@@ -1998,11 +2013,11 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 140,
+        "y": 260,
         "wires": [
             [
-                "6c2d38245803f51b",
-                "0545db8219987d92"
+                "0545db8219987d92",
+                "6c2d38245803f51b"
             ]
         ]
     },
@@ -2019,7 +2034,7 @@
         "inputOverride": "block",
         "outputProperties": [],
         "x": 830,
-        "y": 140,
+        "y": 200,
         "wires": [
             []
         ]
@@ -2041,8 +2056,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 810,
-        "y": 60,
+        "x": 830,
+        "y": 80,
         "wires": [
             [
                 "fb951deb469bc3b4"
@@ -2083,7 +2098,7 @@
         "capabilities": [],
         "outputProperties": [],
         "x": 970,
-        "y": 60,
+        "y": 80,
         "wires": [
             []
         ]
@@ -2101,7 +2116,7 @@
         "inputOverride": "block",
         "outputProperties": [],
         "x": 860,
-        "y": 200,
+        "y": 260,
         "wires": [
             []
         ]
@@ -2119,7 +2134,7 @@
         "inputOverride": "block",
         "outputProperties": [],
         "x": 880,
-        "y": 260,
+        "y": 320,
         "wires": [
             []
         ]
@@ -2137,7 +2152,7 @@
         "inputOverride": "block",
         "outputProperties": [],
         "x": 870,
-        "y": 320,
+        "y": 380,
         "wires": [
             []
         ]
@@ -2155,7 +2170,7 @@
         "inputOverride": "block",
         "outputProperties": [],
         "x": 890,
-        "y": 380,
+        "y": 440,
         "wires": [
             []
         ]
@@ -2173,7 +2188,7 @@
         "inputOverride": "block",
         "outputProperties": [],
         "x": 880,
-        "y": 440,
+        "y": 500,
         "wires": [
             []
         ]
@@ -2199,7 +2214,8 @@
         "y": 200,
         "wires": [
             [
-                "0545db8219987d92"
+                "0545db8219987d92",
+                "ac5a4d66641783eb"
             ]
         ]
     },
@@ -2212,7 +2228,7 @@
             "8bbc06ba4f763df5"
         ],
         "x": 130,
-        "y": 320,
+        "y": 80,
         "wires": [
             [
                 "5b1255d9535f5b72"
@@ -2239,7 +2255,7 @@
         "to": "",
         "reg": false,
         "x": 380,
-        "y": 260,
+        "y": 140,
         "wires": [
             [
                 "3702019e179eaaac"
@@ -2264,10 +2280,38 @@
         "repair": false,
         "outputs": 1,
         "x": 420,
-        "y": 320,
+        "y": 80,
         "wires": [
             [
-                "266c43cb393271ce"
+                "266c43cb393271ce",
+                "ac5a4d66641783eb"
+            ]
+        ]
+    },
+    {
+        "id": "ac5a4d66641783eb",
+        "type": "change",
+        "z": "a53edd6419cf925b",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "6c2d38245803f51b"
             ]
         ]
     },
