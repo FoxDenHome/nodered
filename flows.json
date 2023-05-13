@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "286ebdc579a74a3c",
+        "type": "tab",
+        "label": "PC Shutdown",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f93d98e293b81e36",
         "type": "junction",
         "z": "a7bed2fe84d7aa78",
@@ -347,6 +355,10 @@
                 "value": ""
             },
             {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
                 "property": "device_class",
                 "value": ""
             },
@@ -634,6 +646,72 @@
         "servername": "",
         "verifyservercert": false,
         "alpnprotocol": ""
+    },
+    {
+        "id": "532ebc71c2db6f40",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Dori PC Switch",
+        "version": "6",
+        "entityType": "switch",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Dori PC Switch"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "f6fcc4f49a9ef54a",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Wizzy PC Switch",
+        "version": "6",
+        "entityType": "switch",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Wizzy PC Switch"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
     },
     {
         "id": "99ce1c6505aedccf",
@@ -997,185 +1075,6 @@
         "queue": "none",
         "x": 730,
         "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "65c2658aa3b20b32",
-        "type": "ha-device",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Dori PC low power",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "1383277869fb3dc65d04345fa0816f14",
-        "event": {
-            "type": "power",
-            "platform": "device",
-            "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "sensor.dori_pc_power",
-            "domain": "sensor",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "below",
-                "type": "float",
-                "value": 70
-            },
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 30,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [],
-        "x": 150,
-        "y": 120,
-        "wires": [
-            [
-                "c42a3063b035f55a"
-            ]
-        ]
-    },
-    {
-        "id": "4d2d86d92baeae3a",
-        "type": "ha-device",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Wizzy PC low power",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "d8f10783fd5383c71f1232f171c393e7",
-        "event": {
-            "type": "power",
-            "platform": "device",
-            "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "sensor.wizzy_pc_power",
-            "domain": "sensor",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "below",
-                "type": "float",
-                "value": 30
-            },
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 30,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [],
-        "x": 150,
-        "y": 180,
-        "wires": [
-            [
-                "70539c414a38c86e"
-            ]
-        ]
-    },
-    {
-        "id": "c42a3063b035f55a",
-        "type": "ha-device",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Turn off Dori PC",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "1383277869fb3dc65d04345fa0816f14",
-        "event": {
-            "type": "turn_off",
-            "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "switch.dori_pc_relay",
-            "domain": "switch"
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 340,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "70539c414a38c86e",
-        "type": "ha-device",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Turn off Wizzy PC",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "d8f10783fd5383c71f1232f171c393e7",
-        "event": {
-            "type": "turn_off",
-            "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "switch.wizzy_pc_relay",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 350,
-        "y": 180,
         "wires": [
             []
         ]
@@ -1724,7 +1623,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 600,
+        "x": 660,
         "y": 120,
         "wires": [
             [
@@ -1753,7 +1652,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 940,
+        "x": 1000,
         "y": 120,
         "wires": [
             []
@@ -1814,7 +1713,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 600,
+        "x": 660,
         "y": 240,
         "wires": [
             [
@@ -1843,7 +1742,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 940,
+        "x": 1000,
         "y": 240,
         "wires": [
             []
@@ -1855,7 +1754,7 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Nanoleaf brightness sync",
         "info": "",
-        "x": 770,
+        "x": 830,
         "y": 60,
         "wires": []
     },
@@ -1880,7 +1779,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 940,
+        "x": 1000,
         "y": 180,
         "wires": [
             []
@@ -1907,7 +1806,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 940,
+        "x": 1000,
         "y": 300,
         "wires": [
             []
@@ -1935,7 +1834,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 770,
+        "x": 830,
         "y": 120,
         "wires": [
             [
@@ -1968,7 +1867,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 770,
+        "x": 830,
         "y": 240,
         "wires": [
             [
@@ -1976,6 +1875,248 @@
             ],
             [
                 "068a445697c5808d"
+            ]
+        ]
+    },
+    {
+        "id": "7074cf95b1f8ee1d",
+        "type": "ha-get-entities",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Get updateable",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "rules": [
+            {
+                "property": "attributes.device_class",
+                "logic": "is",
+                "value": "firmware",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "on",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 480,
+        "y": 1220,
+        "wires": [
+            [
+                "647b156410400c06"
+            ]
+        ]
+    },
+    {
+        "id": "8feccdb1d0fd59e9",
+        "type": "inject",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "14400",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1220,
+        "wires": [
+            [
+                "5fd2f6f393d61dac"
+            ]
+        ]
+    },
+    {
+        "id": "647b156410400c06",
+        "type": "delay",
+        "z": "a7bed2fe84d7aa78",
+        "name": "1/5m",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 670,
+        "y": 1220,
+        "wires": [
+            [
+                "ac9358bfc8cb8b6b",
+                "5fd2f6f393d61dac"
+            ]
+        ]
+    },
+    {
+        "id": "ac9358bfc8cb8b6b",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "install",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "update",
+        "service": "install",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 830,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5ca5d65510b90fb",
+        "type": "comment",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Auto-update firmware",
+        "info": "",
+        "x": 480,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "17400f9655eec738",
+        "type": "ha-device",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Dori Desktop low power",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "5cd3f4019044593207219fc758933c0e",
+        "event": {
+            "type": "power",
+            "platform": "device",
+            "device_id": "5cd3f4019044593207219fc758933c0e",
+            "entity_id": "sensor.dori_desktop_power",
+            "domain": "sensor",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "below",
+                "type": "float",
+                "value": 70
+            },
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 30,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [],
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "b6525fad275e22ec"
+            ]
+        ]
+    },
+    {
+        "id": "b6525fad275e22ec",
+        "type": "ha-device",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Turn off Dori Desktop",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "5cd3f4019044593207219fc758933c0e",
+        "event": {
+            "type": "turn_off",
+            "device_id": "5cd3f4019044593207219fc758933c0e",
+            "entity_id": "switch.dori_desktop_relay",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 400,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fd2f6f393d61dac",
+        "type": "trigger",
+        "z": "a7bed2fe84d7aa78",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "date",
+        "duration": "10",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 290,
+        "y": 1220,
+        "wires": [
+            [
+                "7074cf95b1f8ee1d"
             ]
         ]
     },
@@ -2199,7 +2340,7 @@
         "z": "a53edd6419cf925b",
         "name": "5 min no updates",
         "op1": "",
-        "op2": "{\"print\":{\"bed_target_temper\":\"unavailable\",\"bed_temper\":\"unavailable\",\"nozzle_temper\":\"unavailable\",\"nozzle_target_temper\":\"unavailable\",\"chamber_temper\":\"unavailable\"},\"stage_name\":\"unavailable\"}",
+        "op2": "{\"print\":{\"bed_target_temper\":null,\"bed_temper\":null,\"nozzle_temper\":null,\"nozzle_target_temper\":null,\"chamber_temper\":null},\"stage_name\":null}",
         "op1type": "nul",
         "op2type": "json",
         "duration": "5",
@@ -2279,7 +2420,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 420,
+        "x": 410,
         "y": 80,
         "wires": [
             [
@@ -2390,7 +2531,7 @@
         "service": "turn_on",
         "areaId": [],
         "deviceId": [
-            "c35d8ec95b387438a368a93ed7fd4a7f"
+            "69df682ad892356219f3c5d771fdd8d2"
         ],
         "entityId": [],
         "data": "{\t    \"transition\": 0,\t    \"kelvin\": 4500,\t    \"brightness_pct\": 100\t}",
@@ -2417,7 +2558,7 @@
         "service": "turn_off",
         "areaId": [],
         "deviceId": [
-            "c35d8ec95b387438a368a93ed7fd4a7f"
+            "69df682ad892356219f3c5d771fdd8d2"
         ],
         "entityId": [],
         "data": "{\t    \"transition\": 0\t}",
@@ -2462,6 +2603,469 @@
             ],
             [
                 "f68ec679bc420014"
+            ]
+        ]
+    },
+    {
+        "id": "4d2d86d92baeae3a",
+        "type": "ha-device",
+        "z": "286ebdc579a74a3c",
+        "name": "Wizzy PC low power",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "d8f10783fd5383c71f1232f171c393e7",
+        "event": {
+            "type": "power",
+            "platform": "device",
+            "device_id": "d8f10783fd5383c71f1232f171c393e7",
+            "entity_id": "sensor.wizzy_pc_power",
+            "domain": "sensor",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "below",
+                "type": "float",
+                "value": 30
+            },
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 30,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [],
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "70539c414a38c86e"
+            ]
+        ]
+    },
+    {
+        "id": "70539c414a38c86e",
+        "type": "ha-device",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn off Wizzy PC",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "d8f10783fd5383c71f1232f171c393e7",
+        "event": {
+            "type": "turn_off",
+            "device_id": "d8f10783fd5383c71f1232f171c393e7",
+            "entity_id": "switch.wizzy_pc_relay",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 650,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a8aaa846484d0eb",
+        "type": "ha-switch",
+        "z": "286ebdc579a74a3c",
+        "name": "Dori PC Switch",
+        "version": 0,
+        "debugenabled": false,
+        "inputs": 1,
+        "outputs": 2,
+        "entityConfig": "532ebc71c2db6f40",
+        "enableInput": true,
+        "outputOnStateChange": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "5478d4d11b508990"
+            ],
+            [
+                "b37731a192aeacc9"
+            ]
+        ]
+    },
+    {
+        "id": "4ca5f7a209fac8b2",
+        "type": "ha-switch",
+        "z": "286ebdc579a74a3c",
+        "name": "Wizzy PC Switch",
+        "version": 0,
+        "debugenabled": false,
+        "inputs": 1,
+        "outputs": 2,
+        "entityConfig": "f6fcc4f49a9ef54a",
+        "enableInput": true,
+        "outputOnStateChange": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 380,
+        "y": 420,
+        "wires": [
+            [
+                "ab6cd18ae1564573"
+            ],
+            [
+                "c04a05825bf610b7"
+            ]
+        ]
+    },
+    {
+        "id": "5478d4d11b508990",
+        "type": "ha-device",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn on Dori PC",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "1383277869fb3dc65d04345fa0816f14",
+        "event": {
+            "type": "turn_on",
+            "device_id": "1383277869fb3dc65d04345fa0816f14",
+            "entity_id": "switch.dori_pc_relay",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 640,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65c2658aa3b20b32",
+        "type": "ha-device",
+        "z": "286ebdc579a74a3c",
+        "name": "Dori PC low power",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "1383277869fb3dc65d04345fa0816f14",
+        "event": {
+            "type": "power",
+            "platform": "device",
+            "device_id": "1383277869fb3dc65d04345fa0816f14",
+            "entity_id": "sensor.dori_pc_power",
+            "domain": "sensor",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "below",
+                "type": "float",
+                "value": 70
+            },
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 30,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [],
+        "x": 390,
+        "y": 60,
+        "wires": [
+            [
+                "c42a3063b035f55a"
+            ]
+        ]
+    },
+    {
+        "id": "c42a3063b035f55a",
+        "type": "ha-device",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn off Dori PC",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "1383277869fb3dc65d04345fa0816f14",
+        "event": {
+            "type": "turn_off",
+            "device_id": "1383277869fb3dc65d04345fa0816f14",
+            "entity_id": "switch.dori_pc_relay",
+            "domain": "switch"
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 640,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab6cd18ae1564573",
+        "type": "ha-device",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn on Wizzy PC",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 1,
+        "deviceType": "action",
+        "device": "d8f10783fd5383c71f1232f171c393e7",
+        "event": {
+            "type": "turn_on",
+            "device_id": "d8f10783fd5383c71f1232f171c393e7",
+            "entity_id": "switch.wizzy_pc_relay",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [],
+        "outputProperties": [],
+        "x": 650,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b37731a192aeacc9",
+        "type": "http request",
+        "z": "286ebdc579a74a3c",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://fennec.foxden.network:6666/shutdown",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c04a05825bf610b7",
+        "type": "http request",
+        "z": "286ebdc579a74a3c",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://wizzy-desktop.foxden.network:6666/shutdown",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "799a35774a13e510",
+        "type": "server-state-changed",
+        "z": "286ebdc579a74a3c",
+        "name": "Dori PC Relay",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "switch.dori_pc_relay",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "enable",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "6a8aaa846484d0eb"
+            ]
+        ]
+    },
+    {
+        "id": "11c9d3aac4b0c70a",
+        "type": "server-state-changed",
+        "z": "286ebdc579a74a3c",
+        "name": "Wizzy PC Relay",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "switch.wizzy_pc_relay",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "habool",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "enable",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [
+                "4ca5f7a209fac8b2"
             ]
         ]
     }
