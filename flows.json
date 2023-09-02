@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "19390a89bfd209a0",
+        "type": "tab",
+        "label": "Telegram",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f93d98e293b81e36",
         "type": "junction",
         "z": "a7bed2fe84d7aa78",
@@ -73,10 +81,10 @@
             [
                 "e79be807708ff94e",
                 "9f8825bfe35d0491",
-                "058de403c9c507f0",
                 "98e37f64446b861b",
                 "85e2841a8d0f7ce9",
-                "548dbed9334436d5"
+                "548dbed9334436d5",
+                "058de403c9c507f0"
             ]
         ]
     },
@@ -368,7 +376,7 @@
             },
             {
                 "property": "state_class",
-                "value": "measurement"
+                "value": ""
             }
         ],
         "resend": false,
@@ -712,6 +720,31 @@
         ],
         "resend": false,
         "debugEnabled": false
+    },
+    {
+        "id": "af0e9dcf0dc2dffb",
+        "type": "telegram bot",
+        "botname": "FoxDen NodeRED",
+        "usernames": "",
+        "chatids": "-1001061749898",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "homeassistant.foxden.network",
+        "botpath": "",
+        "localbotport": "1880",
+        "publicbotport": "1880",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": true,
+        "verboselogging": false
     },
     {
         "id": "99ce1c6505aedccf",
@@ -2147,7 +2180,7 @@
         "type": "function",
         "z": "a53edd6419cf925b",
         "name": "Map stg_cur and filter",
-        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\n\nif (stage_cur === undefined || !isFinite(stage_cur)) {\n    msg.reset = true;\n    return msg;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 ||\n    msg.payload.print.nozzle_temper >= 80 ||\n    msg.payload.print.bed_temper >= 40) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
+        "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\nif (stage_cur === undefined) {\n    return;\n}\n\nif (!isFinite(stage_cur)) {\n    msg.reset = true;\n    return msg;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 ||\n    msg.payload.print.nozzle_temper >= 80 ||\n    msg.payload.print.bed_temper >= 40) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2186,9 +2219,9 @@
         "z": "a53edd6419cf925b",
         "name": "Idle 30min?",
         "op1": "",
-        "op2": "",
+        "op2": "{}",
         "op1type": "nul",
-        "op2type": "payl",
+        "op2type": "json",
         "duration": "30",
         "extend": false,
         "overrideDelay": false,
@@ -2201,47 +2234,8 @@
         "y": 80,
         "wires": [
             [
-                "fb951deb469bc3b4"
+                "499ffe524e5e00bc"
             ]
-        ]
-    },
-    {
-        "id": "fb951deb469bc3b4",
-        "type": "ha-device",
-        "z": "a53edd6419cf925b",
-        "name": "Turn off",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "debugenabled": false,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "43130b67504c4acc558137b527001959",
-        "event": {
-            "type": "turn_off",
-            "device_id": "43130b67504c4acc558137b527001959",
-            "entity_id": "switch.bambu_x1_relay",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 970,
-        "y": 80,
-        "wires": [
-            []
         ]
     },
     {
@@ -2412,17 +2406,23 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "neq",
+                "t": "eq",
                 "v": "node-red:common.status.connected",
                 "vt": "str"
+            },
+            {
+                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 410,
         "y": 80,
         "wires": [
+            [
+                "6c2d38245803f51b"
+            ],
             [
                 "266c43cb393271ce",
                 "ac5a4d66641783eb"
@@ -2457,6 +2457,76 @@
         ]
     },
     {
+        "id": "e48e68bc05c37c16",
+        "type": "mqtt out",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 request",
+        "topic": "device/00M00A280102436/request",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "60409f974cd5a619",
+        "x": 410,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1460fdda699aecf9",
+        "type": "inject",
+        "z": "a53edd6419cf925b",
+        "name": "5s trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{     \"pushing\": {         \"sequence_id\": \"0\",         \"command\": \"pushall\"     } }",
+        "payloadType": "json",
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "e48e68bc05c37c16"
+            ]
+        ]
+    },
+    {
+        "id": "499ffe524e5e00bc",
+        "type": "api-call-service",
+        "z": "a53edd6419cf925b",
+        "name": "Turn off",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.bambu_x1_switch"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "07a75f3759c420bc",
         "type": "server-state-changed",
         "z": "eb94bf0469e27a01",
@@ -2474,7 +2544,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "binary_sensor.corridor_upper_closet_iaszone",
+        "entityidfilter": "binary_sensor.corridor_upper_closet_door_iaszone",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -2874,8 +2944,11 @@
         "event": {
             "type": "turn_off",
             "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "switch.dori_pc_relay",
-            "domain": "switch"
+            "entity_id": "d5f1a10c28e6465b93dab9ffcd904a09",
+            "domain": "switch",
+            "metadata": {
+                "secondary": false
+            }
         },
         "capabilities": [],
         "outputProperties": [],
@@ -3066,6 +3139,496 @@
         "wires": [
             [
                 "4ca5f7a209fac8b2"
+            ]
+        ]
+    },
+    {
+        "id": "0a7ec24139a2a7be",
+        "type": "telegram sender",
+        "z": "19390a89bfd209a0",
+        "name": "",
+        "bot": "af0e9dcf0dc2dffb",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 990,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3a9f25baac35747",
+        "type": "telegram event",
+        "z": "19390a89bfd209a0",
+        "name": "",
+        "bot": "af0e9dcf0dc2dffb",
+        "event": "callback_query",
+        "autoanswer": true,
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "136b07072949d496",
+                "8ab526eacccb40cd"
+            ]
+        ]
+    },
+    {
+        "id": "c960c603d7e379d4",
+        "type": "function",
+        "z": "19390a89bfd209a0",
+        "name": "Garage Door message",
+        "func": "return {\n    payload: {\n        content: \"Garage Door open > 15 minutes\",\n        options: {\n            reply_markup: JSON.stringify({\n                inline_keyboard: [[\n                    {\n                        text: \"Close\",\n                        callback_data: \"service|cover|close_cover|cover.garage_door\",\n                    },\n                    {\n                        text: \"No action\",\n                        callback_data: \"noop\"\n                    }]\n                ]\n            })\n        },\n    },\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ]
+        ]
+    },
+    {
+        "id": "136b07072949d496",
+        "type": "function",
+        "z": "19390a89bfd209a0",
+        "name": "Action parser",
+        "func": "let service_call = undefined;\n\nif (msg.payload.chatId !== -1001061749898) {\n    return;\n}\n\nconst content = msg.payload.content.split('|');\n\nswitch (content[0]) {\n    case 'service':\n        service_call = {\n            payload: {\n                domain: content[1],\n                service: content[2],\n                target: {\n                    entity_id: [content[3]],\n                },\n            },\n        };\n        break;\n    case 'noop':\n        return;\n}\n\nreturn [service_call];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "6856028c374d201d"
+            ]
+        ]
+    },
+    {
+        "id": "6856028c374d201d",
+        "type": "api-call-service",
+        "z": "19390a89bfd209a0",
+        "name": "",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "",
+        "service": "",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 690,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "697a64a688367a25",
+        "type": "telegram sender",
+        "z": "19390a89bfd209a0",
+        "name": "",
+        "bot": "af0e9dcf0dc2dffb",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ab526eacccb40cd",
+        "type": "function",
+        "z": "19390a89bfd209a0",
+        "name": "Clear inline keyboard",
+        "func": "const out_msg = {\n    payload: {\n        type: 'editMessageReplyMarkup',\n        content: '{}',\n        options: {\n            chat_id: msg.payload.chatId,\n            message_id: msg.payload.messageId\n        },\n    }\n};\n\nreturn [out_msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "697a64a688367a25"
+            ]
+        ]
+    },
+    {
+        "id": "71c96fd0c9a8856a",
+        "type": "ha-device",
+        "z": "19390a89bfd209a0",
+        "name": "Garage Door > 15min",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "debugenabled": false,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "5ca026605c6a09ef4be80ad148590261",
+        "event": {
+            "platform": "device",
+            "device_id": "5ca026605c6a09ef4be80ad148590261",
+            "domain": "cover",
+            "entity_id": "ad66f5305e5e753c4ae77d25d92b7fcf",
+            "type": "opened",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 15,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "c960c603d7e379d4"
+            ]
+        ]
+    },
+    {
+        "id": "2c9649e8977f19b9",
+        "type": "ha-device",
+        "z": "19390a89bfd209a0",
+        "name": "Front Door > 15min",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "debugenabled": false,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "06a9fc45fa9a2de0fe0ddcbcc5d5e30d",
+        "event": {
+            "platform": "device",
+            "device_id": "06a9fc45fa9a2de0fe0ddcbcc5d5e30d",
+            "domain": "lock",
+            "entity_id": "fa857607d471880cc2cbdd6e20572347",
+            "type": "unlocked",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 15,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "c56a1e5bfd16b2d9"
+            ]
+        ]
+    },
+    {
+        "id": "16730fbf0c97349e",
+        "type": "ha-device",
+        "z": "19390a89bfd209a0",
+        "name": "Back Door Upper > 15min",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "debugenabled": false,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "3c1c3057d655980c79a50fe262ff2a77",
+        "event": {
+            "platform": "device",
+            "device_id": "3c1c3057d655980c79a50fe262ff2a77",
+            "domain": "lock",
+            "entity_id": "519f4d452df2c160b31cd390ffe6f591",
+            "type": "unlocked",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 15,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "466d6f8f38fdd58a"
+            ]
+        ]
+    },
+    {
+        "id": "8177b76e74e61822",
+        "type": "ha-device",
+        "z": "19390a89bfd209a0",
+        "name": "Back Door Lower > 15min",
+        "server": "855a07ea.d0a178",
+        "version": 0,
+        "debugenabled": false,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "inputs": 0,
+        "deviceType": "trigger",
+        "device": "16d20a27a6bfe78b4149e0350eeea91b",
+        "event": {
+            "type": "opened",
+            "platform": "device",
+            "device_id": "16d20a27a6bfe78b4149e0350eeea91b",
+            "entity_id": "6bc712588037335e9ba3cdf4477de136",
+            "domain": "binary_sensor",
+            "metadata": {
+                "secondary": false
+            }
+        },
+        "capabilities": [
+            {
+                "name": "for",
+                "type": "positive_time_period_dict",
+                "value": 15,
+                "unit": "minutes"
+            }
+        ],
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "c51b15d8a6d025ca"
+            ]
+        ]
+    },
+    {
+        "id": "c56a1e5bfd16b2d9",
+        "type": "change",
+        "z": "19390a89bfd209a0",
+        "name": "Front Door msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"content\":\"Front Door > 15 minutes\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 380,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ]
+        ]
+    },
+    {
+        "id": "466d6f8f38fdd58a",
+        "type": "change",
+        "z": "19390a89bfd209a0",
+        "name": "Back Door Upper msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"content\":\"Back Door Upper > 15 minutes\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ]
+        ]
+    },
+    {
+        "id": "c51b15d8a6d025ca",
+        "type": "change",
+        "z": "19390a89bfd209a0",
+        "name": "Back Door Lower msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"content\":\"Back Door Lower > 15 minutes\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 500,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ]
+        ]
+    },
+    {
+        "id": "093c0978fe4e8856",
+        "type": "change",
+        "z": "19390a89bfd209a0",
+        "name": "Fill chatId + type",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "-1001061749898",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 320,
+        "wires": [
+            [
+                "0a7ec24139a2a7be"
             ]
         ]
     }
