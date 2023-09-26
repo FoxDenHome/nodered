@@ -2062,7 +2062,7 @@
             "type": "power",
             "platform": "device",
             "device_id": "5cd3f4019044593207219fc758933c0e",
-            "entity_id": "sensor.dori_desktop_power",
+            "entity_id": "538205ea24e868b6b6d29b0d0bae224e",
             "domain": "sensor",
             "metadata": {
                 "secondary": false
@@ -2086,46 +2086,8 @@
         "y": 120,
         "wires": [
             [
-                "b6525fad275e22ec"
+                "ac8a4a5c5e5a4c6e"
             ]
-        ]
-    },
-    {
-        "id": "b6525fad275e22ec",
-        "type": "ha-device",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Turn off Dori Desktop",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "5cd3f4019044593207219fc758933c0e",
-        "event": {
-            "type": "turn_off",
-            "device_id": "5cd3f4019044593207219fc758933c0e",
-            "entity_id": "switch.dori_desktop_relay",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 400,
-        "y": 120,
-        "wires": [
-            []
         ]
     },
     {
@@ -2151,6 +2113,33 @@
             [
                 "7074cf95b1f8ee1d"
             ]
+        ]
+    },
+    {
+        "id": "ac8a4a5c5e5a4c6e",
+        "type": "api-call-service",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Turn off",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.dori_desktop_relay"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 360,
+        "y": 120,
+        "wires": [
+            []
         ]
     },
     {
@@ -2637,7 +2626,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "last",
-        "x": 520,
+        "x": 530,
         "y": 120,
         "wires": [
             []
@@ -2701,7 +2690,7 @@
             "type": "power",
             "platform": "device",
             "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "sensor.wizzy_pc_power",
+            "entity_id": "cc20e1af4f0cf9ee226ea2277684ed15",
             "domain": "sensor",
             "metadata": {
                 "secondary": false
@@ -2725,46 +2714,8 @@
         "y": 340,
         "wires": [
             [
-                "70539c414a38c86e"
+                "329e998ac8da9bd6"
             ]
-        ]
-    },
-    {
-        "id": "70539c414a38c86e",
-        "type": "ha-device",
-        "z": "286ebdc579a74a3c",
-        "name": "Turn off Wizzy PC",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "d8f10783fd5383c71f1232f171c393e7",
-        "event": {
-            "type": "turn_off",
-            "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "switch.wizzy_pc_relay",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 650,
-        "y": 340,
-        "wires": [
-            []
         ]
     },
     {
@@ -2788,10 +2739,10 @@
             }
         ],
         "x": 380,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
-                "5478d4d11b508990"
+                "1473b5fd7bf35c49"
             ],
             [
                 "b37731a192aeacc9"
@@ -2822,49 +2773,11 @@
         "y": 420,
         "wires": [
             [
-                "ab6cd18ae1564573"
+                "4733edde8bc4c8fd"
             ],
             [
                 "c04a05825bf610b7"
             ]
-        ]
-    },
-    {
-        "id": "5478d4d11b508990",
-        "type": "ha-device",
-        "z": "286ebdc579a74a3c",
-        "name": "Turn on Dori PC",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "1383277869fb3dc65d04345fa0816f14",
-        "event": {
-            "type": "turn_on",
-            "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "switch.dori_pc_relay",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 640,
-        "y": 160,
-        "wires": [
-            []
         ]
     },
     {
@@ -2892,7 +2805,7 @@
             "type": "power",
             "platform": "device",
             "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "sensor.dori_pc_power",
+            "entity_id": "0926f73bb5d879dc2f855133d4763e97",
             "domain": "sensor",
             "metadata": {
                 "secondary": false
@@ -2902,7 +2815,7 @@
             {
                 "name": "below",
                 "type": "float",
-                "value": 70
+                "value": 30
             },
             {
                 "name": "for",
@@ -2916,84 +2829,8 @@
         "y": 60,
         "wires": [
             [
-                "c42a3063b035f55a"
+                "3146a90792b50a91"
             ]
-        ]
-    },
-    {
-        "id": "c42a3063b035f55a",
-        "type": "ha-device",
-        "z": "286ebdc579a74a3c",
-        "name": "Turn off Dori PC",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "1383277869fb3dc65d04345fa0816f14",
-        "event": {
-            "type": "turn_off",
-            "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "d5f1a10c28e6465b93dab9ffcd904a09",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 640,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ab6cd18ae1564573",
-        "type": "ha-device",
-        "z": "286ebdc579a74a3c",
-        "name": "Turn on Wizzy PC",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 1,
-        "deviceType": "action",
-        "device": "d8f10783fd5383c71f1232f171c393e7",
-        "event": {
-            "type": "turn_on",
-            "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "switch.wizzy_pc_relay",
-            "domain": "switch",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [],
-        "outputProperties": [],
-        "x": 650,
-        "y": 400,
-        "wires": [
-            []
         ]
     },
     {
@@ -3013,7 +2850,7 @@
         "senderr": false,
         "headers": [],
         "x": 630,
-        "y": 220,
+        "y": 180,
         "wires": [
             []
         ]
@@ -3084,7 +2921,7 @@
             }
         ],
         "x": 170,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "6a8aaa846484d0eb"
@@ -3143,6 +2980,114 @@
         ]
     },
     {
+        "id": "3146a90792b50a91",
+        "type": "api-call-service",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn off",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.dori_pc_relay"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 620,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1473b5fd7bf35c49",
+        "type": "api-call-service",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn on",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.dori_pc_relay"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 620,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "329e998ac8da9bd6",
+        "type": "api-call-service",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn off",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.wizzy_pc_relay"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 620,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4733edde8bc4c8fd",
+        "type": "api-call-service",
+        "z": "286ebdc579a74a3c",
+        "name": "Turn on",
+        "server": "855a07ea.d0a178",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.wizzy_pc_relay"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 620,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "0a7ec24139a2a7be",
         "type": "telegram sender",
         "z": "19390a89bfd209a0",
@@ -3180,6 +3125,7 @@
         "name": "Garage Door message",
         "func": "return {\n    payload: {\n        content: \"Garage Door open > 15 minutes\",\n        options: {\n            reply_markup: JSON.stringify({\n                inline_keyboard: [[\n                    {\n                        text: \"Close\",\n                        callback_data: \"service|cover|close_cover|cover.garage_door\",\n                    },\n                    {\n                        text: \"No action\",\n                        callback_data: \"noop\"\n                    }]\n                ]\n            })\n        },\n    },\n};\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3270,335 +3216,6 @@
         ]
     },
     {
-        "id": "71c96fd0c9a8856a",
-        "type": "ha-device",
-        "z": "19390a89bfd209a0",
-        "name": "Garage Door > 15min",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "debugenabled": false,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "5ca026605c6a09ef4be80ad148590261",
-        "event": {
-            "platform": "device",
-            "device_id": "5ca026605c6a09ef4be80ad148590261",
-            "domain": "cover",
-            "entity_id": "ad66f5305e5e753c4ae77d25d92b7fcf",
-            "type": "opened",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 15,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 160,
-        "y": 320,
-        "wires": [
-            [
-                "c960c603d7e379d4"
-            ]
-        ]
-    },
-    {
-        "id": "2c9649e8977f19b9",
-        "type": "ha-device",
-        "z": "19390a89bfd209a0",
-        "name": "Front Door > 15min",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "debugenabled": false,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "06a9fc45fa9a2de0fe0ddcbcc5d5e30d",
-        "event": {
-            "platform": "device",
-            "device_id": "06a9fc45fa9a2de0fe0ddcbcc5d5e30d",
-            "domain": "lock",
-            "entity_id": "fa857607d471880cc2cbdd6e20572347",
-            "type": "unlocked",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 15,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 150,
-        "y": 380,
-        "wires": [
-            [
-                "c56a1e5bfd16b2d9"
-            ]
-        ]
-    },
-    {
-        "id": "16730fbf0c97349e",
-        "type": "ha-device",
-        "z": "19390a89bfd209a0",
-        "name": "Back Door Upper > 15min",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "debugenabled": false,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "3c1c3057d655980c79a50fe262ff2a77",
-        "event": {
-            "platform": "device",
-            "device_id": "3c1c3057d655980c79a50fe262ff2a77",
-            "domain": "lock",
-            "entity_id": "519f4d452df2c160b31cd390ffe6f591",
-            "type": "unlocked",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 15,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 170,
-        "y": 440,
-        "wires": [
-            [
-                "466d6f8f38fdd58a"
-            ]
-        ]
-    },
-    {
-        "id": "8177b76e74e61822",
-        "type": "ha-device",
-        "z": "19390a89bfd209a0",
-        "name": "Back Door Lower > 15min",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "debugenabled": false,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "16d20a27a6bfe78b4149e0350eeea91b",
-        "event": {
-            "type": "opened",
-            "platform": "device",
-            "device_id": "16d20a27a6bfe78b4149e0350eeea91b",
-            "entity_id": "6bc712588037335e9ba3cdf4477de136",
-            "domain": "binary_sensor",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 15,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 170,
-        "y": 500,
-        "wires": [
-            [
-                "c51b15d8a6d025ca"
-            ]
-        ]
-    },
-    {
-        "id": "c56a1e5bfd16b2d9",
-        "type": "change",
-        "z": "19390a89bfd209a0",
-        "name": "Front Door msg",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"content\":\"Front Door > 15 minutes\"}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 380,
-        "wires": [
-            [
-                "093c0978fe4e8856"
-            ]
-        ]
-    },
-    {
-        "id": "466d6f8f38fdd58a",
-        "type": "change",
-        "z": "19390a89bfd209a0",
-        "name": "Back Door Upper msg",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"content\":\"Back Door Upper > 15 minutes\"}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 420,
-        "y": 440,
-        "wires": [
-            [
-                "093c0978fe4e8856"
-            ]
-        ]
-    },
-    {
-        "id": "c51b15d8a6d025ca",
-        "type": "change",
-        "z": "19390a89bfd209a0",
-        "name": "Back Door Lower msg",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"content\":\"Back Door Lower > 15 minutes\"}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 420,
-        "y": 500,
-        "wires": [
-            [
-                "093c0978fe4e8856"
-            ]
-        ]
-    },
-    {
         "id": "093c0978fe4e8856",
         "type": "change",
         "z": "19390a89bfd209a0",
@@ -3630,6 +3247,343 @@
             [
                 "0a7ec24139a2a7be"
             ]
+        ]
+    },
+    {
+        "id": "d2f936445daa8d97",
+        "type": "api-current-state",
+        "z": "19390a89bfd209a0",
+        "name": "Dishwasher done",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.dishwasher_wash_completed",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Dishwasher done\"}",
+                "valueType": "str"
+            }
+        ],
+        "for": "15",
+        "forType": "num",
+        "forUnits": "seconds",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e04b934ca7be3565",
+        "type": "api-current-state",
+        "z": "19390a89bfd209a0",
+        "name": "Washer done",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "stop",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.washer_washer_machine_state",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Washer done\"}",
+                "valueType": "str"
+            }
+        ],
+        "for": "15",
+        "forType": "num",
+        "forUnits": "seconds",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "235ab95b1ea272db",
+        "type": "api-current-state",
+        "z": "19390a89bfd209a0",
+        "name": "Dryer done",
+        "server": "855a07ea.d0a178",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "stop",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.dryer_dryer_machine_state",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Dryer done\"}",
+                "valueType": "str"
+            }
+        ],
+        "for": "15",
+        "forType": "num",
+        "forUnits": "seconds",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "92120a25acbca3a2",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Garage Door > 15min",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "cover.garage_door",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "open",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "15",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "c960c603d7e379d4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "539b1d0cf931a26a",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Front Door > 15min",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "lock.front_door",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "unlocked",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "15",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Front Door > 15 minutes\"}",
+                "valueType": "str"
+            }
+        ],
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0542bffdeab55455",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Back Door Upper > 45 minutes",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "lock.back_door_upper",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "unlocked",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "45",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Back Door Upper > 45 minutes\"}",
+                "valueType": "str"
+            }
+        ],
+        "x": 190,
+        "y": 440,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0fec1c9405d3c9e7",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Back Door Lower > 45 minutes",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.back_door_lower_opening",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "open",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "45",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Back Door Lower > 45 minutes\"}",
+                "valueType": "str"
+            }
+        ],
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
         ]
     }
 ]
