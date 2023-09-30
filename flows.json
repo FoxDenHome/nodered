@@ -2038,59 +2038,6 @@
         "wires": []
     },
     {
-        "id": "17400f9655eec738",
-        "type": "ha-device",
-        "z": "a7bed2fe84d7aa78",
-        "name": "Dori Desktop low power",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "5cd3f4019044593207219fc758933c0e",
-        "event": {
-            "type": "power",
-            "platform": "device",
-            "device_id": "5cd3f4019044593207219fc758933c0e",
-            "entity_id": "538205ea24e868b6b6d29b0d0bae224e",
-            "domain": "sensor",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "below",
-                "type": "float",
-                "value": 70
-            },
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 30,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [],
-        "x": 160,
-        "y": 120,
-        "wires": [
-            [
-                "ac8a4a5c5e5a4c6e"
-            ]
-        ]
-    },
-    {
         "id": "5fd2f6f393d61dac",
         "type": "trigger",
         "z": "a7bed2fe84d7aa78",
@@ -2139,6 +2086,70 @@
         "x": 360,
         "y": 120,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "496ce50f8ef88bcd",
+        "type": "server-state-changed",
+        "z": "a7bed2fe84d7aa78",
+        "name": "Dori Desktop low power",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.dori_desktop_power",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "num",
+        "haltifstate": "70",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "30",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "ac8a4a5c5e5a4c6e"
+            ],
             []
         ]
     },
@@ -2666,59 +2677,6 @@
         ]
     },
     {
-        "id": "4d2d86d92baeae3a",
-        "type": "ha-device",
-        "z": "286ebdc579a74a3c",
-        "name": "Wizzy PC low power",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "d8f10783fd5383c71f1232f171c393e7",
-        "event": {
-            "type": "power",
-            "platform": "device",
-            "device_id": "d8f10783fd5383c71f1232f171c393e7",
-            "entity_id": "cc20e1af4f0cf9ee226ea2277684ed15",
-            "domain": "sensor",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "below",
-                "type": "float",
-                "value": 30
-            },
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 30,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [],
-        "x": 390,
-        "y": 340,
-        "wires": [
-            [
-                "329e998ac8da9bd6"
-            ]
-        ]
-    },
-    {
         "id": "6a8aaa846484d0eb",
         "type": "ha-switch",
         "z": "286ebdc579a74a3c",
@@ -2777,59 +2735,6 @@
             ],
             [
                 "c04a05825bf610b7"
-            ]
-        ]
-    },
-    {
-        "id": "65c2658aa3b20b32",
-        "type": "ha-device",
-        "z": "286ebdc579a74a3c",
-        "name": "Dori PC low power",
-        "server": "855a07ea.d0a178",
-        "version": 0,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "inputs": 0,
-        "deviceType": "trigger",
-        "device": "1383277869fb3dc65d04345fa0816f14",
-        "event": {
-            "type": "power",
-            "platform": "device",
-            "device_id": "1383277869fb3dc65d04345fa0816f14",
-            "entity_id": "0926f73bb5d879dc2f855133d4763e97",
-            "domain": "sensor",
-            "metadata": {
-                "secondary": false
-            }
-        },
-        "capabilities": [
-            {
-                "name": "below",
-                "type": "float",
-                "value": 30
-            },
-            {
-                "name": "for",
-                "type": "positive_time_period_dict",
-                "value": 30,
-                "unit": "minutes"
-            }
-        ],
-        "outputProperties": [],
-        "x": 390,
-        "y": 60,
-        "wires": [
-            [
-                "3146a90792b50a91"
             ]
         ]
     },
@@ -3088,6 +2993,134 @@
         ]
     },
     {
+        "id": "c45d38c31ba771da",
+        "type": "server-state-changed",
+        "z": "286ebdc579a74a3c",
+        "name": "Dori PC low power",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.dori_pc_power",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "num",
+        "haltifstate": "30",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "30",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 370,
+        "y": 60,
+        "wires": [
+            [
+                "3146a90792b50a91"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "245122741361f76a",
+        "type": "server-state-changed",
+        "z": "286ebdc579a74a3c",
+        "name": "Wizzy PC low power",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.wizzy_pc_power",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "num",
+        "haltifstate": "30",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "30",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "329e998ac8da9bd6"
+            ],
+            []
+        ]
+    },
+    {
         "id": "0a7ec24139a2a7be",
         "type": "telegram sender",
         "z": "19390a89bfd209a0",
@@ -3247,123 +3280,6 @@
             [
                 "0a7ec24139a2a7be"
             ]
-        ]
-    },
-    {
-        "id": "d2f936445daa8d97",
-        "type": "api-current-state",
-        "z": "19390a89bfd209a0",
-        "name": "Dishwasher done",
-        "server": "855a07ea.d0a178",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.dishwasher_wash_completed",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "{\"content\":\"Dishwasher done\"}",
-                "valueType": "str"
-            }
-        ],
-        "for": "15",
-        "forType": "num",
-        "forUnits": "seconds",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 150,
-        "y": 560,
-        "wires": [
-            [
-                "093c0978fe4e8856"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e04b934ca7be3565",
-        "type": "api-current-state",
-        "z": "19390a89bfd209a0",
-        "name": "Washer done",
-        "server": "855a07ea.d0a178",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "stop",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.washer_washer_machine_state",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "{\"content\":\"Washer done\"}",
-                "valueType": "str"
-            }
-        ],
-        "for": "15",
-        "forType": "num",
-        "forUnits": "seconds",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 140,
-        "y": 620,
-        "wires": [
-            [
-                "093c0978fe4e8856"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "235ab95b1ea272db",
-        "type": "api-current-state",
-        "z": "19390a89bfd209a0",
-        "name": "Dryer done",
-        "server": "855a07ea.d0a178",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "stop",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.dryer_dryer_machine_state",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "{\"content\":\"Dryer done\"}",
-                "valueType": "str"
-            }
-        ],
-        "for": "15",
-        "forType": "num",
-        "forUnits": "seconds",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 130,
-        "y": 680,
-        "wires": [
-            [
-                "093c0978fe4e8856"
-            ],
-            []
         ]
     },
     {
@@ -3579,6 +3495,162 @@
         ],
         "x": 190,
         "y": 500,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c131ac9ce310f8c2",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Dishwasher done",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.dishwasher_wash_completed",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "15",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Dishwasher done\"}",
+                "valueType": "str"
+            }
+        ],
+        "x": 140,
+        "y": 560,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "248e9d5abb733e5a",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Washer done",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.washer_washer_machine_state",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "stop",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "15",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Washer done\"}",
+                "valueType": "str"
+            }
+        ],
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "093c0978fe4e8856"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5dab1151e171d26c",
+        "type": "server-state-changed",
+        "z": "19390a89bfd209a0",
+        "name": "Dryer done",
+        "server": "855a07ea.d0a178",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.dryer_dryer_machine_state",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "stop",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "15",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "{\"content\":\"Dryer done\"}",
+                "valueType": "str"
+            }
+        ],
+        "x": 130,
+        "y": 680,
         "wires": [
             [
                 "093c0978fe4e8856"
