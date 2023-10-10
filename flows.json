@@ -361,7 +361,7 @@
             },
             {
                 "property": "entity_category",
-                "value": "config"
+                "value": ""
             },
             {
                 "property": "entity_picture",
@@ -513,6 +513,10 @@
             },
             {
                 "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
                 "value": ""
             },
             {
@@ -746,6 +750,47 @@
         "useselfsignedcertificate": false,
         "sslterminated": true,
         "verboselogging": false
+    },
+    {
+        "id": "a3a45ccd7f125bec",
+        "type": "ha-entity-config",
+        "server": "855a07ea.d0a178",
+        "deviceConfig": "",
+        "name": "Bambu X1 stage",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Bambu X1 stage"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
     },
     {
         "id": "99ce1c6505aedccf",
@@ -2171,8 +2216,8 @@
         "id": "9f8825bfe35d0491",
         "type": "ha-sensor",
         "z": "a53edd6419cf925b",
-        "name": "Bambu X1 Stage",
-        "entityConfig": "27e6a9b3bbae9c7e",
+        "name": "Bambu X1 stage",
+        "entityConfig": "a3a45ccd7f125bec",
         "version": 0,
         "state": "payload.stage_name",
         "stateType": "msg",
