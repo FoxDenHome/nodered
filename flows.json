@@ -84,7 +84,8 @@
                 "98e37f64446b861b",
                 "85e2841a8d0f7ce9",
                 "548dbed9334436d5",
-                "058de403c9c507f0"
+                "058de403c9c507f0",
+                "e256e5417d21f04e"
             ]
         ]
     },
@@ -346,13 +347,13 @@
         "type": "ha-entity-config",
         "server": "855a07ea.d0a178",
         "deviceConfig": "",
-        "name": "Bambu X1 stage",
+        "name": "Bambu X1 time left",
         "version": "6",
         "entityType": "sensor",
         "haConfig": [
             {
                 "property": "name",
-                "value": "Bambu X1 stage"
+                "value": "Bambu X1 time left"
             },
             {
                 "property": "icon",
@@ -360,7 +361,7 @@
             },
             {
                 "property": "entity_category",
-                "value": ""
+                "value": "config"
             },
             {
                 "property": "entity_picture",
@@ -368,15 +369,15 @@
             },
             {
                 "property": "device_class",
-                "value": ""
+                "value": "duration"
             },
             {
                 "property": "unit_of_measurement",
-                "value": ""
+                "value": "min"
             },
             {
                 "property": "state_class",
-                "value": ""
+                "value": "measurement"
             }
         ],
         "resend": false,
@@ -1607,27 +1608,17 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Wizzy Room Light Read",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "light.wizzy_office",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "gt",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "light.wizzy_office",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "gt",
+        "outputOnlyOnStateChange": false,
         "for": "0",
         "forType": "num",
         "forUnits": "milliseconds",
@@ -1697,27 +1688,17 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Dori Room Light Read",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "light.dori_office",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "gt",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "light.dori_office",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "gt",
+        "outputOnlyOnStateChange": false,
         "for": "0",
         "forType": "num",
         "forUnits": "milliseconds",
@@ -2095,27 +2076,17 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Dori Desktop low power",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.dori_desktop_power",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "70",
-        "halt_if_type": "num",
-        "halt_if_compare": "lt",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.dori_desktop_power",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "num",
+        "ifState": "70",
+        "ifStateType": "num",
+        "ifStateOperator": "lt",
+        "outputOnlyOnStateChange": false,
         "for": "30",
         "forType": "num",
         "forUnits": "minutes",
@@ -2182,6 +2153,7 @@
         "name": "Map stg_cur and filter",
         "func": "if (!msg.payload.print) {\n    return;\n}\n\nconst stage_names = [\n    \"Idle\", // -1\n    \"Printing\", // 0\n    \"Auto bed leveling\",\n    \"Heatbed preheating\",\n    \"Sweeping XY mech mode\",\n    \"Changing filament\",\n    \"M400 pause\",\n    \"Paused due to filament runout\",\n    \"Heating hotend\",\n    \"Calibrating extrusion\",\n    \"Scanning bed surface\",\n    \"Inspecting first layer\",\n    \"Identifying build plate type\",\n    \"Calibrating Micro Lidar\",\n    \"Homing toolhead\",\n    \"Cleaning nozzle tip\",\n    \"Checking extruder temperature\",\n    \"Printing was paused by the user\",\n    \"Pause of front cover falling\",\n    \"Calibrating the micro lida\",\n    \"Calibrating extrusion flow\",\n    \"Paused due to nozzle temperature malfunction\",\n    \"Paused due to heat bed temperature malfunction\",\n];\n\nconst stage_cur = msg.payload.print.stg_cur;\nif (stage_cur === undefined) {\n    return;\n}\n\nif (!isFinite(stage_cur)) {\n    msg.reset = true;\n    return msg;\n}\n\nmsg.payload.stage_name = stage_names[stage_cur + 1] || \"unknown\";\n\nif (stage_cur >= 0 ||\n    msg.payload.print.nozzle_temper >= 80 ||\n    msg.payload.print.bed_temper >= 40) {\n    msg.reset = true;\n} else {\n    delete msg.reset;\n}\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2334,7 +2306,7 @@
         "z": "a53edd6419cf925b",
         "name": "5 min no updates",
         "op1": "",
-        "op2": "{\"print\":{\"bed_target_temper\":null,\"bed_temper\":null,\"nozzle_temper\":null,\"nozzle_target_temper\":null,\"chamber_temper\":null},\"stage_name\":null}",
+        "op2": "{\"print\":{\"bed_target_temper\":null,\"bed_temper\":null,\"nozzle_temper\":null,\"nozzle_target_temper\":null,\"chamber_temper\":null,\"mc_remaining_time\":null},\"stage_name\":null}",
         "op1type": "nul",
         "op2type": "json",
         "duration": "5",
@@ -2527,32 +2499,40 @@
         ]
     },
     {
+        "id": "e256e5417d21f04e",
+        "type": "ha-sensor",
+        "z": "a53edd6419cf925b",
+        "name": "Bambu X1 time left",
+        "entityConfig": "27e6a9b3bbae9c7e",
+        "version": 0,
+        "state": "payload.print.mc_remaining_time",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 830,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "07a75f3759c420bc",
         "type": "server-state-changed",
         "z": "eb94bf0469e27a01",
         "name": "Closet sensor read",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.corridor_upper_closet_door_iaszone",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "gt",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.corridor_upper_closet_door_iaszone",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "gt",
+        "outputOnlyOnStateChange": false,
         "for": "0",
         "forType": "num",
         "forUnits": "milliseconds",
@@ -2788,27 +2768,17 @@
         "z": "286ebdc579a74a3c",
         "name": "Dori PC Relay",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.dori_pc_relay",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "habool",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "switch.dori_pc_relay",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "habool",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is_not",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -2839,27 +2809,17 @@
         "z": "286ebdc579a74a3c",
         "name": "Wizzy PC Relay",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.wizzy_pc_relay",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "habool",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "switch.wizzy_pc_relay",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "habool",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is_not",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -2998,27 +2958,17 @@
         "z": "286ebdc579a74a3c",
         "name": "Dori PC low power",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.dori_pc_power",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "30",
-        "halt_if_type": "num",
-        "halt_if_compare": "lt",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.dori_pc_power",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "num",
+        "ifState": "30",
+        "ifStateType": "num",
+        "ifStateOperator": "lt",
+        "outputOnlyOnStateChange": false,
         "for": "30",
         "forType": "num",
         "forUnits": "minutes",
@@ -3062,27 +3012,17 @@
         "z": "286ebdc579a74a3c",
         "name": "Wizzy PC low power",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.wizzy_pc_power",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "30",
-        "halt_if_type": "num",
-        "halt_if_compare": "lt",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.wizzy_pc_power",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "num",
+        "ifState": "30",
+        "ifStateType": "num",
+        "ifStateOperator": "lt",
+        "outputOnlyOnStateChange": false,
         "for": "30",
         "forType": "num",
         "forUnits": "minutes",
@@ -3288,27 +3228,17 @@
         "z": "19390a89bfd209a0",
         "name": "Garage Door > 15min",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "cover.garage_door",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "open",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "cover.garage_door",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "open",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "15",
         "forType": "num",
         "forUnits": "minutes",
@@ -3352,27 +3282,17 @@
         "z": "19390a89bfd209a0",
         "name": "Front Door > 15min",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "lock.front_door",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "unlocked",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "lock.front_door",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "unlocked",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "15",
         "forType": "num",
         "forUnits": "minutes",
@@ -3404,27 +3324,17 @@
         "z": "19390a89bfd209a0",
         "name": "Back Door Upper > 45 minutes",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "lock.back_door_upper",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "unlocked",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "lock.back_door_upper",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "unlocked",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "45",
         "forType": "num",
         "forUnits": "minutes",
@@ -3456,27 +3366,17 @@
         "z": "19390a89bfd209a0",
         "name": "Back Door Lower > 45 minutes",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.back_door_lower_opening",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "open",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.back_door_lower_opening",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "open",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "45",
         "forType": "num",
         "forUnits": "minutes",
@@ -3508,28 +3408,18 @@
         "z": "19390a89bfd209a0",
         "name": "Dishwasher done",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.dishwasher_wash_completed",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "15",
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.dishwasher_wash_completed",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "",
         "forType": "num",
         "forUnits": "seconds",
         "ignorePrevStateNull": false,
@@ -3560,28 +3450,18 @@
         "z": "19390a89bfd209a0",
         "name": "Washer done",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.washer_washer_machine_state",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "stop",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "15",
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.washer_washer_machine_state",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "stop",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "",
         "forType": "num",
         "forUnits": "seconds",
         "ignorePrevStateNull": false,
@@ -3612,28 +3492,18 @@
         "z": "19390a89bfd209a0",
         "name": "Dryer done",
         "server": "855a07ea.d0a178",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.dryer_dryer_machine_state",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "stop",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "15",
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.dryer_dryer_machine_state",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "stop",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "",
         "forType": "num",
         "forUnits": "seconds",
         "ignorePrevStateNull": false,
@@ -3649,7 +3519,7 @@
                 "valueType": "str"
             }
         ],
-        "x": 130,
+        "x": 120,
         "y": 680,
         "wires": [
             [
