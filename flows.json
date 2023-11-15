@@ -1146,7 +1146,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\t   \"color\": color,\t   \"dots\": \"\",\t   \"text\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000,\t   \"animations\": true\t}\t",
+        "data": "{\t   \"color\": color,\t   \"dots\": \"\",\t   \"display\": $pad($string(state), -4, ' ') & '  ' & desc,\t   \"duration\": 3000,\t   \"animations\": true\t}\t",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -1378,7 +1378,7 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Get AQI relevant",
         "server": "855a07ea.d0a178",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -1393,11 +1393,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "array",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "array",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 260,
         "y": 800,
         "wires": [
@@ -1943,7 +1943,7 @@
         "z": "a7bed2fe84d7aa78",
         "name": "Get updateable",
         "server": "855a07ea.d0a178",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "attributes.device_class",
@@ -1958,11 +1958,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 480,
         "y": 1220,
         "wires": [
@@ -3348,9 +3348,9 @@
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
-                "property": "payload",
+                "property": "payload.content",
                 "propertyType": "msg",
-                "value": "{\"content\":\"Front Door > 15 minutes\"}",
+                "value": "Front Door > 15 minutes",
                 "valueType": "str"
             }
         ],
@@ -3390,9 +3390,9 @@
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
-                "property": "payload",
+                "property": "payload.content",
                 "propertyType": "msg",
-                "value": "{\"content\":\"Back Door Upper > 45 minutes\"}",
+                "value": "Back Door Upper > 45 minutes",
                 "valueType": "str"
             }
         ],
@@ -3432,9 +3432,9 @@
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
-                "property": "payload",
+                "property": "payload.content",
                 "propertyType": "msg",
-                "value": "{\"content\":\"Back Door Lower > 45 minutes\"}",
+                "value": "Back Door Lower > 45 minutes",
                 "valueType": "str"
             }
         ],
@@ -3474,9 +3474,9 @@
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
-                "property": "payload",
+                "property": "payload.content",
                 "propertyType": "msg",
-                "value": "{\"content\":\"Dishwasher done\"}",
+                "value": "Dishwasher done",
                 "valueType": "str"
             }
         ],
@@ -3516,9 +3516,9 @@
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
-                "property": "payload",
+                "property": "payload.content",
                 "propertyType": "msg",
-                "value": "{\"content\":\"Washer done\"}",
+                "value": "Washer done",
                 "valueType": "str"
             }
         ],
@@ -3558,13 +3558,13 @@
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
-                "property": "payload",
+                "property": "payload.content",
                 "propertyType": "msg",
-                "value": "{\"content\":\"Dryer done\"}",
+                "value": "Dryer done",
                 "valueType": "str"
             }
         ],
-        "x": 120,
+        "x": 130,
         "y": 680,
         "wires": [
             [
