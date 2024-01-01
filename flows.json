@@ -137,7 +137,7 @@
         "server": "855a07ea.d0a178",
         "deviceConfig": "",
         "name": "sensor config for Fridge temperature",
-        "version": 6,
+        "version": "6",
         "entityType": "sensor",
         "haConfig": [
             {
@@ -145,12 +145,20 @@
                 "value": "Fridge temperature"
             },
             {
-                "property": "device_class",
-                "value": "temperature"
-            },
-            {
                 "property": "icon",
                 "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "temperature"
             },
             {
                 "property": "unit_of_measurement",
@@ -159,13 +167,10 @@
             {
                 "property": "state_class",
                 "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
             }
         ],
-        "resend": true
+        "resend": true,
+        "debugEnabled": false
     },
     {
         "id": "1d2c2b675ffcc80c",
@@ -221,6 +226,10 @@
                 "value": ""
             },
             {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
                 "property": "entity_category",
                 "value": ""
             },
@@ -255,6 +264,10 @@
             },
             {
                 "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
                 "value": ""
             },
             {
@@ -295,6 +308,10 @@
                 "value": ""
             },
             {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
                 "property": "entity_category",
                 "value": ""
             },
@@ -327,9 +344,10 @@
         "protocolVersion": "4",
         "keepalive": "15",
         "cleansession": true,
+        "autoUnsubscribe": true,
         "birthTopic": "device/00M00A280102436/request",
         "birthQos": "0",
-        "birthPayload": "{\"pushing\": {\"sequence_id\": \"0\",\"command\": \"pushall\"}}",
+        "birthPayload": "{\"pushing\":{\"sequence_id\":\"0\",\"command\":\"pushall\",\"version\":1,\"push_target\":1}}",
         "birthMsg": {},
         "closeTopic": "",
         "closeQos": "0",
@@ -401,6 +419,10 @@
                 "value": ""
             },
             {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
                 "property": "entity_category",
                 "value": ""
             },
@@ -435,6 +457,10 @@
             },
             {
                 "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
                 "value": ""
             },
             {
@@ -1358,8 +1384,9 @@
         "type": "function",
         "z": "a7bed2fe84d7aa78",
         "name": "Calculate AQI",
-        "func": "const re = /^sensor\\.(.+)_(particulate_matter_.*_concentration|co2)$/;\n\nconst breakpoints = {};\nbreakpoints.aqi = [\n    {\n        lo: 0,\n        hi: 50,\n    },\n    {\n        lo: 51,\n        hi: 100,\n    },\n    {\n        lo: 101,\n        hi: 150,\n    },\n    {\n        lo: 151,\n        hi: 200,\n    },\n    {\n        lo: 201,\n        hi: 300,\n    },\n    {\n        lo: 301,\n        hi: 400,\n    },\n    {\n        lo: 401,\n        hi: 500,\n    },\n]\nbreakpoints.particulate_matter_2_5um_concentration = [\n    {\n        lo: 0.0,\n        hi: 12.0,\n    },\n    {\n        lo: 12.1,\n        hi: 35.4,\n    },\n    {\n        lo: 35.5,\n        hi: 55.4,\n    },\n    {\n        lo: 55.5,\n        hi: 150.4,\n    },\n    {\n        lo: 150.5,\n        hi: 250.4,\n    },\n    {\n        lo: 250.5,\n        hi: 350.4,\n    },\n    {\n        lo: 350.5,\n        hi: 500.4,\n    },\n];\nbreakpoints.particulate_matter_10_0um_concentration = [\n    {\n        lo: 0.0,\n        hi: 54.0,\n    },\n    {\n        lo: 55.0,\n        hi: 154.0,\n    },\n    {\n        lo: 155.0,\n        hi: 254.0,\n    },\n    {\n        lo: 255.0,\n        hi: 354.0,\n    },\n    {\n        lo: 355.0,\n        hi: 424.0,\n    },\n    {\n        lo: 425.0,\n        hi: 504.0,\n    },\n    {\n        lo: 505.0,\n        hi: 604.0,\n    },\n];\n\nconst aqiValues = {};\n\nfor (const ent of msg.payload) {\n    const m = ent.entity_id.match(re);\n    if (!m) {\n        continue;\n    }\n    const sensorName = m[1];\n    const sensorType = m[2];\n\n    const val = parseFloat(ent.state) - 1.0;\n\n    if (isNaN(val)) {\n        continue;\n    }\n\n    const valBreakpointsAll = breakpoints[sensorType];\n    if (!valBreakpointsAll) {\n        continue;\n    }\n\n    let i = valBreakpointsAll.length - 1;\n    for (; i >= 0; i--) {\n        if (val >= valBreakpointsAll[i].lo) {\n            break;\n        }\n    }\n\n    const valBreakpoints = valBreakpointsAll[i];\n    const aqiBreakpoints = breakpoints.aqi[i];\n\n    const bpRatio = (aqiBreakpoints.hi - aqiBreakpoints.lo) / (valBreakpoints.hi - valBreakpoints.lo);\n    const aqi = Math.round((bpRatio * (val - valBreakpoints.lo)) + aqiBreakpoints.lo);\n\n    const cur = aqiValues[sensorName];\n    if (cur && cur.aqi > aqi) {\n        continue;\n    }\n\n    aqiValues[sensorName] = {\n        aqi,\n        sensorName,\n        sensorType,\n    };\n}\nmsg.payload = aqiValues;\nreturn msg;\n",
+        "func": "const re = /^sensor\\.(.+)_(particulate_matter_.*_concentration|co2)$/;\n\nconst breakpoints = {};\nbreakpoints.aqi = [\n    {\n        lo: 0,\n        hi: 50,\n    },\n    {\n        lo: 51,\n        hi: 100,\n    },\n    {\n        lo: 101,\n        hi: 150,\n    },\n    {\n        lo: 151,\n        hi: 200,\n    },\n    {\n        lo: 201,\n        hi: 300,\n    },\n    {\n        lo: 301,\n        hi: 400,\n    },\n    {\n        lo: 401,\n        hi: 500,\n    },\n]\nbreakpoints.particulate_matter_2_5um_concentration = [\n    {\n        lo: 0.0,\n        hi: 12.0,\n    },\n    {\n        lo: 12.1,\n        hi: 35.4,\n    },\n    {\n        lo: 35.5,\n        hi: 55.4,\n    },\n    {\n        lo: 55.5,\n        hi: 150.4,\n    },\n    {\n        lo: 150.5,\n        hi: 250.4,\n    },\n    {\n        lo: 250.5,\n        hi: 350.4,\n    },\n    {\n        lo: 350.5,\n        hi: 500.4,\n    },\n];\nbreakpoints.particulate_matter_10_0um_concentration = [\n    {\n        lo: 0.0,\n        hi: 54.0,\n    },\n    {\n        lo: 55.0,\n        hi: 154.0,\n    },\n    {\n        lo: 155.0,\n        hi: 254.0,\n    },\n    {\n        lo: 255.0,\n        hi: 354.0,\n    },\n    {\n        lo: 355.0,\n        hi: 424.0,\n    },\n    {\n        lo: 425.0,\n        hi: 504.0,\n    },\n    {\n        lo: 505.0,\n        hi: 604.0,\n    },\n];\n\nconst aqiValues = {};\n\n//msg.tmp = [];\n\nfor (const ent of msg.payload) {\n    const m = ent.entity_id.match(re);\n    if (!m) {\n        continue;\n    }\n    const sensorName = m[1];\n    const sensorType = m[2];\n\n    //const mapArr = [ent, m, 0];\n    //msg.tmp.push(mapArr);\n\n    const val = parseFloat(ent.state) - 1.0;\n\n    if (isNaN(val)) {\n        //mapArr[2] = 1;\n        continue;\n    }\n\n    const valBreakpointsAll = breakpoints[sensorType];\n    if (!valBreakpointsAll) {\n        //mapArr[2] = 2;\n        continue;\n    }\n\n    let i = valBreakpointsAll.length - 1;\n    for (; i >= 0; i--) {\n        if (val >= valBreakpointsAll[i].lo) {\n            break;\n        }\n    }\n\n    const valBreakpoints = valBreakpointsAll[i];\n    const aqiBreakpoints = breakpoints.aqi[i];\n\n    const bpRatio = (aqiBreakpoints.hi - aqiBreakpoints.lo) / (valBreakpoints.hi - valBreakpoints.lo);\n    const aqi = Math.round((bpRatio * (val - valBreakpoints.lo)) + aqiBreakpoints.lo);\n\n    const cur = aqiValues[sensorName];\n    if (cur && cur.aqi > aqi) {\n        //mapArr[2] = 3;\n        continue;\n    }\n\n    aqiValues[sensorName] = {\n        aqi,\n        sensorName,\n        sensorType,\n    };\n}\nmsg.payload = aqiValues;\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2495,6 +2522,7 @@
         "id": "1460fdda699aecf9",
         "type": "inject",
         "z": "a53edd6419cf925b",
+        "d": true,
         "name": "5s trigger",
         "props": [
             {
@@ -2506,7 +2534,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{     \"pushing\": {         \"sequence_id\": \"0\",         \"command\": \"pushall\"     } }",
+        "payload": "{\"pushing\":{\"sequence_id\":\"0\",\"command\":\"pushall\",\"version\":1,\"push_target\":1}}",
         "payloadType": "json",
         "x": 150,
         "y": 360,
