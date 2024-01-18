@@ -819,6 +819,20 @@
         "debugEnabled": false
     },
     {
+        "id": "720dd4903758e359",
+        "type": "tls-config",
+        "name": "ShutdownD mTLS",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "server.pem",
+        "keyname": "cert.pem",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
+    },
+    {
         "id": "99ce1c6505aedccf",
         "type": "inject",
         "z": "b689760f8cbc2ccd",
@@ -2048,8 +2062,8 @@
         "y": 1220,
         "wires": [
             [
-                "ac9358bfc8cb8b6b",
-                "5fd2f6f393d61dac"
+                "5fd2f6f393d61dac",
+                "ac9358bfc8cb8b6b"
             ]
         ]
     },
@@ -2074,7 +2088,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 830,
+        "x": 870,
         "y": 1220,
         "wires": [
             []
@@ -2799,12 +2813,12 @@
         "method": "POST",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://fennec.foxden.network:6666/shutdown",
-        "tls": "",
+        "url": "https://fennec.foxden.network:6666/shutdown",
+        "tls": "720dd4903758e359",
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
-        "authType": "basic",
+        "authType": "",
         "senderr": false,
         "headers": [],
         "x": 630,
@@ -2822,11 +2836,11 @@
         "ret": "txt",
         "paytoqs": "ignore",
         "url": "http://wizzy-desktop.foxden.network:6666/shutdown",
-        "tls": "",
+        "tls": "720dd4903758e359",
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
-        "authType": "basic",
+        "authType": "",
         "senderr": false,
         "headers": [],
         "x": 630,
